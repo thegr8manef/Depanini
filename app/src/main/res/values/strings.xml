@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Depanin</string>
+    <string name="bienvenue">Bienvenue</string>
+    <string name="profile_info">Profile info</string>
+    <string name="firstname">First name</string>
+    <string name="lastname">Last name</string>
 </resources>
