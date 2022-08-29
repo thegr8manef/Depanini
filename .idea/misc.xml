@@ -3,10 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/asus/StudioProjects/Depanini/app/src/main/res/drawable/circle_background.xml" value="0.2595" />
-        <entry key="..\:/Users/asus/StudioProjects/Depanini/app/src/main/res/drawable/ic_arrow_back.xml" value="0.2255" />
-        <entry key="..\:/Users/asus/StudioProjects/Depanini/app/src/main/res/font/hh.xml" value="0.29375" />
-        <entry key="..\:/Users/asus/StudioProjects/Depanini/app/src/main/res/layout/activity_user_info.xml" value="0.2" />
+        <entry key="..\:/Users/jedid/AndroidStudioProjects/Depanin/app/src/main/res/drawable/myrect.xml" value="0.31" />
+        <entry key="..\:/Users/jedid/AndroidStudioProjects/Depanin/app/src/main/res/layout/activity_verification.xml" value="0.264" />
       </map>
     </option>
   </component>
