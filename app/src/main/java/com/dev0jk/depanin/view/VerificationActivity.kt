@@ -1,6 +1,5 @@
-package com.dev0jk.depanin
+package com.dev0jk.depanin.view
 
-import android.R
 import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Bundle
@@ -21,7 +20,6 @@ import com.google.firebase.auth.PhoneAuthProvider
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import java.util.concurrent.TimeUnit
-import kotlin.contracts.contract
 
 
 class VerificationActivity : AppCompatActivity() {

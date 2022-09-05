@@ -1,11 +1,10 @@
-package com.dev0jk.depanin
+package com.dev0jk.depanin.view
 
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.lifecycle.Observer
@@ -13,7 +12,7 @@ import com.bumptech.glide.Glide
 import com.dev0jk.depanin.databinding.ActivityUserInfoBinding
 import com.dev0jk.depanin.model.entity.User
 import com.dev0jk.depanin.utils.LoadingAlert
-import com.dev0jk.depanin.view.UserVM
+import com.dev0jk.depanin.vm.UserVM
 
 class UserInfoActivity : AppCompatActivity() {
     lateinit var binding : ActivityUserInfoBinding

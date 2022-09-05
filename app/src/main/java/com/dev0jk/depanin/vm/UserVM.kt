@@ -1,4 +1,4 @@
-package com.dev0jk.depanin.view
+package com.dev0jk.depanin.vm
 
 import android.net.Uri
 import androidx.lifecycle.LiveData
