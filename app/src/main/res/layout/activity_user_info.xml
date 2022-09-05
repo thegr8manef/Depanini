@@ -15,13 +15,13 @@
         android:layout_marginTop="8dp"
         android:background="@color/secand_color"
         android:src="@drawable/ic_arrow_back"
-        app:layout_constraintEnd_toStartOf="@+id/imageView"
+        app:layout_constraintEnd_toStartOf="@+id/user_image"
         app:layout_constraintHorizontal_bias="0.117"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView"
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/user_image"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginTop="24dp"
@@ -43,7 +43,7 @@
         android:textAlignment="center"
         android:textColor="#3b3b3b"
         android:textSize="20sp"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/user_image" />
 
 
     <TextView
@@ -61,17 +61,18 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/label_firstname"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="40dp"
+
         android:hint="@string/firstname"
 
         app:errorEnabled="true"
         app:counterMaxLength="20"
         app:helperTextTextColor="@color/red"
-        app:layout_constraintEnd_toStartOf="@+id/label_lastname"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView1">
 
@@ -86,27 +87,29 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/label_lastname"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:helperTextTextColor="@color/red"
-
-        app:counterMaxLength="20"
-        app:errorEnabled="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
+        android:layout_marginStart="32dp"
+
         android:hint="@string/lastname"
+        app:counterMaxLength="20"
+        android:layout_marginTop="4dp"
+        app:errorEnabled="true"
+        app:helperTextTextColor="@color/red"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/label_firstname"
-        app:layout_constraintTop_toBottomOf="@+id/textView1">
+
+        app:layout_constraintTop_toBottomOf="@+id/label_firstname">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/lastname"
-            android:maxLength="20"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:maxLength="20" />
 
     </com.google.android.material.textfield.TextInputLayout>
+
+
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/create_account"
