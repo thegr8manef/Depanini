@@ -3,6 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/asus/StudioProjects/Depanini/app/src/main/res/drawable/backgroundUserType.xml" value="0.1285" />
+        <entry key="..\:/Users/asus/StudioProjects/Depanini/app/src/main/res/drawable/background_button.xml" value="0.2775" />
+        <entry key="..\:/Users/asus/StudioProjects/Depanini/app/src/main/res/drawable/background_user_type_white.xml" value="0.1285" />
+        <entry key="..\:/Users/asus/StudioProjects/Depanini/app/src/main/res/drawable/circle_background.xml" value="0.2775" />
+        <entry key="..\:/Users/asus/StudioProjects/Depanini/app/src/main/res/drawable/circlebutton.xml" value="0.2775" />
+        <entry key="..\:/Users/asus/StudioProjects/Depanini/app/src/main/res/layout/activity_main.xml" value="0.3625" />
+        <entry key="..\:/Users/asus/StudioProjects/Depanini/app/src/main/res/layout/activity_profile.xml" value="0.3625" />
+        <entry key="..\:/Users/asus/StudioProjects/Depanini/app/src/main/res/layout/activity_user_info.xml" value="0.3625" />
+        <entry key="..\:/Users/asus/StudioProjects/Depanini/app/src/main/res/layout/activity_user_type.xml" value="0.3625" />
+        <entry key="..\:/Users/asus/StudioProjects/Depanini/app/src/main/res/layout/activity_verification.xml" value="0.3625" />
         <entry key="..\:/Users/jedid/AndroidStudioProjects/Depanin/app/src/main/res/drawable/myrect.xml" value="0.31" />
         <entry key="..\:/Users/jedid/AndroidStudioProjects/Depanin/app/src/main/res/layout/activity_verification.xml" value="0.264" />
       </map>

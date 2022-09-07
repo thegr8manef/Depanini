@@ -13,4 +13,8 @@ class UserVM {
     fun addUser(user: User, userImage: Uri?) : LiveData<MessageResult> {
         return userRepository.addUser(user, userImage)
     }
+
+    fun updateType(phone: String, type: String, userId: String): LiveData<MessageResult> {
+        return userRepository.updateType(phone, type, userId)
+    }
 }

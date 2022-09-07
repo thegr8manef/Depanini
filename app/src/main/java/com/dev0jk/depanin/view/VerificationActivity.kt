@@ -225,6 +225,7 @@ class VerificationActivity : AppCompatActivity() {
                 //SignUp(textEmail,textPassword)
                 Toast.makeText(this,"Logged In as $phone",Toast.LENGTH_LONG).show()
                 val intent1 = Intent(this, UserInfoActivity::class.java)
+                intent1.putExtra("phone",phone)
                 startActivity(intent1)
                 this.finish()
 

@@ -13,4 +13,8 @@ class UserRepository {
     fun addUser(user: User, userImage: Uri?) : LiveData<MessageResult>{
         return userRemote.addUser(user, userImage)
     }
+
+    fun updateType(phone: String, type: String, userId: String): LiveData<MessageResult> {
+        return userRemote.updateType(phone, type, userId)
+    }
 }
