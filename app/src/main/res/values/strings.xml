@@ -4,4 +4,13 @@
     <string name="profile_info">Profile info</string>
     <string name="firstname">First name</string>
     <string name="lastname">Last name</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="normal_map">Normal Map</string>
+    <string name="hybrid_map">Hybrid Map</string>
+    <string name="satellite_map">Satellite Map</string>
+    <string name="terrain_map">Terrain Map</string>
+    <string name="lat_long_snippet">Lat: %1$.5f, Long: %2$.5f</string>
+    <string name="dropped_pin">Dropped Pin</string>
+    <string name="poi">poi</string>
+    <string name="zoom">15f</string>
 </resources>
