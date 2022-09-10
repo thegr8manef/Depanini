@@ -17,4 +17,5 @@ class UserVM {
     fun updateType(phone: String, type: String, userId: String): LiveData<MessageResult> {
         return userRepository.updateType(phone, type, userId)
     }
+
 }
