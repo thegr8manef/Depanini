@@ -2,13 +2,18 @@ package com.dev0jk.depanin.view
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.graphics.Color
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.MediaStore
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
+import com.dev0jk.depanin.R
 import com.dev0jk.depanin.databinding.ActivityUserInfoBinding
 import com.dev0jk.depanin.model.entity.User
 import com.dev0jk.depanin.utils.LoadingAlert
@@ -18,6 +23,7 @@ class UserInfoActivity : AppCompatActivity() {
     lateinit var binding : ActivityUserInfoBinding
     lateinit var userVM : UserVM
     private  var uriImage : Uri? = null
+    private  var phone : String = "+21628556554"
 
     @SuppressLint("ResourceAsColor")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,13 +34,24 @@ class UserInfoActivity : AppCompatActivity() {
 
         userVM = UserVM()
 
+       // phone = intent.getStringExtra("phone").toString()
+
+
         binding.createAccount.setOnClickListener {
+            if(!binding.checkBox.isChecked){
+
+                binding.checkBox.setTextColor(Color.parseColor("#ff3333"))
+
+            } else
+
             if (binding.firstname.text?.isEmpty() == true || binding.lastname.text?.isEmpty() == true) {
+                binding.checkBox.setTextColor(Color.parseColor("#000000"))
 
                 binding.labelFirstname.error = null
                 binding.labelLastname.error = null
                 if (binding.firstname.text?.isEmpty() == true) {
                     binding.labelFirstname.error = "Firstname is required"
+
 
 
                 }
@@ -43,29 +60,24 @@ class UserInfoActivity : AppCompatActivity() {
                 }
 
             } else {
-                val loadingAlert = LoadingAlert(this)
-                loadingAlert.startLoadingAlert()
-                userVM.addUser(
-                    User(
-                        "NULL",
-                        binding.firstname.text.toString(),
-                        binding.lastname.text.toString(),
-                        "28556554",
-                            "NULL"
-                    ),
-                    uriImage
-                ).observe(this, Observer {
-                    loadingAlert.dismissDialog()
-                    if (it.statu) {
-                        Toast.makeText(this, "Successfully registered", Toast.LENGTH_LONG).show()
-                    } else {
-                        if (it.message.isEmpty()){
-                            Toast.makeText(this, "Something Was Wrong", Toast.LENGTH_LONG).show()
+                binding.checkBox.setTextColor(Color.parseColor("#000000"))
 
-                        }else
-                        Toast.makeText(this, it.message, Toast.LENGTH_LONG).show()
+              //  val loadingAlert = LoadingAlert(this)
+              //  loadingAlert.startLoadingAlert()
+                val intent: Intent = Intent(this, UserTypeActivity::class.java).apply {
+
+                    if (uriImage != null){
+                        putExtra("image", uriImage.toString())
                     }
-                })
+
+                    putExtra("phone",phone)
+                    putExtra("firstname",binding.firstname.text.toString())
+                    putExtra("lastname",binding.lastname.text.toString())
+
+                }
+                startActivity(intent)
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
+
             }
 
         }

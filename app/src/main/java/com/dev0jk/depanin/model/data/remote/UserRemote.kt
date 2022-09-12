@@ -63,7 +63,7 @@ class UserRemote {
 
 
 
-                    mutableLiveData.value = MessageResult(true,"")
+                    mutableLiveData.value = MessageResult(true,id)
 
                 }
             }
@@ -71,6 +71,26 @@ class UserRemote {
             }
         }catch (e :Exception){
             mutableLiveData.value = MessageResult(false,"")
+        }
+        return mutableLiveData
+    }
+
+
+
+    fun updateType(phone: String, type: String, userId: String): LiveData<MessageResult> {
+
+        var mutableLiveData = MutableLiveData<MessageResult>()
+        try {
+            db.collection("users").document(userId).update(mapOf(
+                "type" to type,
+            )).addOnSuccessListener {
+                mutableLiveData.value = MessageResult(true, "")
+            }.addOnFailureListener{
+                mutableLiveData.value = MessageResult(false, it.message.toString())
+            }
+
+        }catch (e :Exception){
+            mutableLiveData.value = MessageResult(false, "")
         }
         return mutableLiveData
     }
