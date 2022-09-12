@@ -1,14 +1,12 @@
 package com.dev0jk.depanin.view
 
 import android.Manifest
-import android.content.Intent
 import android.content.pm.PackageManager
 import android.content.res.Resources
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
@@ -25,17 +23,16 @@ import java.util.*
 
 //This class allows you to interact with the map by adding markers, styling its appearance and
 // displaying the user's location.
-class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
+class MapsGpsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var map: GoogleMap
     private val TAG = MapsActivity::class.java.simpleName
     private val REQUEST_LOCATION_PERMISSION = 1
-    private lateinit var button : Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maps)
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        button = findViewById(R.id.LocationBtn)
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
@@ -59,19 +56,19 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val zoomLevel = 10f
         val overlaySize = 100f
 
-        val homeLatLng = LatLng(latitude, longitude)
+/*        val homeLatLng = LatLng(latitude, longitude)
         map.moveCamera(CameraUpdateFactory.newLatLngZoom(homeLatLng, zoomLevel))
-        map.addMarker(MarkerOptions().position(homeLatLng))
+        map.addMarker(MarkerOptions().position(homeLatLng))*/
 
 /*        val googleOverlay = GroundOverlayOptions()
             .image(BitmapDescriptorFactory.fromResource(R.drawable.android))
             .position(homeLatLng, overlaySize)
         map.addGroundOverlay(googleOverlay)*/
 
-        setMapLongClick(map)
-        setPoiClick(map)
+       // setMapLongClick(map)
+        //setPoiClick(map)
         setMapStyle(map)
-        //enableMyLocation()
+        enableMyLocation()
     }
 
     // Initializes contents of Activity's standard options menu. Only called the first time options
@@ -111,7 +108,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
 
     // Called when user makes a long press gesture on the map.
-    private fun setMapLongClick(map: GoogleMap) {
+/*    private fun setMapLongClick(map: GoogleMap) {
 
 
         map.setOnMapLongClickListener { latLng ->
@@ -137,19 +134,11 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
 
                 Toast.makeText(this, "do Long press to remove the marker", Toast.LENGTH_LONG).show()
-                button.setOnClickListener {
+*//*            val intent = Intent(this@MapsActivity, PlayerActivity::class.java).apply {
+                putExtra("location",latLng)
 
-                    val intent = Intent(this@MapsActivity, MainActivity::class.java).apply {
-                        putExtra("latitude",latLng.latitude)
-                        putExtra("longitude",latLng.longitude)
-                        Log.println(Log.VERBOSE,"======>location of user",latLng.toString())
-
-                    }
-                    this@MapsActivity.startActivity(intent)
-
-                }
-
-
+            }
+            this@MapsActivity.startActivity(intent)*//*
             }
             else{
                 markerName?.remove()
@@ -160,10 +149,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         }
 
 
-    }
+    }*/
 
     // Places a marker on the map and displays an info window that contains POI name.
-    private fun setPoiClick(map: GoogleMap) {
+/*    private fun setPoiClick(map: GoogleMap) {
         map.setOnPoiClickListener { poi ->
             if (p==0){
                 poiMarker = map.addMarker(
@@ -182,7 +171,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 p = 0
             }
         }
-    }
+    }*/
 
     // Allows map styling and theming to be customized.
     private fun setMapStyle(map: GoogleMap) {
@@ -212,7 +201,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     }
 
     // Checks if users have given their location and sets location enabled if so.
-/*
     private fun enableMyLocation() {
         if (isPermissionGranted()) {
             if (ActivityCompat.checkSelfPermission(
@@ -242,12 +230,11 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             )
         }
     }
-*/
 
     // Callback for the result from requesting permissions.
     // This method is invoked for every call on requestPermissions(android.app.Activity, String[],
     // int).
-/*    override fun onRequestPermissionsResult(
+    override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<String>,
         grantResults: IntArray) {
@@ -258,5 +245,5 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 enableMyLocation()
             }
         }
-    }*/
+    }
 }

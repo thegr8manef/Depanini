@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.MapsActivity">
+    tools:context=".view.MapsGpsActivity">
 
     <fragment
         android:id="@+id/map"
@@ -21,8 +21,8 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_margin="80dp"
-        android:layout_marginEnd="104dp"
-        android:layout_marginBottom="80dp"
+        android:layout_marginEnd="120dp"
+        android:layout_marginBottom="76dp"
         android:background="@drawable/circlebuttontrans"
         android:text="Take My Location"
         android:textAllCaps="false"
