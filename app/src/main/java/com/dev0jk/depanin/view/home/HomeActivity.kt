@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.dev0jk.depanin.R
 import com.dev0jk.depanin.databinding.ActivityHomeBinding
 import com.dev0jk.depanin.model.entity.Category
+import com.etebarian.meowbottomnavigation.MeowBottomNavigation
 
 class HomeActivity : AppCompatActivity() {
 
@@ -35,5 +36,15 @@ class HomeActivity : AppCompatActivity() {
         )
 
         binding.categories.adapter = categoryAdapter
+
+
+
+        binding.bottomNavigation.add(MeowBottomNavigation.Model(1, R.drawable.ic_send))
+        binding.bottomNavigation.add(MeowBottomNavigation.Model(2, R.drawable.ic_home))
+        binding.bottomNavigation.add(MeowBottomNavigation.Model(3, R.drawable.ic_round_search))
+
+
+
+        binding.bottomNavigation.show(2)
     }
 }

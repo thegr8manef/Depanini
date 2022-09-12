@@ -22,6 +22,7 @@
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:layout_marginStart="16dp"
+
             android:layout_marginTop="8dp"
             android:src="@drawable/logo"
             app:layout_constraintStart_toStartOf="parent"
@@ -93,18 +94,55 @@
         app:layout_constraintTop_toBottomOf="@+id/top"
         tools:layout_editor_absoluteX="0dp">
 
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp"
+            android:text="Our Services"
+            android:textStyle="bold"
+            android:textColor="@color/text_color"
+
+            app:layout_constraintStart_toStartOf="@+id/categories"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/categories"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="100dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="8dp"
             android:paddingTop="2dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
 
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <com.etebarian.meowbottomnavigation.MeowBottomNavigation
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+
+            android:layout_alignParentBottom="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:mbn_backgroundBottomColor="@color/secand_color"
+            app:mbn_countBackgroundColor="@color/secand_color"
+            app:mbn_countTextColor="@color/secand_color"
+            app:mbn_defaultIconColor="@color/gray"
+            app:mbn_rippleColor="#2f424242"
+            app:mbn_selectedIconColor="@color/primary_color"
+            app:mbn_shadowColor="#1f212121" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
