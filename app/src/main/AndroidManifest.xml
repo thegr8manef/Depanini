@@ -30,7 +30,7 @@
             android:name=".view.VerificationActivity"
             android:exported="false" />
         <activity
-            android:name=".view.UserInfoActivity"
+            android:name=".view.home.HomeActivity"
             android:exported="true">
 
             <intent-filter>
@@ -43,7 +43,7 @@
             android:name=".view.UserTypeActivity"
             android:exported="false"></activity>
         <activity
-            android:name=".view.home.HomeActivity"
+            android:name=".view.UserInfoActivity"
             android:exported="false" />
 
         <activity
