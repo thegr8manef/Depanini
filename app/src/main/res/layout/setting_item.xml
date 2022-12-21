@@ -4,16 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="40dp"
-    tools:context=".view.settings.placeholder.SettingsFragment">
+    tools:context=".view.settings.SettingsFragment">
 
     <TextView
+        android:id="@+id/setting_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:text="Worker"
-        android:textColor="@color/text_color"
+
+
         android:textStyle="bold"
-        android:textSize="15sp"
+        android:textSize="13sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -21,11 +22,11 @@
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
+        android:layout_marginEnd="16dp"
         android:background="@color/secand_color"
         android:src="@drawable/ic_arrow_forward"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:tint="@color/black" />
+        app:tint="@color/gray" />
 </androidx.constraintlayout.widget.ConstraintLayout>

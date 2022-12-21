@@ -7,6 +7,7 @@ import com.dev0jk.depanin.R
 import com.dev0jk.depanin.databinding.ActivityHomeBinding
 import com.dev0jk.depanin.model.entity.Category
 import com.dev0jk.depanin.view.search.SearchFragment
+import com.dev0jk.depanin.view.settings.SettingsFragment
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation
 
 class HomeActivity : AppCompatActivity() {
@@ -14,6 +15,7 @@ class HomeActivity : AppCompatActivity() {
     lateinit var binding : ActivityHomeBinding
     lateinit var homeFragment : HomeFragment
     lateinit var searchFragment: SearchFragment
+    lateinit var settingsFragment: SettingsFragment
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,6 +34,7 @@ class HomeActivity : AppCompatActivity() {
 
          homeFragment = HomeFragment()
         searchFragment= SearchFragment()
+        settingsFragment = SettingsFragment()
 
 
 
@@ -66,6 +69,14 @@ class HomeActivity : AppCompatActivity() {
 
                 }
             }
+            4-> {
+                supportFragmentManager.beginTransaction().apply {
+                    replace(R.id.home_fragment, settingsFragment)
+                    commit()
+
+                }
+            }
+
 
 
 
