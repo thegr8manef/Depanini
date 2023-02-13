@@ -6,45 +6,80 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.dev0jk.depanin.R
 import com.dev0jk.depanin.databinding.ActivityHomeBinding
 import com.dev0jk.depanin.model.entity.Category
+import com.dev0jk.depanin.view.search.SearchFragment
+import com.dev0jk.depanin.view.settings.SettingsFragment
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation
 
 class HomeActivity : AppCompatActivity() {
 
     lateinit var binding : ActivityHomeBinding
+    lateinit var homeFragment : HomeFragment
+    lateinit var searchFragment: SearchFragment
+    lateinit var settingsFragment: SettingsFragment
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
 
-        val arrayOfCategories = arrayListOf<Category>(
-            Category("All", R.drawable.img_all),
-            Category("Electricity", R.drawable.img_electricity),
-            Category("Plumbing", R.drawable.img_plumbing),
-            Category("Painting", R.drawable.img_painting),
-            Category("Gardener", R.drawable.img_gardener),
-            Category("Security", R.drawable.img_camera),
-            Category("Masonry", R.drawable.img_masonry),
-            Category("Carpenter", R.drawable.img_carpenter),)
-
-        val categoryAdapter = CategoriesAdapter(this, arrayOfCategories)
-        binding.categories.layoutManager = LinearLayoutManager(this)
-        binding.categories.layoutManager = LinearLayoutManager(
-            this,
-            LinearLayoutManager.HORIZONTAL,
-            false
-        )
-
-        binding.categories.adapter = categoryAdapter
 
 
 
         binding.bottomNavigation.add(MeowBottomNavigation.Model(1, R.drawable.ic_send))
         binding.bottomNavigation.add(MeowBottomNavigation.Model(2, R.drawable.ic_home))
         binding.bottomNavigation.add(MeowBottomNavigation.Model(3, R.drawable.ic_round_search))
+        binding.bottomNavigation.add(MeowBottomNavigation.Model(4, R.drawable.ic_settings))
+
+         homeFragment = HomeFragment()
+        searchFragment= SearchFragment()
+        settingsFragment = SettingsFragment()
 
 
 
         binding.bottomNavigation.show(2)
+
+        binding.bottomNavigation.setOnShowListener {
+            changeFragment(it.id)
+
+        }
+
+    }
+
+
+    fun changeFragment(id :Int){
+
+
+        when (id) {
+
+
+
+            2-> {
+                supportFragmentManager.beginTransaction().apply {
+                    replace(R.id.home_fragment, homeFragment)
+                    commit()
+
+                }
+            }
+            3-> {
+                supportFragmentManager.beginTransaction().apply {
+                    replace(R.id.home_fragment, searchFragment)
+                    commit()
+
+                }
+            }
+            4-> {
+                supportFragmentManager.beginTransaction().apply {
+                    replace(R.id.home_fragment, settingsFragment)
+                    commit()
+
+                }
+            }
+
+
+
+
+        }
     }
 }

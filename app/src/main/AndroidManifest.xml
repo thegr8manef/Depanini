@@ -3,9 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.dev0jk.depanin">
 
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+
 
     <application
         android:allowBackup="true"
@@ -17,10 +20,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Depanin"
         tools:targetApi="31">
+        <activity
+            android:name=".view.location.LocationActivity"
+            android:exported="false">
+        </activity>
 
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCN_5nQOhfOkRZprw2OaKkTO4mw7-SAWlo" />
+
 
         <activity
             android:name=".view.MapsActivity"
@@ -30,9 +35,8 @@
             android:name=".view.VerificationActivity"
             android:exported="false" />
         <activity
-            android:name=".view.UserInfoActivity"
+            android:name=".view.home.HomeActivity"
             android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -41,15 +45,26 @@
         </activity>
         <activity
             android:name=".view.UserTypeActivity"
-            android:exported="false"></activity>
-        <activity
-            android:name=".view.home.HomeActivity"
             android:exported="false" />
-
+        <activity
+            android:name=".view.UserInfoActivity"
+            android:exported="false" />
         <activity
             android:name=".view.MainActivity"
             android:exported="false" />
 
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCN_5nQOhfOkRZprw2OaKkTO4mw7-SAWlo" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
     </application>
 
 </manifest>

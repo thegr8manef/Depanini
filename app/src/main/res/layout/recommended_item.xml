@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginTop="8dp"
+
+
+    android:background="@color/secand_color"
+    app:cardCornerRadius="10dp"
+  >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView2"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="12dp"
+            android:background="@drawable/shadow"
+            android:elevation="2dp"
+            app:cardCornerRadius="6dp"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/user_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="center"
+
+
+                />
+
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/rate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="72dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/background_user_type"
+            android:backgroundTint="@color/primary_color"
+            android:elevation="2dp"
+            android:text="4.4"
+            android:drawableLeft="@drawable/ic_star"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+
+            android:textAlignment="center"
+            android:textColor="@color/secand_color"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/cardView2"
+            app:layout_constraintVertical_bias="0.861" />
+
+
+        <TextView
+            android:id="@+id/worker_name"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Roberto Muslihin"
+            android:textColor="@color/text_color"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.257"
+            app:layout_constraintStart_toEndOf="@+id/cardView2"
+            app:layout_constraintTop_toTopOf="@+id/cardView2" />
+
+        <TextView
+            android:id="@+id/worker_job"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Plumbing"
+
+
+            app:layout_constraintStart_toStartOf="@+id/worker_name"
+            app:layout_constraintTop_toBottomOf="@+id/worker_name" />
+
+        <TextView
+            android:id="@+id/worker_salary"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TN 15.000/hr "
+
+            android:textColor="@color/text_color"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/worker_name"
+            app:layout_constraintTop_toBottomOf="@+id/worker_job" />
+
+        <TextView
+            android:layout_width="70dp"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:background="@color/primary_color"
+            android:text="Contact"
+            android:textStyle="bold"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:textColor="@color/secand_color"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@color/white"
+            android:src="@drawable/ic_bookmark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
