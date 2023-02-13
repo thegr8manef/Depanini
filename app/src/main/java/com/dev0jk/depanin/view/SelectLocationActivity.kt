@@ -138,9 +138,14 @@ class SelectLocationActivity : AppCompatActivity() {
     }
     fun NextBtn(){
         val sharedPref = getSharedPreferences("my_prefs", Context.MODE_PRIVATE)
-        val storedValue = sharedPref.getString("ChosenCity", "default_value")
-        Log.v("================>name","$storedValue")
-        val intent = Intent(this, HomeActivity::class.java)
+        val storedValueOfCity = sharedPref.getString("ChosenCity", "default_value")
+        val storedValueOfGouv = sharedPref.getString("ChosenGouv", "default_value")
+        Log.v("================>name","$storedValueOfCity")
+        Log.v("================>name","$storedValueOfGouv")
+        val intent = Intent(this, HomeActivity::class.java).apply {
+            putExtra("ChosenCity",storedValueOfCity)
+            putExtra("ChosenGouv",storedValueOfGouv)
+        }
         startActivity(intent)
     }
     fun CancelBtn(){

@@ -2,10 +2,9 @@ package com.dev0jk.depanin.view.home
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.recyclerview.widget.LinearLayoutManager
+import android.util.Log
 import com.dev0jk.depanin.R
 import com.dev0jk.depanin.databinding.ActivityHomeBinding
-import com.dev0jk.depanin.model.entity.Category
 import com.dev0jk.depanin.view.search.SearchFragment
 import com.dev0jk.depanin.view.settings.SettingsFragment
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation
@@ -24,6 +23,11 @@ class HomeActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
+        val intent = intent
+        val chosenCity = intent.getStringExtra("ChosenCity")
+        val chosenGouv = intent.getStringExtra("ChosenGouv")
+        Log.v("================>ChosenCity","$chosenCity")
+        Log.v("================>ChosenGouv","$chosenGouv")
 
 
 
