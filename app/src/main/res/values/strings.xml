@@ -13,5 +13,4 @@
     <string name="dropped_pin">Dropped Pin</string>
     <string name="poi">poi</string>
     <string name="zoom">15f</string>
-    <string name="title_activity_maps_gps">MapsGpsActivity</string>
 </resources>

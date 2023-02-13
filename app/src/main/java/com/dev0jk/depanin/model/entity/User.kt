@@ -1,6 +1,10 @@
 package com.dev0jk.depanin.model.entity
 
-data class User(val id : String, var name : String,
-                var lastName :String, val phone : String?,
-                var userImage : String?,
-                var type : String? = null)
+data class User(var id : String? = null,
+                var name : String? = null,
+                var lastName :String? = null,
+                val phone : String? = null,
+                var userImage : String?= null,
+                var type : String? = null,
+                var address : String? =null,
+                var specialty : String? = null)
