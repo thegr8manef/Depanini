@@ -23,14 +23,14 @@
             android:value="AIzaSyCN_5nQOhfOkRZprw2OaKkTO4mw7-SAWlo" />
 
         <activity
-            android:name=".view.MapsActivity"
+            android:name=".view.UserInfoActivity"
             android:exported="false"
             android:label="@string/title_activity_maps" />
         <activity
             android:name=".view.VerificationActivity"
             android:exported="false" />
         <activity
-            android:name=".view.UserInfoActivity"
+            android:name=".view.SelectLocationActivity"
             android:exported="true">
 
             <intent-filter>

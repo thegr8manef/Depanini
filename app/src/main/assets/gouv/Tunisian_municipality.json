@@ -1,0 +1,1938 @@
+[
+        {
+            "properties": {
+                "gouv_name": "Ariana",
+                "gouv_name_ar": "اريانة",
+                "cites" : [
+                    {
+                        "gouv_name": "Ariana",
+                        "NAME_EN": "L'ARIANA VILLE", 
+                        "NAME_EN_AR": "أریانة"
+                    },
+                    {
+                        "gouv_name": "Ariana",
+                        "NAME_EN": "SOUKRA",
+                        "NAME_EN_AR": "سكرة"
+                    },
+                    {
+                        "gouv_name": "Ariana",
+                        "NAME_EN": "RAOUED",
+                        "NAME_EN_AR": "رواد"
+                    },
+                    {
+                        "gouv_name": "Ariana",
+                        "NAME_EN": "KALAAT EL ANDALOUS",
+                        "NAME_EN_AR": "قلعة الأندلس"
+                    },
+                    {
+                        "gouv_name": "Ariana",
+                        "NAME_EN": "SIDI THABET",
+                        "NAME_EN_AR": "سیدي ثابت"
+                    },
+                    {
+                        "gouv_name": "Ariana",
+                        "NAME_EN": "CITE ETTADHAMEN",
+                        "NAME_EN_AR": "لتضامن"
+                    },
+                    {
+                        "gouv_name": "Ariana",
+                        "NAME_EN": "EL MNIHLA",
+                        "NAME_EN_AR": "المنیھلة"
+                    }
+
+                ]
+            }
+        },
+        {
+            "properties": {
+                "gouv_name": "Beja",
+                "gouv_name_ar": "باجة",
+                "cites" : [
+                    {
+                        "gouv_name": "Beja",
+                        "NAME_EN": "Beja",
+                        "NAME_EN_AR": "باجة"
+                    },
+                    {
+                        "gouv_name": "Beja",
+                        "NAME_EN": "EL MAAGOULA",
+                        "NAME_EN_AR": "المعقولة"
+                    },
+                    {
+                        "gouv_name": "Beja",
+                        "NAME_EN": "ZAHRET MADIAN",
+                        "NAME_EN_AR": "زھرة مدین"
+                    },
+                    {
+                        "NAME_EN": "OUECHTATA JAMILA",
+                        "NAME_EN_AR": "وشتاتة الجمیلة",
+                        "gouv_name": "Beja"
+                    },
+                    {
+                        "NAME_EN": "NEFZA",
+                        "NAME_EN_AR": "نفزة",
+                        "gouv_name": "Beja"
+                    },
+                    {
+                        "NAME_EN": "TEBOURSOUK",
+                        "NAME_EN_AR": "تبرسق",
+                        "gouv_name": "Beja"
+                    },
+                    {
+                        "NAME_EN": "TESTOUR",
+                        "NAME_EN_AR": "تستور",
+                        "gouv_name": "Beja"
+                    },
+                    {
+                        "NAME_EN": "TIBAR",
+                        "NAME_EN_AR": "تیبار",
+                        "gouv_name": "Beja"
+                    },
+                    {
+                        "NAME_EN": "GOUBELLAT",
+                        "NAME_EN_AR": "قبلاط",
+                        "gouv_name": "Beja"
+                    },
+                    {
+                        "NAME_EN": "ESSLOUGUIA",
+                        "NAME_EN_AR": "السلوقیة",
+                        "gouv_name": "Beja"
+                    },
+                    {
+                        "NAME_EN": "MEDJEZ EL BAB",
+                        "NAME_EN_AR": "مجاز الباب",
+                        "gouv_name": "Beja"
+                    },
+                    {
+                        "NAME_EN": "SIDI SMAIL",
+                        "NAME_EN_AR": "سیدي اسماعیل",
+                        "gouv_name": "Beja"
+                    }
+                ]
+            }
+        },
+        {
+            "properties": {
+                "gouv_name": "Ben Arous",
+                "gouv_name_ar": "بن عروس",
+                "cites" : [
+                    {
+                        "NAME_EN": "BEN AROUS",
+                        "NAME_EN_AR": "بن عروس",
+                        "gouv_name": "Ben Arous"
+
+                    },
+                    {
+                        "gouv_name": "Ben Arous",
+                        "NAME_EN": "BOU MHEL EL BASSATINE",
+                        "NAME_EN_AR": "بومھل البساتین"
+                    },
+                    {
+                        "gouv_name": "Ben Arous",
+                        "NAME_EN": "EZZAHRA",
+                        "NAME_EN_AR": "الزھراء"
+                    },
+                    {
+                        "gouv_name": "Ben Arous",
+                        "NAME_EN": "RADES",
+                        "NAME_EN_AR": "رادس"
+                    },
+                    {
+                        "gouv_name": "Ben Arous",
+                        "NAME_EN": "MEGRINE",
+                        "NAME_EN_AR": "مقرین"
+                    },
+                    {
+                        "gouv_name": "Ben Arous",
+                        "NAME_EN": "MOHAMEDIA",
+                        "NAME_EN_AR": "المحمدیة"
+                    },
+                    {
+                        "gouv_name": "Ben Arous",
+                        "NAME_EN": "FOUCHANA",
+                        "NAME_EN_AR": "فوشانة"
+                    },
+                    {
+                        "gouv_name": "Ben Arous",
+                        "NAME_EN": "MORNAG",
+                        "NAME_EN_AR": "مرناق"
+                    },
+                    {
+                        "gouv_name": "Ben Arous",
+                        "NAME_EN": "KHELIDIA",
+                        "NAME_EN_AR": "الخلیدیة"
+                    },
+                    {
+                        "gouv_name": "Ben Arous",
+                        "NAME_EN": "NAASEN",
+                        "NAME_EN_AR": "نعسان"
+                    },
+                    {
+                        "gouv_name": "Ben Arous",
+                        "NAME_EN": "EL MOUROUJ",
+                        "NAME_EN_AR": "المروج"
+                    },
+                    {
+                        "gouv_name": "Ben Arous",
+                        "NAME_EN": "HAMMAM LIF",
+                        "NAME_EN_AR": "حمام الأنف"
+                    },
+                    {
+                        "gouv_name": "Ben Arous",
+                        "NAME_EN": "HAMMAM CHOTT",
+                        "NAME_EN_AR": "حمام الشط"
+                    }
+                ]
+            }
+        },
+        {
+            "properties": {
+                "gouv_name": "Bizerte",
+                "gouv_name_ar": "بنزرت",
+                "cites" : [
+                    {
+                        "gouv_name": "Bizerte",
+                        "NAME_EN": "BIZERTE",
+                        "NAME_EN_AR": "بنزرت"
+                    },
+                    {
+                        "gouv_name": "Bizerte",
+                        "NAME_EN": "RAS DJEBEL",
+                        "NAME_EN_AR": "رأس الجبل"
+                    },
+                    {
+                        "gouv_name": "Bizerte",
+                        "NAME_EN": "MENZEL ABDERRAHMEN",
+                        "NAME_EN_AR": "منزل عبد الرحمان"
+                    },
+                    {
+                        "gouv_name": "Bizerte",
+                        "NAME_EN": "EL HACHACHNA",
+                        "NAME_EN_AR": "الحشاشنة"
+                    },
+                    {
+                        "gouv_name": "Bizerte",
+                        "NAME_EN": "OUSJA",
+                        "NAME_EN_AR": "عوسجة"
+                    },
+                    {
+                        "gouv_name": "Bizerte",
+                        "NAME_EN": "DJOUMINE",
+                        "NAME_EN_AR": "جومین"
+                    },
+                    {
+                        "gouv_name": "Bizerte",
+                        "NAME_EN": "RAFRAF",
+                        "NAME_EN_AR": "رفراف"
+                    },
+                    {
+                        "gouv_name": "Bizerte",
+                        "NAME_EN": "TINJA",
+                        "NAME_EN_AR": ": تینجة"
+                    },
+                    {
+                        "gouv_name": "Bizerte",
+                        "NAME_EN": "MATEUR",
+                        "NAME_EN_AR": "ماطر"
+                    },
+                    {
+                        "gouv_name": "Bizerte",
+                        "NAME_EN": "GHEZALA",
+                        "NAME_EN_AR": "غزالة"
+                    },
+                    {
+                        "gouv_name": "Bizerte",
+                        "NAME_EN": "UTIQUE",
+                        "NAME_EN_AR": "أوتیك"
+                    },
+                    {
+                        "gouv_name": "Bizerte",
+                        "NAME_EN": "MENZEL DJEMIL",
+                        "NAME_EN_AR": "منزل جمیل"
+                    },
+                    {
+                        "gouv_name": "Bizerte",
+                        "NAME_EN": "EL ALIA",
+                        "NAME_EN_AR": "العالیة"
+                    },
+                    {
+                        "gouv_name": "Bizerte",
+                        "NAME_EN": "METELINE",
+                        "NAME_EN_AR": "ماتلین"
+                    },
+                    {
+                        "gouv_name": "Bizerte",
+                        "NAME_EN": "GHAR EL MELEH",
+                        "NAME_EN_AR": "غار الملح"
+                    },
+                    {
+                        "gouv_name": "Bizerte",
+                        "NAME_EN": "SEDJNANE",
+                        "NAME_EN_AR": "سجنان"
+                    },
+                    {
+                        "gouv_name": "Bizerte",
+                        "NAME_EN": "MENZEL BOURGUIBA",
+                        "NAME_EN_AR": "منزل بورقيبة "
+                    }
+                ]
+            }
+        },
+        {
+            "properties": {
+                "gouv_name": "Gabes",
+                "gouv_name_ar": "قابس",
+                "cites" : [
+                    {
+                        "gouv_name": "Gabes",
+                        "NAME_EN": "GABES",
+                        "NAME_EN_AR": "قابس"
+                    },
+                    {
+                        "gouv_name": "Gabes",
+                        "NAME_EN": "BOUCHEMMA",
+                        "NAME_EN_AR": "بوشمة"
+                    },
+                    {
+                        "gouv_name": "Gabes",
+                        "NAME_EN": "MARETH",
+                        "NAME_EN_AR": "مارث"
+                    },
+                    {
+                        "gouv_name": "Gabes",
+                        "NAME_EN": "NOUVELLE MATMATA",
+                        "NAME_EN_AR": "مطماطة الجدیدة"
+                    },
+                    {
+                        "gouv_name": "Gabes",
+                        "NAME_EN": "EZZARAT",
+                        "NAME_EN_AR": "الزرات"
+                    },
+                    {
+                        "gouv_name": "Gabes",
+                        "NAME_EN": "MATMATA",
+                        "NAME_EN_AR": "مطماطة"
+                    },
+                    {
+                        "gouv_name": "Gabes",
+                        "NAME_EN": "HABIB THAMEUR",
+                        "NAME_EN_AR": "الحبیب ثامر بوعطوش"
+                    },
+                    {
+                        "gouv_name": "Gabes",
+                        "NAME_EN": "EL HAMMA",
+                        "NAME_EN_AR": "الحامة"
+                    },
+                    {
+                        "gouv_name": "Gabes",
+                        "NAME_EN": "MENZEL EL HABIB",
+                        "NAME_EN_AR": "منزل الحبیب"
+                    },
+                    {
+                        "gouv_name": "Gabes",
+                        "NAME_EN": "DEKHILET TOUJANE",
+                        "NAME_EN_AR": "دخیلة توجان"
+                    },
+                    {
+                        "gouv_name": "Gabes",
+                        "NAME_EN": "OUEDHREF",
+                        "NAME_EN_AR": "وذرف"
+                    },
+                    {
+                        "gouv_name": "Gabes",
+                        "NAME_EN": "KETANA",
+                        "NAME_EN_AR": "كتانة"
+                    },
+                    {
+                        "gouv_name": "Gabes",
+                        "NAME_EN": "GHANOUCH",
+                        "NAME_EN_AR": "غنوش"
+                    },
+                    {
+                        "gouv_name": "Gabes",
+                        "NAME_EN": "EL METOUIA",
+                        "NAME_EN_AR": "المطویة"
+                    },
+                    {
+                        "gouv_name": "Gabes",
+                        "NAME_EN": "CHENINI NAHAL",
+                        "NAME_EN_AR": "شنني نحال"
+                    }
+                ]
+            }
+        },
+        {
+            "properties": {
+
+                "gouv_name": "Gafsa",
+                "gouv_name_ar": "قفصة",
+                "cites" : [
+                    {
+                        "gouv_name": "Gafsa",
+                        "NAME_EN": "GAFSA",
+                        "NAME_EN_AR": "قفصة"
+                    },
+                    {
+                        "gouv_name": "Gafsa",
+                        "NAME_EN": "SNED",
+                        "NAME_EN_AR": "السند"
+                    },
+                    {
+                        "gouv_name": "Gafsa",
+                        "NAME_EN": "BELKHIR",
+                        "NAME_EN_AR": "بلخیر"
+                    },
+                    {
+                        "gouv_name": "Gafsa",
+                        "NAME_EN": "EL GUETAR",
+                        "NAME_EN_AR": "القطار"
+                    },
+                    {
+                        "gouv_name": "Gafsa",
+                        "NAME_EN": "MDHILA",
+                        "NAME_EN_AR": "المظیلة"
+                    },
+                    {
+                        "gouv_name": "Gafsa",
+                        "NAME_EN": "METLAOUI",
+                        "NAME_EN_AR": "المتلوي"
+                    },
+                    {
+                        "gouv_name": "Gafsa",
+                        "NAME_EN": "REDEYEF",
+                        "NAME_EN_AR": "الردیف"
+                    },
+                    {
+                        "gouv_name": "Gafsa",
+                        "NAME_EN": "OUM EL ARAIES",
+                        "NAME_EN_AR": "أم العرائس"
+                    },
+                    {
+                        "gouv_name": "Gafsa",
+                        "NAME_EN": "EL KSAR",
+                        "NAME_EN_AR": "القصر"
+                    },
+                    {
+                        "gouv_name": "Gafsa",
+                        "NAME_EN": "SIDI AICH",
+                        "NAME_EN_AR": "سیدي عیش"
+                    },
+                    {
+                        "gouv_name": "Gafsa",
+                        "NAME_EN": "SIDI BOUBAKER",
+                        "NAME_EN_AR": "سیدي بوبكر"
+                    },
+                    {
+                        "gouv_name": "Gafsa",
+                        "NAME_EN": "SANOUCHE",
+                        "NAME_EN_AR": "زانوش"
+                    },
+                    {
+                        "gouv_name": "Gafsa",
+                        "NAME_EN": "LALA",
+                        "NAME_EN_AR": "لالة"
+                    }
+                ]
+            }
+        },
+        {
+            "properties": {
+                "gouv_name": "Jendouba",
+                "gouv_name_ar": "جندوبة",
+                "cites" : [
+                    {
+                        "gouv_name": "Jendouba",
+                        "NAME_EN": "JENDOUBA",
+                        "NAME_EN_AR": "جندوبة"
+                    },
+                    {
+                        "gouv_name": "Jendouba",
+                        "NAME_EN": "KHEMAIRIA",
+                        "NAME_EN_AR": "الخمایریة"
+                    },
+                    {
+                        "gouv_name": "Jendouba",
+                        "NAME_EN": "JOUAOUDA",
+                        "NAME_EN_AR": "الجواودة"
+                    },
+                    {
+                        "gouv_name": "Jendouba",
+                        "NAME_EN": "moltaka tataouer",
+                        "NAME_EN_AR": "الملقى التطور"
+                    },
+                    {
+                        "gouv_name": "Jendouba",
+                        "NAME_EN": "AIN ESSOBH NADHOUR",
+                        "NAME_EN_AR": "عین الصبح الناظور"
+                    },
+                    {
+                        "gouv_name": "Jendouba",
+                        "NAME_EN": "BALTA - BOU AOUANE",
+                        "NAME_EN_AR": "بلطة بوعوان"
+                    },
+                    {
+                        "gouv_name": "Jendouba",
+                        "NAME_EN": "OUED MELIZ",
+                        "NAME_EN_AR": "وادي ملیز"
+                    },
+                    {
+                        "gouv_name": "Jendouba",
+                        "NAME_EN": "FERNANA",
+                        "NAME_EN_AR": "فرنانة"
+                    },
+                    {
+                        "gouv_name": "Jendouba",
+                        "NAME_EN": "AIN DRAHAM",
+                        "NAME_EN_AR": "عین دراھم"
+                    },
+                    {
+                        "gouv_name": "Jendouba",
+                        "NAME_EN": "EL GALAA EL MAADEN-GORGESSAN",
+                        "NAME_EN_AR": "القلعة المعدن فرقصان"
+                    },
+                    {
+                        "gouv_name": "Jendouba",
+                        "NAME_EN": "TABARKA",
+                        "NAME_EN_AR": "طبرقة"
+                    },
+                    {
+                        "NAME_EN": "BOU SALEM",
+                        "gouv_name": "Jendouba",
+                        "NAME_EN_AR": "بوسالم"
+                    },
+                    {
+                        "NAME_EN": "GHARDIMAOU",
+                        "gouv_name": "Jendouba",
+                        "NAME_EN_AR": "غار الدماء"
+                    },
+                    {
+                        "gouv_name": "Jendouba",
+                        "NAME_EN": "BENI MTIR",
+                        "NAME_EN_AR": "بني مطیر"
+                    }
+                ]
+            }
+        },
+        {
+            "properties": {
+                "gouv_name": "Kairouan",
+                "gouv_name_ar": "القيروان",
+                "cites" : [
+                    {
+                        "gouv_name": "Kairouan",
+                        "NAME_EN": "KAIROUAN",
+                        "NAME_EN_AR": "القیروان"
+                    },
+                    {
+                        "gouv_name": "Kairouan",
+                        "NAME_EN": "HAFFOUZ",
+                        "NAME_EN_AR": "حفوز"
+                    },
+                    {
+                        "gouv_name": "Kairouan",
+                        "NAME_EN": "SISSEB EDHRIAAT",
+                        "NAME_EN_AR": "سیسب الدریعات"
+                    },
+                    {
+                        "gouv_name": "Kairouan",
+                        "NAME_EN": "EL OUSLATIA",
+                        "NAME_EN_AR": "الوسلاتیة"
+                    },
+                    {
+                        "gouv_name": "Kairouan",
+                        "NAME_EN": "EL ALAA",
+                        "NAME_EN_AR": "العلا"
+                    },
+                    {
+                        "gouv_name": "Kairouan",
+                        "NAME_EN": "JEHINAt",
+                        "NAME_EN_AR": "جھینة"
+                    },
+                    {
+
+                        "gouv_name": "Kairouan",
+                        "NAME_EN": "ECHRARDA",
+                        "NAME_EN_AR": "الشراردة"
+                    },
+                    {
+                        "gouv_name": "Kairouan",
+                        "NAME_EN": "MENZEL MHIRI",
+                        "NAME_EN_AR": "منزل المھیري"
+                    },
+                    {
+                        "gouv_name": "Kairouan",
+                        "NAME_EN": "AIN JELLOULA",
+                        "NAME_EN_AR": "عین جلولة"
+                    },
+                    {
+                        "gouv_name": "Kairouan",
+                        "NAME_EN": "CHAOUACHI",
+                        "NAME_EN_AR": "شواشي"
+                    },
+                    {
+                        "gouv_name": "Kairouan",
+                        "NAME_EN": "CHERAITIA EL KSOUR",
+                        "NAME_EN_AR": "الشرایطیة القصور"
+                    },
+                    {
+                        "gouv_name": "Kairouan",
+                        "NAME_EN": "ABIDA",
+                        "NAME_EN_AR": "عبیدة"
+                    },
+                    {
+                        "gouv_name": "Kairouan",
+                        "NAME_EN": "EL AIN EL BEIDHA",
+                        "NAME_EN_AR": "عین البیضاء"
+                    },
+                    {
+                        "gouv_name": "Kairouan",
+                        "NAME_EN": "RAKADA",
+                        "NAME_EN_AR": "رقادة"
+                    },
+                    {
+                        "gouv_name": "Kairouan",
+                        "NAME_EN": "BOUHAJLA",
+                        "NAME_EN_AR": "بوحجلة"
+                    },
+                    {
+                        "gouv_name": "Kairouan",
+                        "NAME_EN": "NASRALLAH",
+                        "NAME_EN_AR": "نصر لله"
+                    },
+                    {
+                        "gouv_name": "Kairouan",
+                        "NAME_EN": "HAJEB EL AYOUN",
+                        "NAME_EN_AR": "حاجب العیون"
+                    },
+                    {
+                        "gouv_name": "Kairouan",
+                        "NAME_EN": "ECHEBIKA",
+                        "NAME_EN_AR": "الشبیكة"
+                    },
+                    {
+                        "gouv_name": "Kairouan",
+                        "NAME_EN": "SBIKHA",
+                        "NAME_EN_AR": "السبیخة"
+                    }
+                ]
+            }
+        },
+        {
+            "properties": {
+                "gouv_name": "Kasserine",
+                "gouv_name_ar": "القصرين",
+                "cites" : [
+                    {
+                        "gouv_name": "Kasserine",
+                        "NAME_EN": "KASSERINE",
+                        "NAME_EN_AR": "القصرین"
+                    },
+                    {
+                        "gouv_name": "Kasserine",
+                        "NAME_EN": "SBEITLA",
+                        "NAME_EN_AR": "سبیطلة"
+                    },
+                    {
+                        "gouv_name": "Kasserine",
+                        "NAME_EN": "SBIBA",
+                        "NAME_EN_AR": "سبیبة"
+                    },
+                    {
+                        "gouv_name": "Kasserine",
+                        "NAME_EN": "FERIANA",
+                        "NAME_EN_AR": "فریانة"
+                    },
+                    {
+                        "gouv_name": "Kasserine",
+                        "NAME_EN": "ENNOUR",
+                        "NAME_EN_AR": "النور"
+                    },
+                    {
+                        "gouv_name": "Kasserine",
+                        "NAME_EN": "MAJEL BEL ABBES",
+                        "NAME_EN_AR": "ماجل بلعباس"
+                    },
+                    {
+                        "gouv_name": "Kasserine",
+                        "NAME_EN": "TELEPT",
+                        "NAME_EN_AR": "تلابت"
+                    },
+                    {
+                        "gouv_name": "Kasserine",
+                        "NAME_EN": "KHMOUDA",
+                        "NAME_EN_AR": "خمودة"
+                    },
+                    {
+                        "gouv_name": "Kasserine",
+                        "NAME_EN": "EZZOUHOUR",
+                        "NAME_EN_AR": "الزھور"
+                    },
+                    {
+                        "gouv_name": "Kasserine",
+                        "NAME_EN": "FOUSSANA",
+                        "NAME_EN_AR": "فوسانة"
+                    },
+                    {
+                        "gouv_name": "Kasserine",
+                        "NAME_EN": "BOUZGUAM",
+                        "NAME_EN_AR": "بوزقام"
+                    },
+                    {
+                        "gouv_name": "Kasserine",
+                        "NAME_EN": "HIDRA",
+                        "NAME_EN_AR": "حیدرة"
+                    },
+                    {
+                        "gouv_name": "Kasserine",
+                        "NAME_EN": "THALA",
+                        "NAME_EN_AR": "تالة"
+                    },
+                    {
+                        "gouv_name": "Kasserine",
+                        "NAME_EN": "EL AYOUN",
+                        "NAME_EN_AR": "العیون"
+                    },
+                    {
+                        "gouv_name": "Kasserine",
+                        "NAME_EN": "DJEDELIANE",
+                        "NAME_EN_AR": "جدلیان"
+                    },
+                    {
+                        "gouv_name": "Kasserine",
+                        "NAME_EN": "AIN EL KHEMAISSIA",
+                        "NAME_EN_AR": "عین الخمایسیة"
+                    },
+                    {
+                        "gouv_name": "Kasserine",
+                        "NAME_EN": "ECHRAYAA MACHREK CHAMS",
+                        "NAME_EN_AR": "الشرائع مشرق الشمس"
+                    },
+                    {
+                        "gouv_name": "Kasserine",
+                        "NAME_EN": "ERRAKHMET",
+                        "NAME_EN_AR": "الرخمات"
+                    },
+                    {
+                        "gouv_name": "Kasserine",
+                        "NAME_EN": "HASSI FERID",
+                        "NAME_EN_AR": "حاسي الفرید"
+                    }
+                ]
+            }
+        },
+        {
+            "properties": {
+                "gouv_name": "Kebili",
+                "gouv_name_ar": "قبلي",
+                "cites" : [
+                    {
+                        "gouv_name": "Kebili",
+                        "NAME_EN": "KEBELI",
+                        "NAME_EN_AR": "قبلي"
+                    },
+                    {
+                        "gouv_name": "Kebili",
+                        "NAME_EN": "BECHELLI JERSINE EL BLIDET",
+                        "NAME_EN_AR": "بشلي جرسین البلیدات"
+                    },
+                    {
+                        "gouv_name": "Kebili",
+                        "NAME_EN": "BECHRI FATNASSA",
+                        "NAME_EN_AR": "بشري فطناسة"
+                    },
+                    {
+                        "gouv_name": "Kebili",
+                        "NAME_EN": "EL GOLAA",
+                        "NAME_EN_AR": "القلعة"
+                    },
+                    {
+                        "gouv_name": "Kebili",
+                        "NAME_EN": "REJIM MAATOUG",
+                        "NAME_EN_AR": "رجیم معتوق"
+                    },
+                    {
+                        "gouv_name": "Kebili",
+                        "NAME_EN": "FAOUAR",
+                        "NAME_EN_AR": "الفوار"
+                    },
+                    {
+                        "gouv_name": "Kebili",
+                        "NAME_EN": "DOUZ",
+                        "NAME_EN_AR": "دوز"
+                    },
+                    {
+                        "gouv_name": "Kebili",
+                        "NAME_EN": "SOUK EL AHED",
+                        "NAME_EN_AR": "سوق الأحد"
+                    },
+                    {
+                        "gouv_name": "Kebili",
+                        "NAME_EN": "JEMNA",
+                        "NAME_EN_AR": "جمنة"
+                    }
+                ]
+            }
+        },
+        {
+            "properties": {
+                "gouv_name": "Kef",
+                "gouv_name_ar": "الكاف",
+                "cites" : [
+                    {
+                        "gouv_name": "Kef",
+                        "NAME_EN": "KEF",
+                        "NAME_EN_AR": "الكاف"
+                    },
+                    {
+                        "gouv_name": "Kef",
+                        "NAME_EN": "KALAAT KHASBAH",
+                        "NAME_EN_AR": "القلعة الخصباء"
+                    },
+                    {
+                        "gouv_name": "Kef",
+                        "NAME_EN": "KALAAT SNAN",
+                        "NAME_EN_AR": "قلعة سنان"
+                    },
+                    {
+                        "gouv_name": "Kef",
+                        "NAME_EN": "TAJEROUINE",
+                        "NAME_EN_AR": "تاجروین"
+                    },
+                    {
+                        "gouv_name": "Kef",
+                        "NAME_EN": "SAKIET SIDI YOUSSEF",
+                        "NAME_EN_AR": "ساقیة سیدي یوسف"
+                    },
+                    {
+                        "gouv_name": "Kef",
+                        "NAME_EN": "BAHRA",
+                        "NAME_EN_AR": "بھرة"
+                    },
+                    {
+                        "gouv_name": "Kef",
+                        "NAME_EN": "NEBEUR",
+                        "NAME_EN_AR": "نبر"
+                    },
+                    {
+                        "gouv_name": "Kef",
+                        "NAME_EN": "ZAAFRANE DYR ELKEF",
+                        "NAME_EN_AR": "الزعفران دیر الكاف"
+                    },
+                    {
+                        "gouv_name": "Kef",
+                        "NAME_EN": "EL MARJA",
+                        "NAME_EN_AR": "المرجى"
+                    },
+                    {
+                        "gouv_name": "Kef",
+                        "NAME_EN": "MENZEL SALEM",
+                        "NAME_EN_AR": "منزل سالم"
+                    },
+                    {
+                        "gouv_name": "Kef",
+                        "NAME_EN": "ES-SERS",
+                        "NAME_EN_AR": "السرس"
+                    },
+                    {
+                        "gouv_name": "Kef",
+                        "NAME_EN": "TOUIREF",
+                        "NAME_EN_AR": "الطویرف"
+                    },
+                    {
+                        "gouv_name": "Kef",
+                        "NAME_EN": "DAHMANI",
+                        "NAME_EN_AR": "الدھماني"
+                    },
+                    {
+                        "gouv_name": "Kef",
+                        "NAME_EN": "DJERISSA",
+                        "AME_EN_AR": "الجریصة"
+                    }
+                ]
+            }
+        },
+        {
+            "properties": {
+                "gouv_name": "Mahdia",
+                "gouv_name_ar": "المهدية",
+                "cites" : [
+                    {
+                        "gouv_name": "Mahdia",
+                        "NAME_EN": "MAHDIA",
+                        "NAME_EN_AR": "المھدیة"
+                    },
+                    {
+                        "gouv_name": "Mahdia",
+                        "NAME_EN": "EL HEKAIMA",
+                        "NAME_EN_AR": "الحكائمة"
+                    },
+                    {
+                        "gouv_name": "Mahdia",
+                        "NAME_EN": "TALALSA",
+                        "NAME_EN_AR": "تلالسة"
+                    },
+                    {
+                        "gouv_name": "Mahdia",
+                        "NAME_EN": "SIDI ALOUANE",
+                        "NAME_EN_AR": "سیدي علوان"
+                    },
+                    {
+                        "gouv_name": "Mahdia",
+                        "NAME_EN": "KSOUR ESSEF",
+                        "NAME_EN_AR": "قصور الساف"
+                    },
+                    {
+                        "gouv_name": "Mahdia",
+                        "NAME_EN": "SIDI ZID OULED MOULAHEM",
+                        "NAME_EN_AR": "سیدي زید أولاد مولاھم"
+                    },
+                    {
+                        "gouv_name": "Mahdia",
+                        "NAME_EN": "ZALBA",
+                        "NAME_EN_AR": "زالبة"
+                    },
+                    {
+                        "gouv_name": "Mahdia",
+                        "NAME_EN": "MELLOULECH",
+                        "NAME_EN_AR": "ملولش"
+                    },
+                    {
+                        "gouv_name": "Mahdia",
+                        "NAME_EN": "BOU MERDES",
+                        "NAME_EN_AR": "بومرداس"
+                    },
+                    {
+                        "gouv_name": "Mahdia",
+                        "NAME_EN": "CHEBBA",
+                        "NAME_EN_AR": "الشابة"
+                    },
+                    {
+                        "gouv_name": "Mahdia",
+                        "NAME_EN": "BRADAA",
+                        "NAME_EN_AR": "البرادعة"
+                    },
+                    {
+                        "gouv_name": "Mahdia",
+                        "NAME_EN": "REJICHE",
+                        "NAME_EN_AR": "الرجیش"
+                    },
+                    {
+                        "gouv_name": "Mahdia",
+                        "NAME_EN": "EL DJEM",
+                        "NAME_EN_AR": "الجم"
+                    },
+                    {
+                        "gouv_name": "Mahdia",
+                        "NAME_EN": "ESSOUASSI",
+                        "NAME_EN_AR": "السواسي"
+                    },
+                    {
+                        "gouv_name": "Mahdia",
+                        "NAME_EN": "HEBIRA",
+                        "NAME_EN_AR": "ھبیرة"
+                    },
+                    {
+                        "gouv_name": "Mahdia",
+                        "NAME_EN": "CHORBANE",
+                        "NAME_EN_AR": "شربان"
+                    },
+                    {
+                        "gouv_name": "Mahdia",
+                        "NAME_EN": "OULED CHAMEKH",
+                        "NAME_EN_AR": "أولاد الشامخ"
+                    },
+                    {
+                        "gouv_name": "Mahdia",
+                        "NAME_EN": "KERKER",
+                        "NAME_EN_AR": "كركر"
+                    }
+                ]
+            }
+        },
+        {
+            "properties": {
+                "gouv_name": "Mannouba",
+                "gouv_name_ar": "منوبة",
+                "cites" : [
+                    {
+                        "gouv_name": "Mannouba",
+                        "NAME_EN": "MANNOUBA",
+                        "NAME_EN_AR": "منوبة"
+                    },
+                    {
+                        "gouv_name": "Mannouba",
+                        "NAME_EN": "BORJ AMRI",
+                        "NAME_EN_AR": "برج العامري"
+                    },
+                    {
+                        "gouv_name": "Mannouba",
+                        "NAME_EN": "BASSATINE",
+                        "NAME_EN_AR": "البساتین"
+                    },
+                    {
+                        "gouv_name": "Mannouba",
+                        "NAME_EN": "OUED ELLIL",
+                        "NAME_EN_AR": "وادي اللیل"
+                    },
+                    {
+                        "gouv_name": "Mannouba",
+                        "NAME_EN": "DOUAR HICHER",
+                        "NAME_EN_AR": "دوار ھیشر"
+                    },
+                    {
+                        "gouv_name": "Mannouba",
+                        "NAME_EN": "DENDEN",
+                        "NAME_EN_AR": "الدندان"
+                    },
+                    {
+                        "gouv_name": "Mannouba",
+                        "NAME_EN": "MORNAGUIA",
+                        "NAME_EN_AR": "المرناقیة"
+                    },
+                    {
+                        "gouv_name": "Mannouba",
+                        "NAME_EN": "EL BATTANE",
+                        "NAME_EN_AR": "البطان"
+                    },
+                    {
+                        "gouv_name": "Mannouba",
+                        "NAME_EN": "TEBOURBA",
+                        "NAME_EN_AR": "طبربة"
+                    },
+                    {
+                        "gouv_name": "Mannouba",
+                        "NAME_EN": "DJEDEIDA",
+                        "NAME_EN_AR": "الجدیدة"
+                    }
+                ]
+            }
+        },
+        {
+            "properties": {
+                "gouv_name": "Medenine",
+                "gouv_name_ar": "مدنين",
+                "cites" : [
+                    {
+                        "gouv_name": "Medenine",
+                        "NAME_EN": "MEDENINE",
+                        "NAME_EN_AR": "مدنین"
+                    },
+                    {
+                        "gouv_name": "Medenine",
+                        "NAME_EN": "DJERBA AJIM",
+                        "NAME_EN_AR": "أجیم"
+                    },
+                    {
+                        "gouv_name": "Medenine",
+                        "NAME_EN": "ZARZIS",
+                        "NAME_EN_AR": "جرجیس"
+                    },
+                    {
+                        "gouv_name": "Medenine",
+                        "NAME_EN": "BEN GUERDANE",
+                        "NAME_EN_AR": "بن قردان"
+                    },
+                    {
+                        "gouv_name": "Medenine",
+                        "NAME_EN": "DJERBA MIDOUN",
+                        "NAME_EN_AR": "میدون"
+                    },
+                    {
+                        "gouv_name": "Medenine",
+                        "NAME_EN": "BENI KHEDECH",
+                        "NAME_EN_AR": "بني خداش"
+                    },
+                    {
+                        "gouv_name": "Medenine",
+                        "NAME_EN": "DJERBA HOUMET SOUK",
+                        "NAME_EN_AR": "حومة السوق"
+                    },
+                    {
+                        "gouv_name": "Medenine",
+                        "NAME_EN": "ZARZIS NORD",
+                        "NAME_EN_AR": "جرجیس الشمالیة"
+                    },
+                    {
+                        "gouv_name": "Medenine",
+                        "NAME_EN": "BOUGHRARA",
+                        "NAME_EN_AR": "بوغرارة"
+                    },
+                    {
+                        "gouv_name": "Medenine",
+                        "NAME_EN": "SIDI MAKHLOULF",
+                        "NAME_EN_AR": "سیدي مخلوف"
+                    }
+                ]
+            }
+        },
+        {
+            "properties": {
+                "gouv_name": "Monastir",
+                "gouv_name_ar": "المنستير",
+                "cites" : [
+                    {
+                        "gouv_name": "Monastir",
+                        "NAME_EN": "MONASTIR",
+                        "NAME_EN_AR": "المنستیر"
+                    },
+                    {
+                        "gouv_name": "Monastir",
+                        "NAME_EN": "MENZEL FARSI",
+                        "NAME_EN_AR": "منزل فارسي"
+                    },
+                    {
+                        "gouv_name": "Monastir",
+                        "NAME_EN": "MOKNINE",
+                        "NAME_EN_AR": "المكنین"
+                    },
+                    {
+                        "gouv_name": "Monastir",
+                        "NAME_EN": "LAMTA",
+                        "NAME_EN_AR": "لمطة"
+                    },
+                    {
+                        "gouv_name": "Monastir",
+                        "NAME_EN": "BOU-HJAR",
+                        "NAME_EN_AR": "بوحجر"
+                    },
+                    {
+                        "gouv_name": "Monastir",
+                        "NAME_EN": "TOUZA",
+                        "NAME_EN_AR": "طوزة"
+                    },
+                    {
+                        "gouv_name": "Monastir",
+                        "NAME_EN": "KSIBET EL MEDIOUNI",
+                        "NAME_EN_AR": "قصیبة المدیوني"
+                    },
+                    {
+                        "gouv_name": "Monastir",
+                        "NAME_EN": "ZAOUIET KONTOCH",
+                        "NAME_EN_AR": "زاویة قنطش"
+                    },
+                    {
+                        "gouv_name": "Monastir",
+                        "NAME_EN": "JAMMEL",
+                        "NAME_EN_AR": "جمال"
+                    },
+                    {
+                        "gouv_name": "Monastir",
+                        "NAME_EN": "EL MASDOUR MENZEL HARB",
+                        "NAME_EN_AR": "المصدور منزل حرب"
+                    },
+                    {
+                        "gouv_name": "Monastir",
+                        "NAME_EN": "MENZEL ENNOUR",
+                        "NAME_EN_AR": "منزل نور"
+                    },
+                    {
+                        "gouv_name": "Monastir",
+                        "NAME_EN": "SIDI AMEUR MASJED AISSA",
+                        "NAME_EN_AR": "سیدي عامر مسجد عیسى"
+                    },
+                    {
+                        "gouv_name": "Monastir",
+                        "NAME_EN": "KHENIS",
+                        "NAME_EN_AR": "خنیس"
+                    },
+                    {
+                        "gouv_name": "Monastir",
+                        "NAME_EN": "SAHLINE MOOTMAR",
+                        "NAME_EN_AR": "الساحلین معتمر"
+                    },
+                    {
+                        "gouv_name": "Monastir",
+                        "NAME_EN": "AMIRET EL FEHOUL",
+                        "NAME_EN_AR": "عمیرة الفحول"
+                    },
+                    {
+                        "gouv_name": "Monastir",
+                        "NAME_EN": "MENZEL KAMEL",
+                        "NAME_EN_AR": "منزل كامل"
+                    },
+                    {
+                        "gouv_name": "Monastir",
+                        "NAME_EN": "GHNEDA",
+                        "NAME_EN_AR": "غنادة"
+                    },
+                    {
+                        "gouv_name": "Monastir",
+                        "NAME_EN": "MENZEL HAYET",
+                        "NAME_EN_AR": "منزل حیاة"
+                    },
+                    {
+                        "gouv_name": "Monastir",
+                        "NAME_EN": "OUERDANINE",
+                        "NAME_EN_AR": "الوردانین"
+                    },
+                    {
+                        "gouv_name": "Monastir",
+                        "NAME_EN": "SIDI BENNOUR",
+                        "NAME_EN_AR": "سیدي بنور"
+                    },
+                    {
+                        "gouv_name": "Monastir",
+                        "NAME_EN": "BEMBLA EL MNARA",
+                        "NAME_EN_AR": "بنبلة المنارة"
+                    },
+                    {
+                        "gouv_name": "Monastir",
+                        "NAME_EN": "CHERAHIL",
+                        "NAME_EN_AR": "الشراحیل"
+                    },
+                    {
+                        "gouv_name": "Monastir",
+                        "NAME_EN": "BEKALTA",
+                        "NAME_EN_AR": "البقالطة"
+                    },
+                    {
+                        "gouv_name": "Monastir",
+                        "NAME_EN": "AMIRET EL HOJJAJ",
+                        "NAME_EN_AR": "عمیرة الحجاج"
+                    },
+                    {
+                        "gouv_name": "Monastir",
+                        "NAME_EN": "TEBOULBA",
+                        "NAME_EN_AR": "طبلبة"
+                    },
+                    {
+                        "gouv_name": "Monastir",
+                        "NAME_EN": "AMIRET TOUAZRA",
+                        "NAME_EN_AR": "عمیرة التوازرة"
+                    },
+                    {
+                        "gouv_name": "Monastir",
+                        "NAME_EN": "KSAR HELAL",
+                        "NAME_EN_AR": "قصر ھلال"
+                    },
+                    {
+                        "gouv_name": "Monastir",
+                        "NAME_EN": "BENI HASSEN",
+                        "NAME_EN_AR": "بني حسان"
+                    },
+                    {
+                        "gouv_name": "Monastir",
+                        "NAME_EN": "BENEN BODHER",
+                        "NAME_EN_AR": "بنان بوضر"
+                    },
+                    {
+                        "gouv_name": "Monastir",
+                        "NAME_EN": "ZERMADINE",
+                        "NAME_EN_AR": "زرمدین"
+                    },
+                    {
+                        "gouv_name": "Monastir",
+                        "NAME_EN": "SAYADA",
+                        "NAME_EN_AR": "صیادة"
+                    }
+                ]
+            }
+        },
+        {
+            "properties": {
+                "gouv_name": "Nabeul",
+                "gouv_name_ar": "نابل",
+                "cites" : [
+                    {
+                        "gouv_name": "Nabeul",
+                        "NAME_EN": "NABEUL",
+                        "NAME_EN_AR": "نابل"
+                    },
+                    {
+                        "gouv_name": "Nabeul",
+                        "NAME_EN": "MENZEL TEMIME",
+                        "NAME_EN_AR": "منزل تمیم"
+                    },
+                    {
+                        "gouv_name": "Nabeul",
+                        "NAME_EN": "TAZARKA",
+                        "NAME_EN_AR": "تازركة"
+                    },
+                    {
+                        "gouv_name": "Nabeul",
+                        "NAME_EN": "EL MAAMOURA",
+                        "NAME_EN_AR": "المعمورة"
+                    },
+                    {
+                        "gouv_name": "Nabeul",
+                        "NAME_EN": "MENZEL HORR",
+                        "NAME_EN_AR": "منزل حر"
+                    },
+                    {
+                        "gouv_name": "Nabeul",
+                        "NAME_EN": "BENI KHIAR",
+                        "NAME_EN_AR": "بني خیار"
+                    },
+                    {
+                        "gouv_name": "Nabeul",
+                        "NAME_EN": "AZMOUR",
+                        "NAME_EN_AR": "أزمور"
+                    },
+                    {
+                        "gouv_name": "Nabeul",
+                        "NAME_EN": "SIDI DJEDIDI",
+                        "NAME_EN_AR": "سیدي الجدیدي"
+                    },
+                    {
+                        "gouv_name": "Nabeul",
+                        "NAME_EN": "BOU ARGOUB",
+                        "NAME_EN_AR": "بوعرقوب"
+                    },
+                    {
+                        "gouv_name": "Nabeul",
+                        "NAME_EN": "HAMMAM EL GUEZAZ",
+                        "NAME_EN_AR": "حمام الغزاز"
+                    },
+                    {
+                        "gouv_name": "Nabeul",
+                        "NAME_EN": "GROMBALIA",
+                        "NAME_EN_AR": "قرمبالیة"
+                    },
+                    {
+                        "gouv_name": "Nabeul",
+                        "NAME_EN": "KORBUS",
+                        "NAME_EN_AR": "قربص"
+                    },
+                    {
+                        "gouv_name": "Nabeul",
+                        "NAME_EN": "CHERIFET BOUCHARAY",
+                        "NAME_EN_AR": "الشریفات\/ بوشراي"
+                    },
+                    {
+                        "gouv_name": "Nabeul",
+                        "NAME_EN": "MENZEL BOUZELFA",
+                        "NAME_EN_AR": "منزل بوزلفة"
+                    },
+                    {
+                        "gouv_name": "Nabeul",
+                        "NAME_EN": "ZAOUIET JEDIDI",
+                        "NAME_EN_AR": "زاویة الجدیدي"
+                    },
+                    {
+                        "gouv_name": "Nabeul",
+                        "NAME_EN": "SOLIMAN",
+                        "NAME_EN_AR": "سلیمان"
+                    },
+                    {
+                        "gouv_name": "Nabeul",
+                        "NAME_EN": "BENI KHALLED",
+                        "NAME_EN_AR": "بني خلاد"
+                    },
+                    {
+                        "gouv_name": "Nabeul",
+                        "NAME_EN": "TAKELSA",
+                        "NAME_EN_AR": "تاكلسة"
+                    },
+                    {
+                        "gouv_name": "Nabeul",
+                        "NAME_EN": "TAZAGHRANE BOUKRIM ZAOUIET MEGHUAIZ",
+                        "NAME_EN_AR": "تزغران زاویة المقایز"
+                    },
+                    {
+                        "gouv_name": "Nabeul",
+                        "NAME_EN": "DAR ALLOUCHE",
+                        "NAME_EN_AR": "دار علوش"
+                    },
+                    {
+                        "gouv_name": "Nabeul",
+                        "NAME_EN": "KELIBIA",
+                        "NAME_EN_AR": "قلیبیة"
+                    },
+                    {
+                        "gouv_name": "Nabeul",
+                        "NAME_EN": "EL MIDA",
+                        "NAME_EN_AR": "المیدة"
+                    },
+                    {
+                        "gouv_name": "Nabeul",
+                        "NAME_EN": "KORBA",
+                        "NAME_EN_AR": "قربة"
+                    },
+                    {
+                        "gouv_name": "Nabeul",
+                        "NAME_EN": "SOMAA",
+                        "NAME_EN_AR": "الصمعة"
+                    },
+                    {
+                        "gouv_name": "Nabeul",
+                        "NAME_EN": "DAR CHAABANE EL FEHRI",
+                        "NAME_EN_AR": "دار شعبان"
+                    },
+                    {
+                        "gouv_name": "Nabeul",
+                        "NAME_EN": "HAMMAMET",
+                        "NAME_EN_AR": "الحمامات"
+                    },
+                    {
+                        "gouv_name": "Nabeul",
+                        "NAME_EN": "FONDOUK DJEDID SELTANE",
+                        "NAME_EN_AR": "فندق الجدید\/ سلتان"
+                    },
+                    {
+                        "gouv_name": "Nabeul",
+                        "NAME_EN": "EL HAOUARIA",
+                        "NAME_EN_AR": "الھواریة"
+                    }
+                ]
+            }
+        },
+        {
+            "properties": {
+                "gouv_name": "Sfax",
+                "gouv_name_ar": "صفاقس",
+                "cites" : [
+                    {
+                        "gouv_name": "Sfax",
+                        "NAME_EN": "SFAX",
+                        "NAME_EN_AR": "صفاقس"
+                    },
+                    {
+                        "gouv_name": "Sfax",
+                        "NAME_EN": "ENNASR",
+                        "NAME_EN_AR": "النصر"
+                    },
+                    {
+                        "gouv_name": "Sfax",
+                        "NAME_EN": "HAZEG ELLOUZA",
+                        "NAME_EN_AR": "حزق اللوزة"
+                    },
+                    {
+                        "gouv_name": "Sfax",
+                        "NAME_EN": "BIR ALI BEN KELIFA",
+                        "NAME_EN_AR": "بئر علي بن خلیفة"
+                    },
+                    {
+                        "gouv_name": "Sfax",
+                        "NAME_EN": "EL ACHECH BOUJARBOUE EL AOUADNA MAJEL EDDARJ",
+                        "NAME_EN_AR": "العشاش"
+                    },
+                    {
+                        "gouv_name": "Sfax",
+                        "NAME_EN": "CHIHIA",
+                        "NAME_EN_AR": "شیحیة"
+                    },
+                    {
+                        "gouv_name": "Sfax",
+                        "NAME_EN": "SAKIET EDDAIER",
+                        "NAME_EN_AR": "ساقیة الدایر"
+                    },
+                    {
+                        "gouv_name": "Sfax",
+                        "NAME_EN": "SAKIET EZZIT",
+                        "NAME_EN_AR": "ساقیة الزیت"
+                    },
+                    {
+                        "gouv_name": "Sfax",
+                        "NAME_EN": "KERKENAH",
+                        "NAME_EN_AR": "قرقنة"
+                    },
+                    {
+                        "gouv_name": "Sfax",
+                        "NAME_EN": "MAHRES",
+                        "NAME_EN_AR": "المحرص"
+                    },
+                    {
+                        "gouv_name": "Sfax",
+                        "NAME_EN": "SKHIRA",
+                        "NAME_EN_AR": "الصخیرة"
+                    },
+                    {
+                        "gouv_name": "Sfax",
+                        "NAME_EN": "ENNADHOUR SIDI ALI BELABED",
+                        "NAME_EN_AR": "الناظور سیدي علي بلعابد"
+                    },
+                    {
+                        "gouv_name": "Sfax",
+                        "NAME_EN": "GHRAIBA",
+                        "NAME_EN_AR": "الغریبة"
+                    },
+                    {
+                        "gouv_name": "Sfax",
+                        "NAME_EN": "MENZEL CHAKER",
+                        "NAME_EN_AR": "منزل شاكر"
+                    },
+                    {
+                        "gouv_name": "Sfax",
+                        "NAME_EN": "EL HENCHA",
+                        "NAME_EN_AR": "الحنشة"
+                    },
+                    {
+                        "gouv_name": "Sfax",
+                        "NAME_EN": "EL AMRA",
+                        "NAME_EN_AR": "العامرة"
+                    },
+                    {
+                        "gouv_name": "Sfax",
+                        "NAME_EN": "DJEBENIANA",
+                        "NAME_EN_AR": "جبنیانة"
+                    },
+                    {
+                        "gouv_name": "Sfax",
+                        "NAME_EN": "AGAREB",
+                        "NAME_EN_AR": "عقارب"
+                    },
+                    {
+                        "gouv_name": "Sfax",
+                        "NAME_EN": "TINA",
+                        "NAME_EN_AR": "طینة"
+                    },
+                    {
+                        "gouv_name": "Sfax",
+                        "NAME_EN": "EL AOUABED  ELKHAZZANET",
+                        "NAME_EN_AR": "العوابد الخزانات"
+                    },
+                    {
+                        "gouv_name": "Sfax",
+                        "NAME_EN": "EL AIN",
+                        "NAME_EN_AR": "العین"
+                    },
+                    {
+                        "gouv_name": "Sfax",
+                        "NAME_EN": "GREMDA",
+                        "NAME_EN_AR": "قرمدة"
+                    },
+                    {
+                        "gouv_name": "Sfax",
+                        "NAME_EN": "EL HAJEB",
+                        "NAME_EN_AR": "الحاجب"
+                    }
+                ]
+            }
+        },
+        {
+            "properties": {
+                "gouv_name": "Sidi Bouzid",
+                "gouv_name_ar": "سيدي بوزيد",
+                "cites" : [
+                    {
+                        "gouv_name": "Sidi Bouzid",
+                        "NAME_EN": "SIDI BOUZID",
+                        "NAME_EN_AR": "سیدي بوزید"
+                    },
+                    {
+                        "gouv_name": "Sidi Bouzid",
+                        "NAME_EN": "CEBALET OULED ASKER",
+                        "NAME_EN_AR": "سبالة أولاد عسكر"
+                    },
+                    {
+                        "gouv_name": "Sidi Bouzid",
+                        "NAME_EN": "BATEN EL GHZEL",
+                        "NAME_EN_AR": "باطن الغزال"
+                    },
+                    {
+                        "gouv_name": "Sidi Bouzid",
+                        "NAME_EN": "OULED HAFFOUZ",
+                        "NAME_EN_AR": "أولاد حفوز"
+                    },
+                    {
+                        "gouv_name": "Sidi Bouzid",
+                        "NAME_EN": "EL FAIEDH BENNOUR",
+                        "NAME_EN_AR": "بنور"
+                    },
+                    {
+                        "gouv_name": "Sidi Bouzid",
+                        "NAME_EN": "EL MANSOURA",
+                        "NAME_EN_AR": "المنصورة"
+                    },
+                    {
+                        "gouv_name": "Sidi Bouzid",
+                        "NAME_EN": "JILMA",
+                        "NAME_EN_AR": "جلمة"
+                    },
+                    {
+                        "gouv_name": "Sidi Bouzid",
+                        "NAME_EN": "ESSAIDA",
+                        "NAME_EN_AR": "سعیدة"
+                    },
+                    {
+                        "gouv_name": "Sidi Bouzid",
+                        "NAME_EN": "RAHAL",
+                        "NAME_EN_AR": "رحال"
+                    },
+                    {
+                        "gouv_name": "Sidi Bouzid",
+                        "NAME_EN": "SOUK JEDID",
+                        "NAME_EN_AR": "سوق الجدید"
+                    },
+                    {
+                        "gouv_name": "Sidi Bouzid",
+                        "NAME_EN": "EL ASSOUADA",
+                        "NAME_EN_AR": "الأحواز لسودة"
+                    },
+                    {
+                        "gouv_name": "Sidi Bouzid",
+                        "NAME_EN": "REGUEB",
+                        "NAME_EN_AR": "الرقاب"
+                    },
+                    {
+                        "gouv_name": "Sidi Bouzid",
+                        "NAME_EN": "MENZEL BOUZAIENNE",
+                        "NAME_EN_AR": "منزل بوزیان"
+                    },
+                    {
+                        "gouv_name": "Sidi Bouzid",
+                        "NAME_EN": "MEZZOUNA",
+                        "NAME_EN_AR": "مزونة"
+                    },
+                    {
+                        "gouv_name": "Sidi Bouzid",
+                        "NAME_EN": "MEKNASSY",
+                        "NAME_EN_AR": "المكناسي"
+                    },
+                    {
+                        "gouv_name": "Sidi Bouzid",
+                        "NAME_EN": "SIDI ALI BEN AOUN",
+                        "NAME_EN_AR": "سیدي علي بن عون"
+                    },
+                    {
+                        "gouv_name": "Sidi Bouzid",
+                        "NAME_EN": "BIR EL HAFEY",
+                        "NAME_EN_AR": "بئر الحفي"
+                    }
+                ]
+            }
+        },
+        {
+            "properties": {
+                "gouv_name": "Siliana",
+                "gouv_name_ar": "سليانة",
+                "cites" : [
+                    {
+                        "gouv_name": "Siliana",
+                        "NAME_EN": "SILIANA",
+                        "NAME_EN_AR": "سلیانة"
+                    },
+                    {
+                        "gouv_name": "Siliana",
+                        "NAME_EN": "ER-ROUHIA",
+                        "NAME_EN_AR": "الروحیة"
+                    },
+                    {
+                        "gouv_name": "Siliana",
+                        "NAME_EN": "KESRA",
+                        "NAME_EN_AR": "كسرى"
+                    },
+                    {
+                        "gouv_name": "Siliana",
+                        "NAME_EN": "EL HABABSA",
+                        "NAME_EN_AR": "الحبابسة"
+                    },
+                    {
+                        "gouv_name": "Siliana",
+                        "NAME_EN": "EL AROUSSA",
+                        "NAME_EN_AR": "العروسة"
+                    },
+                    {
+                        "gouv_name": "Siliana",
+                        "NAME_EN": "SIDI MORCHED",
+                        "NAME_EN_AR": "سیدي مرشد"
+                    },
+                    {
+                        "gouv_name": "Siliana",
+                        "NAME_EN": "BARGOU",
+                        "NAME_EN_AR": "برقو"
+                    },
+                    {
+                        "gouv_name": "Siliana",
+                        "NAME_EN": "MAKTHAR",
+                        "NAME_EN_AR": "مكثر"
+                    },
+                    {
+                        "gouv_name": "Siliana",
+                        "NAME_EN": "BOUROUIS",
+                        "NAME_EN_AR": "بورویس"
+                    },
+                    {
+                        "gouv_name": "Siliana",
+                        "NAME_EN": "EL  KRIB",
+                        "NAME_EN_AR": "الكریب"
+                    },
+                    {
+                        "gouv_name": "Siliana",
+                        "NAME_EN": "GAAFOUR",
+                        "NAME_EN_AR": "قعفور"
+                    },
+                    {
+                        "gouv_name": "Siliana",
+                        "NAME_EN": "BOU ARADA",
+                        "NAME_EN_AR": "بوعرادة"
+                    }
+                ]
+            }
+        },
+        {
+            "properties": {
+                "gouv_name": "Sousse",
+                "gouv_name_ar": "سوسة",
+                "cites" : [
+                    {
+                        "gouv_name": "Sousse",
+                        "NAME_EN": "SOUSSE",
+                        "NAME_EN_AR": "سوسة"
+                    },
+                    {
+                        "gouv_name": "Sousse",
+                        "NAME_EN": "SIDI EL HENI",
+                        "NAME_EN_AR": "سیدي الھاني"
+                    },
+                    {
+                        "gouv_name": "Sousse",
+                        "NAME_EN": "BOUFICHA",
+                        "NAME_EN_AR": "بوفیشة"
+                    },
+                    {
+                        "gouv_name": "Sousse",
+                        "NAME_EN": "HERGLA",
+                        "NAME_EN_AR": "ھرقلة"
+                    },
+                    {
+                        "gouv_name": "Sousse",
+                        "NAME_EN": "SIDI BOU ALI",
+                        "NAME_EN_AR": "سیدي بوعلي"
+                    },
+                    {
+                        "gouv_name": "Sousse",
+                        "NAME_EN": "ENFIDHA",
+                        "NAME_EN_AR": "النفیضة"
+                    },
+                    {
+                        "gouv_name": "Sousse",
+                        "NAME_EN": "KSIBA  THRAYET",
+                        "NAME_EN_AR": "قصیبة الثریات"
+                    },
+                    {
+                        "gouv_name": "Sousse",
+                        "NAME_EN": "KALAA SEGHIRA",
+                        "NAME_EN_AR": "القلعة الصغرى"
+                    },
+                    {
+                        "gouv_name": "Sousse",
+                        "NAME_EN": "AKOUDA",
+                        "NAME_EN_AR": "أكودة"
+                    },
+                    {
+                        "gouv_name": "Sousse",
+                        "NAME_EN": "HAMMAM SOUSSE",
+                        "NAME_EN_AR": "حمام سوسة"
+                    },
+                    {
+                        "gouv_name": "Sousse",
+                        "NAME_EN": "EZZOUHOUR",
+                        "NAME_EN_AR": "الزھور"
+                    },
+                    {
+                        "gouv_name": "Sousse",
+                        "NAME_EN": "M'SAKEN",
+                        "NAME_EN_AR": "مساكن"
+                    },
+                    {
+                        "gouv_name": "Sousse",
+                        "NAME_EN": "CHOTT MERIAM",
+                        "NAME_EN_AR": "شط مریم"
+                    },
+                    {
+                        "gouv_name": "Sousse",
+                        "NAME_EN": "KALAA KEBIRA",
+                        "NAME_EN_AR": "القلعة الكبرى"
+                    },
+                    {
+                        "gouv_name": "Sousse",
+                        "NAME_EN": "EL GHRIMET HICHER",
+                        "NAME_EN_AR": "القریمات ھیشر"
+                    },
+                    {
+                        "gouv_name": "Sousse",
+                        "NAME_EN": "MESSADINE",
+                        "NAME_EN_AR": "المسعدین"
+                    },
+                    {
+                        "gouv_name": "Sousse",
+                        "NAME_EN": "ZAOUIA SOUSSE",
+                        "NAME_EN_AR": "زاویة سوسة"
+                    },
+                    {
+                        "gouv_name": "Sousse",
+                        "NAME_EN": "KONDAR",
+                        "NAME_EN_AR": "كندار"
+                    }
+                ]
+            }
+        },
+        {
+            "properties": {
+                "gouv_name": "Tataouine",
+                "gouv_name_ar": "تطاوين",
+                "cites" : [
+                    {
+                        "gouv_name": "Tataouine",
+                        "NAME_EN": "TATAOUINE",
+                        "NAME_EN_AR": "تطاوین"
+                    },
+                    {
+                        "gouv_name": "Tataouine",
+                        "NAME_EN": "REMADA",
+                        "NAME_EN_AR": "رمادة"
+                    },
+                    {
+                        "gouv_name": "Tataouine",
+                        "NAME_EN": "DHEHIBA",
+                        "NAME_EN_AR": "الذھیبة"
+                    },
+                    {
+                        "gouv_name": "Tataouine",
+                        "NAME_EN": "GHOMRASSEN",
+                        "NAME_EN_AR": "غمراسن"
+                    },
+                    {
+                        "gouv_name": "Tataouine",
+                        "NAME_EN": "TATAOUINE SUD",
+                        "NAME_EN_AR": "شنني الدویرات"
+                    },
+                    {
+                        "gouv_name": "Tataouine",
+                        "NAME_EN": "BIR LAHMAR",
+                        "NAME_EN_AR": "بئر الأحمر"
+                    },
+                    {
+                        "gouv_name": "Tataouine",
+                        "NAME_EN": "SMAR",
+                        "NAME_EN_AR": "الصمار"
+                    }
+                ]
+            }
+        },
+        {
+            "properties": {
+                "gouv_name": "Tozeur",
+                "gouv_name_ar": "توزر",
+                "cites" : [
+                    {
+                        "gouv_name": "Tozeur",
+                        "NAME_EN": "TOZEUR",
+                        "NAME_EN_AR": "توزر"
+                    },
+                    {
+                        "gouv_name": "Tozeur",
+                        "NAME_EN": "DEGACH",
+                        "NAME_EN_AR": "دقاش"
+                    },
+                    {
+                        "gouv_name": "Tozeur",
+                        "NAME_EN": "TAMEGHZA",
+                        "NAME_EN_AR": "تمغزة"
+                    },
+                    {
+                        "gouv_name": "Tozeur",
+                        "NAME_EN": "NEFTA",
+                        "NAME_EN_AR": "نفطة"
+                    },
+                    {
+                        "gouv_name": "Tozeur",
+                        "NAME_EN": "HAZOUA",
+                        "NAME_EN_AR": "حزوة"
+                    },
+                    {
+                        "gouv_name": "Tozeur",
+                        "NAME_EN": "HAMET EJRID",
+                        "NAME_EN_AR": "حامة الجرید"
+                    }
+                ]
+            }
+        },
+        {
+            "properties": {
+                "gouv_name": "Tunis",
+                "gouv_name_ar": "تونس",
+                "cites" : [
+                    {
+                        "gouv_name": "Tunis",
+                        "NAME_EN": "TUNIS",
+                        "NAME_EN_AR": "تونس"
+                    },
+                    {
+                        "gouv_name": "Tunis",
+                        "NAME_EN": "LE KRAM",
+                        "NAME_EN_AR": "الكرم"
+                    },
+                    {
+                        "gouv_name": "Tunis",
+                        "NAME_EN": "LA MARSA",
+                        "NAME_EN_AR": "المرسى"
+                    },
+                    {
+                        "gouv_name": "Tunis",
+                        "NAME_EN": "LE BARDO",
+                        "NAME_EN_AR": "باردو"
+                    },
+                    {
+                        "gouv_name": "Tunis",
+                        "NAME_EN": "SIDI HASSINE",
+                        "NAME_EN_AR": "سیدي حسین"
+                    },
+                    {
+                        "gouv_name": "Tunis",
+                        "NAME_EN": "CARTHAGE",
+                        "NAME_EN_AR": "قرطاج"
+                    },
+                    {
+                        "gouv_name": "Tunis",
+                        "NAME_EN": "SIDI BOU SAID",
+                        "NAME_EN_AR": "سیدي بوسعید"
+                    },
+                    {
+                        "gouv_name": "Tunis",
+                        "NAME_EN": "LA GOULETTE",
+                        "NAME_EN_AR": "حلق الوادي"
+                    }
+                ]
+            }
+        },
+        {
+            "properties": {
+                "gouv_name": "Zaghouan",
+                "gouv_name_ar": "زغوان",
+                "cites" : [
+                    {
+                        "gouv_name": "Zaghouan",
+                        "NAME_EN": "ZAGHOUAN",
+                        "NAME_EN_AR": "زغوان"
+                    },
+                    {
+                        "gouv_name": "Zaghouan",
+                        "NAME_EN": "JBEL ELOUAST",
+                        "NAME_EN_AR": "جبل الوسط"
+                    },
+                    {
+                        "gouv_name": "Zaghouan",
+                        "NAME_EN": "SAOUAF",
+                        "NAME_EN_AR": "صواف"
+                    },
+                    {
+                        "gouv_name": "Zaghouan",
+                        "NAME_EN": "EL FAHS",
+                        "NAME_EN_AR": "الفحص"
+                    },
+                    {
+                        "gouv_name": "Zaghouan",
+                        "NAME_EN": "EN-NADHOUR",
+                        "NAME_EN_AR": "الناظور"
+                    },
+                    {
+                        "gouv_name": "Zaghouan",
+                        "NAME_EN": "EL AMIEM",
+                        "NAME_EN_AR": "العمایم"
+                    },
+                    {
+                        "gouv_name": "Zaghouan",
+                        "NAME_EN": "BIR MCHERGUA",
+                        "NAME_EN_AR": "بئر مشارقة"
+                    },
+                    {
+                        "gouv_name": "Zaghouan",
+                        "NAME_EN": "EZ-ZERIBA",
+                        "NAME_EN_AR": "الزریبة"
+                    }
+                ]
+            }
+        }
+    ]
