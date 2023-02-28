@@ -10,6 +10,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.dev0jk.depanin.R
 import com.dev0jk.depanin.model.entity.Category
+import com.dev0jk.depanin.view.SelectLocationActivity
 import com.dev0jk.depanin.view.location.LocationActivity
 
 class SettingsAdapter(val context: Context, val settings : ArrayList<String>) :
@@ -24,7 +25,7 @@ class SettingsAdapter(val context: Context, val settings : ArrayList<String>) :
            itemView.setOnClickListener{
                when(itemView.findViewById<TextView>(R.id.setting_name).text.toString() ){
                    "My Address" -> {
-                       val intent = Intent(context, LocationActivity::class.java)
+                       val intent = Intent(context, SelectLocationActivity::class.java)
                        context.startActivity(intent)
                    }
                }

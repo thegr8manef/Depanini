@@ -1,21 +1,18 @@
 package com.dev0jk.depanin.view
 
-import android.app.PendingIntent
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.Observer
-import com.bumptech.glide.Glide
 import com.dev0jk.depanin.R
 import com.dev0jk.depanin.databinding.ActivityUserTypeBinding
+import com.dev0jk.depanin.model.entity.Location
 import com.dev0jk.depanin.model.entity.User
 import com.dev0jk.depanin.utils.LoadingAlert
 import com.dev0jk.depanin.view.home.HomeActivity
 import com.dev0jk.depanin.vm.UserVM
-import java.net.URI
 
 class UserTypeActivity : AppCompatActivity() {
 
@@ -30,16 +27,17 @@ class UserTypeActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         userVM = UserVM()
-        var image : Uri?
         var phone = intent.getStringExtra("phone").toString()
-        image = try {
-            Uri.parse(intent.getStringExtra("image"))
+        var image : Uri? = try {
+            Uri.parse(intent.getStringExtra("image").toString())
         } catch (e : java.lang.NullPointerException){
             null
         }
 
         var firstName = intent.getStringExtra("firstname").toString()
         var lastName = intent.getStringExtra("lastname").toString()
+        var ChosenCity = intent.getStringExtra("ChosenCity").toString()
+        var ChosenGouv = intent.getStringExtra("ChosenGouv").toString()
 
 
 
@@ -80,8 +78,9 @@ class UserTypeActivity : AppCompatActivity() {
                         firstName,
                         lastName,
                         phone,
-                        "NULL",
-                        type
+                        image.toString(),
+                        type,
+                        Location(ChosenGouv,ChosenCity)
 
                     ),
                     image

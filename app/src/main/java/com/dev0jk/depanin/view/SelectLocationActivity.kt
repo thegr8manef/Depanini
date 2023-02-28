@@ -2,16 +2,22 @@ package com.dev0jk.depanin.view
 
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dev0jk.depanin.R
 import com.dev0jk.depanin.databinding.ActivitySelectedLocationBinding
 import com.dev0jk.depanin.model.entity.Gouvernement
+import com.dev0jk.depanin.model.entity.Location
+import com.dev0jk.depanin.utils.LoadingAlert
 import com.dev0jk.depanin.view.home.HomeActivity
+import com.dev0jk.depanin.vm.UserVM
+import com.dev0jk.depanin.vm.WorkerVM
 import org.json.JSONArray
 import java.io.IOException
 import java.io.InputStream
@@ -21,6 +27,8 @@ class SelectLocationActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySelectedLocationBinding
     var allJson = arrayListOf<String>()
     var type = arrayListOf<String>()
+    lateinit var userVM : UserVM
+    lateinit var workerVM: WorkerVM
     private var gouv_name = arrayListOf<String>()
     private var lenghtOfCities = HashMap<String, String>()
     private var _listOfCites: ArrayList<Gouvernement> = arrayListOf()
@@ -36,7 +44,8 @@ class SelectLocationActivity : AppCompatActivity() {
         setContentView(binding.root)
 /*        binding.getStarted.isClickable =false
         binding.getStarted.isEnabled = false*/
-
+        userVM = UserVM()
+        workerVM = WorkerVM()
         readJson()
         dropDownList()
 
@@ -137,14 +146,37 @@ class SelectLocationActivity : AppCompatActivity() {
 
     }
     fun NextBtn(){
+        var loadingAlert=  LoadingAlert(this)
+        loadingAlert.startLoadingAlert()
+        var image : Uri?
+        var phone = intent.getStringExtra("phone").toString()
+        image = try {
+            Uri.parse(intent.getStringExtra("image"))
+        } catch (e : java.lang.NullPointerException){
+            null
+        }
+
+        var firstName = intent.getStringExtra("firstname").toString()
+        var lastName = intent.getStringExtra("lastname").toString()
+
+
         val sharedPref = getSharedPreferences("my_prefs", Context.MODE_PRIVATE)
         val storedValueOfCity = sharedPref.getString("ChosenCity", "default_value")
         val storedValueOfGouv = sharedPref.getString("ChosenGouv", "default_value")
         Log.v("================>name","$storedValueOfCity")
         Log.v("================>name","$storedValueOfGouv")
-        val intent = Intent(this, HomeActivity::class.java).apply {
+/*        userVM.updateLocation("", Location(storedValueOfGouv!!,storedValueOfCity!!)).observe(this@SelectLocationActivity,
+            Observer {
+
+             loadingAlert.dismissDialog()
+            })*/
+        val intent = Intent(this, UserTypeActivity::class.java).apply {
             putExtra("ChosenCity",storedValueOfCity)
             putExtra("ChosenGouv",storedValueOfGouv)
+            putExtra("phone",phone)
+            putExtra("image",image)
+            putExtra("firstname",firstName)
+            putExtra("lastname",lastName)
         }
         startActivity(intent)
     }

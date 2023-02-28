@@ -3,7 +3,9 @@ package com.dev0jk.depanin.model.data.repository
 import android.net.Uri
 import androidx.lifecycle.LiveData
 import com.dev0jk.depanin.model.data.remote.UserRemote
+import com.dev0jk.depanin.model.entity.Location
 import com.dev0jk.depanin.model.entity.User
+import com.dev0jk.depanin.model.entity.modelWorker.ResponseUserModel
 import com.dev0jk.depanin.utils.MessageResult
 
 class UserRepository {
@@ -16,5 +18,18 @@ class UserRepository {
 
     fun updateType(phone: String, type: String, userId: String): LiveData<MessageResult> {
         return userRemote.updateType(phone, type, userId)
+    }
+    fun updateLocation(userId : String,location: Location) : LiveData<MessageResult>{
+        return userRemote.updateLocationUser(userId, location)
+    }
+    fun signUpClient(username : String,password:String,address:String,phone:Int) : LiveData<ResponseUserModel>{
+        return userRemote.signUpClient(username ,password,address,phone)
+    }
+
+    fun getData(phone:Int) : LiveData<List<com.dev0jk.depanin.model.data.remote.entity.User>>{
+        return userRemote.getDataUser(phone)
+    }
+    fun getAllClient() : LiveData<List<com.dev0jk.depanin.model.data.remote.entity.User>>{
+        return userRemote.getAllClient()
     }
 }
