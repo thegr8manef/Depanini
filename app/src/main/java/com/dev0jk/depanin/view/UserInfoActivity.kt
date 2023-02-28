@@ -23,7 +23,7 @@ class UserInfoActivity : AppCompatActivity() {
     lateinit var binding : ActivityUserInfoBinding
     lateinit var userVM : UserVM
     private  var uriImage : Uri? = null
-    private  var phone : String = "+21628556554"
+    private  var phone : String? =null
 
     @SuppressLint("ResourceAsColor")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,7 +34,7 @@ class UserInfoActivity : AppCompatActivity() {
 
         userVM = UserVM()
 
-       // phone = intent.getStringExtra("phone").toString()
+       phone = intent.getStringExtra("phone").toString()
 
 
         binding.createAccount.setOnClickListener {
@@ -64,7 +64,7 @@ class UserInfoActivity : AppCompatActivity() {
 
               //  val loadingAlert = LoadingAlert(this)
               //  loadingAlert.startLoadingAlert()
-                val intent: Intent = Intent(this, UserTypeActivity::class.java).apply {
+                val intent: Intent = Intent(this, SelectLocationActivity::class.java).apply {
 
                     if (uriImage != null){
                         putExtra("image", uriImage.toString())

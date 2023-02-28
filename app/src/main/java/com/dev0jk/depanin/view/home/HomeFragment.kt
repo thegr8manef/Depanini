@@ -13,6 +13,7 @@ import com.dev0jk.depanin.R
 import com.dev0jk.depanin.databinding.FragmentHomeBinding
 import com.dev0jk.depanin.model.entity.Category
 import com.dev0jk.depanin.model.entity.User
+import com.dev0jk.depanin.vm.UserVM
 import com.dev0jk.depanin.vm.WorkerVM
 
 
@@ -21,6 +22,7 @@ class HomeFragment : Fragment() {
     private var _binding : FragmentHomeBinding? =null
     private val binding get() = _binding!!
     lateinit var workerVM : WorkerVM
+    lateinit var userVM: UserVM
 
     val arrayOfCategories = arrayListOf<Category>(
         Category("All", R.drawable.img_all),
@@ -32,7 +34,7 @@ class HomeFragment : Fragment() {
         Category("Masonry", R.drawable.img_masonry),
         Category("Carpenter", R.drawable.img_carpenter),)
 
-    val recommends = arrayListOf<User>(
+/*    val recommends = arrayListOf<User>(
         User("tt","nn","k","","",""),
         User("tt","nn","k","","",""),
         User("tt","nn","k","","",""),
@@ -42,7 +44,7 @@ class HomeFragment : Fragment() {
         User("tt","nn","k","","",""),
         User("tt","nn","k","","",""),
         User("tt","nn","k","","","")
-    )
+    )*/
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -62,8 +64,28 @@ class HomeFragment : Fragment() {
 
         binding.profileImage
         workerVM = WorkerVM()
+        userVM=UserVM()
+        //userVM.signUpClient("nefza","nefza","nefza",9999)
+        workerVM.signUpWorker("aziz wazzan","aziz","soussa",99420988,1234568,"bac+2")
+/*        workerVM.getAllWorker()*/
+        userVM.getAllClient()
+        //userVM.getData(123)
+/*            workerVM.getAllWorker().observe(viewLifecycleOwner, Observer {
+            if (!it.isNullOrEmpty()){
+                val recommendedAdapter = RecommendedAdapter(requireContext(), it!!)
+                binding.recommended.layoutManager = LinearLayoutManager(requireContext())
+                binding.recommended.layoutManager = LinearLayoutManager(
+                    requireContext(),
 
-        workerVM.getRecommanded("monastir").observe(viewLifecycleOwner, Observer {
+
+                    )
+
+                binding.recommended.adapter = recommendedAdapter
+            }
+
+        })*/
+
+        workerVM.getRecommanded("Beja").observe(viewLifecycleOwner, Observer {
             if (!it.isNullOrEmpty()){
                 val recommendedAdapter = RecommendedAdapter(requireContext(), it!!)
                 binding.recommended.layoutManager = LinearLayoutManager(requireContext())
