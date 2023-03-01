@@ -105,7 +105,7 @@ class UserRemote {
     fun updateLocationUser(userId : String, location: Location) : LiveData<MessageResult>{
         return updateLocation(userId, location)
     }
-    fun getDataUser(phone : Int) : LiveData<List<com.dev0jk.depanin.model.data.remote.entity.User>>{
+    fun getDataUser(phone : Int) : LiveData<MessageResult>{
         return getData(phone)
     }
 

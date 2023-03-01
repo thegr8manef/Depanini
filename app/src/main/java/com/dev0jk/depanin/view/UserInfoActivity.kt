@@ -44,19 +44,19 @@ class UserInfoActivity : AppCompatActivity() {
 
             } else
 
-            if (binding.firstname.text?.isEmpty() == true || binding.lastname.text?.isEmpty() == true) {
+            if (binding.username.text?.isEmpty() == true || binding.password.text?.isEmpty() == true) {
                 binding.checkBox.setTextColor(Color.parseColor("#000000"))
 
-                binding.labelFirstname.error = null
-                binding.labelLastname.error = null
-                if (binding.firstname.text?.isEmpty() == true) {
-                    binding.labelFirstname.error = "Firstname is required"
+                binding.labelUsername.error = null
+                binding.labelPassword.error = null
+                if (binding.username.text?.isEmpty() == true) {
+                    binding.labelUsername.error = "Username is required"
 
 
 
                 }
-                if (binding.lastname.text?.isEmpty() == true) {
-                    binding.labelLastname.error = "Lastname is required"
+                if (binding.password.text?.isEmpty() == true) {
+                    binding.labelPassword.error = "Password is required"
                 }
 
             } else {
@@ -71,8 +71,8 @@ class UserInfoActivity : AppCompatActivity() {
                     }
 
                     putExtra("phone",phone)
-                    putExtra("firstname",binding.firstname.text.toString())
-                    putExtra("lastname",binding.lastname.text.toString())
+                    putExtra("username",binding.username.text.toString())
+                    putExtra("password",binding.password.text.toString())
 
                 }
                 startActivity(intent)

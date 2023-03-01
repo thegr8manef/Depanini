@@ -83,7 +83,7 @@ class WorkerRemote {
         return updateLocation(userId, location)
     }
 
-    fun getDataWorker(phone: Int): LiveData<List<com.dev0jk.depanin.model.data.remote.entity.User>> {
+    fun getDataWorker(phone: Int): LiveData<MessageResult> {
         return getData(phone)
     }
 

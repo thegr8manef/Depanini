@@ -26,7 +26,7 @@ class UserRepository {
         return userRemote.signUpClient(username ,password,address,phone)
     }
 
-    fun getData(phone:Int) : LiveData<List<com.dev0jk.depanin.model.data.remote.entity.User>>{
+    fun getData(phone:Int) : LiveData<MessageResult>{
         return userRemote.getDataUser(phone)
     }
     fun getAllClient() : LiveData<List<com.dev0jk.depanin.model.data.remote.entity.User>>{

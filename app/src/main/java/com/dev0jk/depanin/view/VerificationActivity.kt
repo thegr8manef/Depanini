@@ -11,7 +11,10 @@ import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import com.dev0jk.depanin.databinding.ActivityVerificationBinding
+import com.dev0jk.depanin.vm.UserVM
+import com.dev0jk.depanin.vm.WorkerVM
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.PhoneAuthCredential
@@ -42,9 +45,10 @@ class VerificationActivity : AppCompatActivity() {
 
         binding = ActivityVerificationBinding.inflate(layoutInflater)
         setContentView(binding.root)
-          binding.relativeLayoutGetOTP.visibility = View.VISIBLE
-        binding.relativeLayoutVerifyOTP.visibility = View.GONE
-        auth = Firebase.auth
+        var workerVM: WorkerVM = WorkerVM()
+/*          binding.relativeLayoutGetOTP.visibility = View.VISIBLE
+        binding.relativeLayoutVerifyOTP.visibility = View.GONE*/
+        /*auth = Firebase.auth*/
         progressDialog = ProgressDialog(this)
         progressDialog.setTitle("Please wait")
         progressDialog.setCanceledOnTouchOutside(false)
@@ -54,7 +58,7 @@ class VerificationActivity : AppCompatActivity() {
         textEmail = intentDataUser.getStringExtra("email").toString()
         textPassword = intentDataUser.getStringExtra("password").toString()
 
-        mCallBack = object  : PhoneAuthProvider.OnVerificationStateChangedCallbacks(){
+/*        mCallBack = object  : PhoneAuthProvider.OnVerificationStateChangedCallbacks(){
 
 
             override fun onVerificationCompleted(phoneAuthCredential: PhoneAuthCredential) {
@@ -83,19 +87,40 @@ class VerificationActivity : AppCompatActivity() {
             }
 
 
-        }
-        binding.idBtnGetOtp.setOnClickListener {
+        }*/
+        binding.btnNext.setOnClickListener {
 
             val phone = binding.numberphone.text.toString().trim()
-            if (TextUtils.isEmpty(phone)){
-                Toast.makeText(this@VerificationActivity,"Please enter phone number",Toast.LENGTH_LONG).show()
+            if (TextUtils.isEmpty(phone)) {
+                Toast.makeText(
+                    this@VerificationActivity,
+                    "Please enter phone number",
+                    Toast.LENGTH_LONG
+                ).show()
 
-            }else{
-                startPhoneNumberVerification(phone)
+            } else {
+                progressDialog.setMessage("Verifing Phone Number...")
+                progressDialog.show()
+                workerVM.getData(phone.toInt()).observe(this) {
+
+                    var itm = it
+                    if (it.statu) {
+                        val intent1 = Intent(this, UserInfoActivity::class.java)
+                        intent1.putExtra("phone",phone)
+                        startActivity(intent1)
+
+                    }
+                    else{
+                        progressDialog.dismiss()
+                        binding.idEdtPhoneNumber.error = "This Phone Number Exists"
+                    }
+                }
+
+                //progressDialog.dismiss()
             }
         }
 
-        binding.resendtx.setOnClickListener{
+/*        binding.resendtx.setOnClickListener{
 
             val phone = binding.numberphone.text.toString().trim()
             if (TextUtils.isEmpty(phone)){
@@ -105,12 +130,12 @@ class VerificationActivity : AppCompatActivity() {
                 resendVerificationCode(phone, forceResendingToken!!)
             }
 
-        }
+        }*/
 
 /* Assign the TextViews in the array in the order in which you want to shift focus */
 
 /* Assign the TextViews in the array in the order in which you want to shift focus */
-        val otp1 = binding.idEdtOtp1
+/*        val otp1 = binding.idEdtOtp1
         val otp2 = binding.idEdtOtp2
         val otp3 = binding.idEdtOtp3
         val otp4 = binding.idEdtOtp4
@@ -151,8 +176,8 @@ class VerificationActivity : AppCompatActivity() {
                 }
 
             })
-        }
-        binding.idBtnVerify.setOnClickListener{
+        }*/
+/*        binding.idBtnVerify.setOnClickListener{
             val otp11 = binding.idEdtOtp1.text
             val otp22 = binding.idEdtOtp2.text
             val otp33 = binding.idEdtOtp3.text
@@ -168,14 +193,14 @@ class VerificationActivity : AppCompatActivity() {
                 verifyPhoneWithCode(mVerificationId,code)
                 //Toast.makeText(this@VerificationActivity, "Welcome$code",Toast.LENGTH_LONG).show()
             }
-        }
+        }*/
 
 
 
 
 
     }
-    private fun startPhoneNumberVerification(phone :String){
+/*    private fun startPhoneNumberVerification(phone :String){
         progressDialog.setMessage("Verifing Phone Number...")
         progressDialog.show()
 
@@ -188,9 +213,9 @@ class VerificationActivity : AppCompatActivity() {
 
         PhoneAuthProvider.verifyPhoneNumber(options)
 
-    }
+    }*/
 
-    private fun resendVerificationCode(phone: String,token : PhoneAuthProvider.ForceResendingToken){
+/*    private fun resendVerificationCode(phone: String,token : PhoneAuthProvider.ForceResendingToken){
         progressDialog.setMessage("Resend Code...")
         progressDialog.show()
 
@@ -205,17 +230,17 @@ class VerificationActivity : AppCompatActivity() {
         PhoneAuthProvider.verifyPhoneNumber(options)
 
 
-    }
+    }*/
 
-    private fun verifyPhoneWithCode(verificationId : String?,code:String){
+/*    private fun verifyPhoneWithCode(verificationId : String?,code:String){
         progressDialog.setMessage("Verifing code...")
         progressDialog.show()
 
         val credential = PhoneAuthProvider.getCredential(verificationId.toString(),code)
         signWithPhoneAuthCredential(credential)
-    }
+    }*/
 
-    private fun signWithPhoneAuthCredential(credential: PhoneAuthCredential){
+/*    private fun signWithPhoneAuthCredential(credential: PhoneAuthCredential){
         progressDialog.setMessage("Logging IN")
 
         auth.signInWithCredential(credential)
@@ -235,7 +260,7 @@ class VerificationActivity : AppCompatActivity() {
                 Toast.makeText(this,"${e.message}",Toast.LENGTH_LONG).show()
 
             }
-    }
+    }*/
 
     }
 

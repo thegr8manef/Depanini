@@ -13,12 +13,14 @@ import com.dev0jk.depanin.model.entity.User
 import com.dev0jk.depanin.utils.LoadingAlert
 import com.dev0jk.depanin.view.home.HomeActivity
 import com.dev0jk.depanin.vm.UserVM
+import com.dev0jk.depanin.vm.WorkerVM
 
 class UserTypeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityUserTypeBinding
      var type : String =""
     lateinit var userVM : UserVM
+    lateinit var workerVM: WorkerVM
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,6 +29,8 @@ class UserTypeActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         userVM = UserVM()
+        workerVM = WorkerVM()
+
         var phone = intent.getStringExtra("phone").toString()
         var image : Uri? = try {
             Uri.parse(intent.getStringExtra("image").toString())
@@ -34,8 +38,8 @@ class UserTypeActivity : AppCompatActivity() {
             null
         }
 
-        var firstName = intent.getStringExtra("firstname").toString()
-        var lastName = intent.getStringExtra("lastname").toString()
+        var username = intent.getStringExtra("username").toString()
+        var password = intent.getStringExtra("password").toString()
         var ChosenCity = intent.getStringExtra("ChosenCity").toString()
         var ChosenGouv = intent.getStringExtra("ChosenGouv").toString()
 
@@ -67,7 +71,36 @@ class UserTypeActivity : AppCompatActivity() {
 
 
         binding.getStarted.setOnClickListener {
-            if (!type.isNullOrEmpty()) {
+
+            if (type.isNullOrEmpty()) {
+                Toast.makeText(this, "Please Select your Type", Toast.LENGTH_LONG).show()
+            }else{
+                if (type.equals("provider")){
+
+
+                    userVM.signUpClient(
+                        username,
+                        password,
+                        Location(ChosenGouv,ChosenCity).toString(),
+                        phone.toInt()
+                    )
+                    val intent = Intent(this, HomeActivity::class.java)
+                    startActivity(intent)
+            }else{
+                    val intent = Intent(this, WorkerInfoActivity::class.java)
+
+                    intent.putExtra("username",username)
+                    intent.putExtra("password",password)
+                    intent.putExtra("ChosenCity",ChosenCity)
+                    intent.putExtra("ChosenGouv",ChosenGouv)
+                    intent.putExtra("phone",phone)
+
+
+                    startActivity(intent)
+                }
+
+        }
+/*            if (!type.isNullOrEmpty()) {
 
 
                 val loadingAlert = LoadingAlert(this)
@@ -75,8 +108,8 @@ class UserTypeActivity : AppCompatActivity() {
                 userVM.addUser(
                     User(
                         "NULL",
-                        firstName,
-                        lastName,
+                        username,
+                        password,
                         phone,
                         image.toString(),
                         type,
@@ -105,7 +138,7 @@ class UserTypeActivity : AppCompatActivity() {
 
             else{
                 Toast.makeText(this, "Please Select your Type", Toast.LENGTH_LONG).show()
-            }
+            }*/
         }
     }
 }
