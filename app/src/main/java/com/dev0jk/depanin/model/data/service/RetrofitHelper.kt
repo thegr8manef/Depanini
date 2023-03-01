@@ -11,7 +11,7 @@ object RetrofitHelper {
     fun getInstance(): Retrofit {
 
         return Retrofit.Builder()
-            .baseUrl("http://localhost:8080")
+            .baseUrl("https://depaninibackend-production-c4b8.up.railway.app")
             .addConverterFactory(GsonConverterFactory.create())
             .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
             .build()

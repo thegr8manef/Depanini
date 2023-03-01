@@ -65,7 +65,7 @@
             android:layout_marginStart="32dp"
             android:layout_marginTop="16dp"
             android:hint="Enter your phone"
-            app:layout_constraintEnd_toStartOf="@+id/idBtnGetOtp"
+            app:layout_constraintEnd_toStartOf="@+id/btn_next"
             app:layout_constraintStart_toStartOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -77,7 +77,7 @@
         </com.google.android.material.textfield.TextInputLayout>
         <!--Button for getting OTP-->
         <Button
-            android:id="@+id/idBtnGetOtp"
+            android:id="@+id/btn_next"
             android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
@@ -86,14 +86,14 @@
             android:layout_marginEnd="18dp"
             android:layout_toEndOf="@+id/idEdtPhoneNumber"
             android:background="@drawable/circlebutton"
-            android:text="Get OTP"
+            android:text="Next"
             android:textAllCaps="false"
             android:textColor="#F6F6F6" />
 
 
     </RelativeLayout>
 
-    <RelativeLayout
+<!--    <RelativeLayout
         android:id="@+id/relativeLayoutVerifyOTP"
         android:layout_width="match_parent"
         android:layout_height="296dp"
@@ -106,10 +106,10 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.813">
 
-        <!--Edittext for getting otp from user-->
+        &lt;!&ndash;Edittext for getting otp from user&ndash;&gt;
 
 
-        <!--button for verifying user OTP-->
+        &lt;!&ndash;button for verifying user OTP&ndash;&gt;
 
 
         <LinearLayout
@@ -267,7 +267,7 @@
             android:text="Didn't receive code? Request again"
             android:textColor="@color/black" />
 
-    </RelativeLayout>
+    </RelativeLayout>-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

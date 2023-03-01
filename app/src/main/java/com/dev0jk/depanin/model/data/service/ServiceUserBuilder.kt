@@ -31,7 +31,7 @@ fun<T> buildService(service: Class<T>): T{
             })
             .build()
         Retrofit.Builder()
-            .baseUrl("http://localhost:8080")
+            .baseUrl("https://depaninibackend-production-c4b8.up.railway.app")
             .addConverterFactory(GsonConverterFactory.create())
             .client(client)
             .build()

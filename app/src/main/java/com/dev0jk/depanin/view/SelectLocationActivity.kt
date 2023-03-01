@@ -156,8 +156,8 @@ class SelectLocationActivity : AppCompatActivity() {
             null
         }
 
-        var firstName = intent.getStringExtra("firstname").toString()
-        var lastName = intent.getStringExtra("lastname").toString()
+        var username = intent.getStringExtra("username").toString()
+        var password = intent.getStringExtra("password").toString()
 
 
         val sharedPref = getSharedPreferences("my_prefs", Context.MODE_PRIVATE)
@@ -175,8 +175,8 @@ class SelectLocationActivity : AppCompatActivity() {
             putExtra("ChosenGouv",storedValueOfGouv)
             putExtra("phone",phone)
             putExtra("image",image)
-            putExtra("firstname",firstName)
-            putExtra("lastname",lastName)
+            putExtra("username",username)
+            putExtra("password",password)
         }
         startActivity(intent)
     }

@@ -25,7 +25,7 @@ class WorkerRepository {
     fun signUpWorker(username : String,password:String,address:String,phone:Int,cin:Int,niveau:String) : LiveData<ResponseUserModel>{
         return workerRemote.signUpWorker(username ,password,address,phone,cin,niveau)
     }
-    fun getData(phone:Int) : LiveData<List<com.dev0jk.depanin.model.data.remote.entity.User>>{
+    fun getData(phone:Int) : LiveData<MessageResult>{
         return workerRemote.getDataWorker(phone)
     }
     fun getAllWorker() : LiveData<List<com.dev0jk.depanin.model.data.remote.entity.User>>{

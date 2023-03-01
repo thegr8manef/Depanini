@@ -39,8 +39,8 @@ fun updateLocation (userId : String, location: Location) : LiveData<MessageResul
     }
     return mutableLiveData
 }
-fun getData(phone : Int): LiveData<List<User>> {
-    var readAllData = MutableLiveData<List<User>>()
+fun getData(phone : Int):  LiveData<MessageResult> {
+    var readAllData = MutableLiveData<MessageResult>()
 
 
     try {
@@ -54,11 +54,17 @@ fun getData(phone : Int): LiveData<List<User>> {
             if (errorCode == 500) {
                 Log.println(Log.ASSERT, "============>Code500", "phone is already exist")
                 Log.println(Log.ASSERT, "============>ResponseApi", response.body().toString())
+                readAllData.value?.statu = response.body().toString().toBoolean()
+                Log.println(Log.ASSERT, "============>statu", response.body().toString().toBoolean().toString())
 
             }
             if (errorCode==200){
-                Log.println(Log.ASSERT, "============>Code200", "phone is already exist")
-                Log.println(Log.ASSERT, "============>ResponseApi", response.body().toString())
+                var  messageResult = MessageResult(response.body().toString().toBoolean()," ")
+//                Log.println(Log.ASSERT, "============>Code200", "phone is already exist")
+//                Log.println(Log.ASSERT, "============>ResponseApi", response.body().toString())
+                readAllData.value= messageResult
+              //  Log.println(Log.ASSERT, "============>statu", response.body().toString().toBoolean().toString())
+
 
             }
 

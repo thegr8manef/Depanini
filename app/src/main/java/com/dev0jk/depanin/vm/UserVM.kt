@@ -28,5 +28,8 @@ class UserVM {
     fun getAllClient() : LiveData<List<com.dev0jk.depanin.model.data.remote.entity.User>>{
         return userRepository.getAllClient()
     }
+    fun getData(phone:Int) : LiveData<MessageResult>{
+        return userRepository.getData(phone)
+    }
 
 }
