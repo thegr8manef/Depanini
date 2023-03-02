@@ -26,6 +26,10 @@ class UserRepository {
         return userRemote.signUpClient(username ,password,address,phone)
     }
 
+    fun authentifacteUsers(username : String,password:String) : LiveData<ResponseUserModel>{
+        return userRemote.authentificateUsers(username ,password)
+    }
+
     fun getData(phone:Int) : LiveData<MessageResult>{
         return userRemote.getDataUser(phone)
     }

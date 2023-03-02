@@ -29,15 +29,9 @@ class VerificationActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityVerificationBinding
 
-     private lateinit var auth: FirebaseAuth
-    private var forceResendingToken : PhoneAuthProvider.ForceResendingToken? = null
-    private var mCallBack:PhoneAuthProvider.OnVerificationStateChangedCallbacks? = null
     private var textEmail = ""
     private var textPassword = ""
-    private var mVerificationId : String? = null
-
-    private val TAG ="MAIN_TAG"
-
+lateinit var workerVM: WorkerVM
     private lateinit var progressDialog:ProgressDialog
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,10 +39,7 @@ class VerificationActivity : AppCompatActivity() {
 
         binding = ActivityVerificationBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        var workerVM: WorkerVM = WorkerVM()
-/*          binding.relativeLayoutGetOTP.visibility = View.VISIBLE
-        binding.relativeLayoutVerifyOTP.visibility = View.GONE*/
-        /*auth = Firebase.auth*/
+        workerVM = WorkerVM()
         progressDialog = ProgressDialog(this)
         progressDialog.setTitle("Please wait")
         progressDialog.setCanceledOnTouchOutside(false)

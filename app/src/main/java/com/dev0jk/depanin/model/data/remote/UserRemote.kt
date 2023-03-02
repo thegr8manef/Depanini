@@ -109,6 +109,61 @@ class UserRemote {
         return getData(phone)
     }
 
+    fun authentificateUsers(
+        username: String,
+        password: String
+    ): LiveData<ResponseUserModel> {
+        val requestUserModel = RequestUserModel(username, password,null,null,null,null)
+        var readAllData = MutableLiveData<ResponseUserModel>()
+
+        //val getPost = ServiceBuilder.api.sendReqWorker("manefDEv", "manef","TozeurHayMatar",99105580,9722325,"master")
+        val code200=true
+        ServiceUserBuilder.apiUser.authentificateUsers(requestUserModel).enqueue(object :
+            Callback<ResponseUserModel> {
+            override fun onResponse(
+
+                call: Call<ResponseUserModel>,
+                response: Response<ResponseUserModel>
+            ) {
+                Log.println(Log.ASSERT, "body", response.body().toString())
+
+                var  messageResult : ResponseUserModel = if (response.code()==200){
+                    Log.println(Log.ASSERT, "header", response.headers()["authorization"].toString())
+                    ResponseUserModel(response.headers()["authorization"].toString(),true)
+
+                }else{
+                    Log.println(Log.ASSERT, "header", response.headers()["authorization"].toString())
+                    Log.println(Log.ASSERT, "header", response.body().toString())
+                    ResponseUserModel(response.headers()["authorization"].toString(),false)
+
+                }
+                readAllData.value= messageResult
+                //mutableLiveData.value = response.body()
+//                   response.body()?.results?.forEach{
+//                       Log.println(Log.ASSERT, "", it.toString())
+//                   }
+            }
+
+
+
+            override fun onFailure(call: Call<ResponseUserModel>, t: Throwable) {
+
+                var  messageResult : ResponseUserModel = if (code200){
+                    ResponseUserModel("null",true)
+
+                }else{
+                    ResponseUserModel("null",false)
+                }
+                readAllData.value= messageResult
+
+            }
+
+
+        })
+
+        return readAllData
+    }
+
     fun signUpClient(username:String,password:String,address:String,phone:Int) : LiveData<ResponseUserModel> {
         val requestUserModel = RequestUserModel(username, password,address,phone,null,null)
 

@@ -20,7 +20,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
 
         binding.btnLogin.setOnClickListener {
-
+            val intent = Intent(this, SignInActivity::class.java)
+            startActivity(intent)
             Log.v("test_login","login")
         }
 
