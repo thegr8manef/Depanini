@@ -25,4 +25,7 @@ interface ApiClientInterface {
 // ========================================================================
     @GET("/admin/search/user/{phone}")
     suspend fun getCurrency(@Path("phone") phone: Int): Response<Boolean>
+
+    @POST("authenticate")
+    fun authentificateUsers(@Body requestModel: RequestUserModel) : Call<ResponseUserModel>
 }

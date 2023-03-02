@@ -66,9 +66,9 @@ class HomeFragment : Fragment() {
         workerVM = WorkerVM()
         userVM=UserVM()
         //userVM.signUpClient("nefza","nefza","nefza",9999)
-        workerVM.signUpWorker("aziz wazzan","aziz","soussa",99420988,1234568,"bac+2")
+        //workerVM.signUpWorker("aziz wazzan","aziz","soussa",99420988,1234568,"bac+2")
 /*        workerVM.getAllWorker()*/
-        userVM.getAllClient()
+        //userVM.getAllClient()
         //userVM.getData(123)
 /*            workerVM.getAllWorker().observe(viewLifecycleOwner, Observer {
             if (!it.isNullOrEmpty()){

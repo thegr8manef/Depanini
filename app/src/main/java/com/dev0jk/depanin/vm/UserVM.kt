@@ -32,4 +32,8 @@ class UserVM {
         return userRepository.getData(phone)
     }
 
+    fun authentifacteUsers(username : String,password:String) : LiveData<ResponseUserModel>{
+        return userRepository.authentifacteUsers(username ,password)
+    }
+
 }
