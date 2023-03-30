@@ -1,0 +1,74 @@
+package com.dev0jk.depanin.utils
+
+import android.content.Context
+import com.dev0jk.depanin.model.data.remote.entity.User
+
+
+fun setUser(user: User, context: Context){
+    val editor = context.applicationContext.getSharedPreferences("list_user", Context.MODE_PRIVATE).edit()
+    editor.putString("username", user.username)
+    editor.putString("password", user.password)
+    editor.putString("address_gov", user.address_gov)
+    editor.putString("address_municipale", user.address_municipale)
+    editor.putString("image", user.image)
+    editor.putString("phone", user.phone.toString())
+    editor.putString("cin", user.cin.toString())
+    editor.putString("niveau", user.niveau)
+    editor.apply()
+
+}
+
+fun getUser(context: Context): User {
+    val username = context.applicationContext.getSharedPreferences("list_user", Context.MODE_PRIVATE).getString("username", "default_value")
+    val password = context.applicationContext.getSharedPreferences("list_user", Context.MODE_PRIVATE).getString("password", "default_value")
+    val address_gov = context.applicationContext.getSharedPreferences("list_user", Context.MODE_PRIVATE).getString("address_gov", "default_value")
+    val address_municipale = context.applicationContext.getSharedPreferences("list_user", Context.MODE_PRIVATE).getString("address_municipale", "default_value")
+    val image = context.applicationContext.getSharedPreferences("list_user", Context.MODE_PRIVATE).getString("image", "default_value")
+    val phone = context.applicationContext.getSharedPreferences("list_user", Context.MODE_PRIVATE).getString("phone", "default_value")
+    val cin = context.applicationContext.getSharedPreferences("list_user", Context.MODE_PRIVATE).getString("cin", "default_value")
+    val niveau = context.applicationContext.getSharedPreferences("list_user", Context.MODE_PRIVATE).getString("niveau", "default_value")
+    return User(username!!,password.toString(),address_gov.toString(),address_municipale.toString(),image.toString(),phone!!.toInt(),cin!!.toInt(),niveau.toString(),true)
+}
+
+
+/*
+fun getSpeciality(): String? {
+    return speciality
+}
+
+fun setSpeciality(speciality: String?) {
+    this.speciality = speciality
+}
+
+fun getEmail(): String? {
+    return email
+}
+
+fun setEmail(email: String?) {
+    if (email != null) {
+        this.email = email
+    }
+}
+
+fun getUsername(): String? {
+    return username
+}
+
+fun setUsername(username: String?) {
+    this.username = username
+}
+
+fun getPassword(): String? {
+    return password
+}
+
+fun setPassword(password: String?) {
+    this.password = password!!
+}
+
+fun getRole(): String? {
+    return role
+}
+fun setRole(role: String?) {
+    this.role = role
+}*/

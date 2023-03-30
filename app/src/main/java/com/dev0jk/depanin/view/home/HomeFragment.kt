@@ -15,6 +15,8 @@ import com.dev0jk.depanin.model.entity.Category
 import com.dev0jk.depanin.model.entity.User
 import com.dev0jk.depanin.vm.UserVM
 import com.dev0jk.depanin.vm.WorkerVM
+import kotlinx.coroutines.MainScope
+import kotlinx.coroutines.launch
 
 
 class HomeFragment : Fragment() {
@@ -51,6 +53,7 @@ class HomeFragment : Fragment() {
         super.onCreate(savedInstanceState)
         arguments?.let {
 
+
         }
     }
 
@@ -65,11 +68,16 @@ class HomeFragment : Fragment() {
         binding.profileImage
         workerVM = WorkerVM()
         userVM=UserVM()
+
+/*        MainScope().launch {
+            workerVM.updateWorker(1,"123","123")
+        }*/
         //userVM.signUpClient("nefza","nefza","nefza",9999)
         //workerVM.signUpWorker("aziz wazzan","aziz","soussa",99420988,1234568,"bac+2")
 /*        workerVM.getAllWorker()*/
         //userVM.getAllClient()
         //userVM.getData(123)
+        //workerVM.updateWorker(4)
 /*            workerVM.getAllWorker().observe(viewLifecycleOwner, Observer {
             if (!it.isNullOrEmpty()){
                 val recommendedAdapter = RecommendedAdapter(requireContext(), it!!)
@@ -85,7 +93,7 @@ class HomeFragment : Fragment() {
 
         })*/
 
-        workerVM.getRecommanded("Beja").observe(viewLifecycleOwner, Observer {
+        workerVM.getRecommendedWorker("tozeur","tozeur")/*.observe(viewLifecycleOwner, Observer {
             if (!it.isNullOrEmpty()){
                 val recommendedAdapter = RecommendedAdapter(requireContext(), it!!)
                 binding.recommended.layoutManager = LinearLayoutManager(requireContext())
@@ -98,7 +106,9 @@ class HomeFragment : Fragment() {
                 binding.recommended.adapter = recommendedAdapter
             }
 
-        })
+        }
+        )*/
+
 
         val categoryAdapter = CategoriesAdapter(requireContext(), arrayOfCategories)
         binding.categories.layoutManager = LinearLayoutManager(requireContext())

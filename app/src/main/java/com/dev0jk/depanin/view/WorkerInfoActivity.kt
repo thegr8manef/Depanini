@@ -75,7 +75,8 @@ class WorkerInfoActivity : AppCompatActivity() {
                     workerVM.signUpWorker(
                         username,
                         password,
-                        Location(ChosenGouv,ChosenCity).toString(),
+                        ChosenGouv,
+                        ChosenCity,
                         phone.toInt(),
                         binding.cin.text.toString().toInt(),
                         binding.niveau.text.toString()

@@ -22,8 +22,8 @@ class UserVM {
     fun updateLocation(userId : String,location: Location) : LiveData<MessageResult>{
         return userRepository.updateLocation(userId, location)
     }
-    fun signUpClient(username: String, password: String, address: String, phone: Int) : LiveData<ResponseUserModel>{
-        return userRepository.signUpClient(username ,password,address,phone)
+    fun signUpClient(username:String,password:String,address_gov:String,address_municipale:String,phone:Int) : LiveData<ResponseUserModel>{
+        return userRepository.signUpClient(username, password,address_gov,address_municipale,phone)
     }
     fun getAllClient() : LiveData<List<com.dev0jk.depanin.model.data.remote.entity.User>>{
         return userRepository.getAllClient()
@@ -32,7 +32,7 @@ class UserVM {
         return userRepository.getData(phone)
     }
 
-    fun authentifacteUsers(username : String,password:String) : LiveData<ResponseUserModel>{
+    fun authentifacteUsers(username : String,password:String) : LiveData<com.dev0jk.depanin.model.data.remote.entity.User>{
         return userRepository.authentifacteUsers(username ,password)
     }
 

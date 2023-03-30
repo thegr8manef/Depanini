@@ -22,11 +22,11 @@ class UserRepository {
     fun updateLocation(userId : String,location: Location) : LiveData<MessageResult>{
         return userRemote.updateLocationUser(userId, location)
     }
-    fun signUpClient(username : String,password:String,address:String,phone:Int) : LiveData<ResponseUserModel>{
-        return userRemote.signUpClient(username ,password,address,phone)
+    fun signUpClient(username:String,password:String,address_gov:String,address_municipale:String,phone:Int) : LiveData<ResponseUserModel>{
+        return userRemote.signUpClient(username, password,address_gov,address_municipale,phone)
     }
 
-    fun authentifacteUsers(username : String,password:String) : LiveData<ResponseUserModel>{
+    fun authentifacteUsers(username : String,password:String) : LiveData<com.dev0jk.depanin.model.data.remote.entity.User>{
         return userRemote.authentificateUsers(username ,password)
     }
 

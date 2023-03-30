@@ -1,6 +1,7 @@
 package com.dev0jk.depanin.model.data.service
 
 import com.dev0jk.depanin.model.data.api.ApiClientInterface
+import com.dev0jk.depanin.utils.Strings
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -31,7 +32,7 @@ fun<T> buildService(service: Class<T>): T{
             })
             .build()
         Retrofit.Builder()
-            .baseUrl("https://depaninibackend-production.up.railway.app")
+            .baseUrl(Strings().URL)
             .addConverterFactory(GsonConverterFactory.create())
             .client(client)
             .build()

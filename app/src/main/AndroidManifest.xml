@@ -21,6 +21,10 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".view.settings.edit.NewTaskSheet"
+            android:exported="false"
+            tools:ignore="Instantiatable" />
+        <activity
             android:name=".view.SignInActivity"
             android:exported="false" />
         <activity

@@ -7,23 +7,20 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.net.ConnectivityManager
-import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import com.dev0jk.depanin.R
 import com.dev0jk.depanin.databinding.ActivitySignInBinding
-import com.dev0jk.depanin.databinding.ActivityWorkerInfoBinding
-import com.dev0jk.depanin.model.entity.Location
-import com.dev0jk.depanin.utils.LoadingAlert
+import com.dev0jk.depanin.model.data.remote.entity.User
+import com.dev0jk.depanin.utils.setUser
 import com.dev0jk.depanin.view.home.HomeActivity
 import com.dev0jk.depanin.vm.UserVM
-import com.dev0jk.depanin.vm.WorkerVM
 
 class SignInActivity : AppCompatActivity() {
 
     lateinit var binding: ActivitySignInBinding
     lateinit var userVM : UserVM
+    lateinit var user: User
     private lateinit var progressDialog: ProgressDialog
 
     @SuppressLint("ResourceAsColor")
@@ -32,10 +29,10 @@ class SignInActivity : AppCompatActivity() {
         binding = ActivitySignInBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+        userVM = UserVM()
         progressDialog = ProgressDialog(this)
         progressDialog.setTitle("Please wait")
         progressDialog.setCanceledOnTouchOutside(false)
-        userVM = UserVM()
 
             binding.createAccount.setOnClickListener {
                 if(!binding.checkBox.isChecked){
@@ -50,13 +47,13 @@ class SignInActivity : AppCompatActivity() {
                         binding.labelUsername.error = null
                         binding.labelPassword.error = null
                         if (binding.username.text?.isEmpty() == true) {
-                            binding.labelUsername.error = "CIN is required"
+                            binding.labelUsername.error = "Username is required"
 
 
 
                         }
                         if (binding.password.text?.isEmpty() == true) {
-                            binding.labelPassword.error = "Niveau is required"
+                            binding.labelPassword.error = "Password is required"
                         }
 
                     } else {
@@ -72,11 +69,14 @@ class SignInActivity : AppCompatActivity() {
                         binding.username.text.toString(),
                         binding.password.text.toString()
                     ).observe(this) {
-                        Log.println(Log.ASSERT, "it.message", it.message)
-                        Log.println(Log.ASSERT, "it.response", it.reponse.toString())
+                        Log.println(Log.ASSERT, "it.message", it.username)
+                        Log.println(Log.ASSERT, "it.response", it.password.toString())
 
                         var itm = it
-                        if (it.reponse) {
+                        if (it.isLogin==false) {
+                            user = User(it.username,it.password,it.address_gov,it.address_municipale,it.image,it.phone,it.cin,it.niveau,it.isLogin)
+                            Log.println(Log.ASSERT, "it.response",user.toString())
+                            setUser(user,this)
                             val intent1 = Intent(this, HomeActivity::class.java)
                             startActivity(intent1)
 
@@ -90,6 +90,11 @@ class SignInActivity : AppCompatActivity() {
                     }
 
             }
+
+        binding.tvForgetPassword.setOnClickListener{
+            showAlertSendingEmail()
+
+        }
 
         }
     fun isNetworkConnected(): Boolean {
@@ -108,8 +113,18 @@ class SignInActivity : AppCompatActivity() {
 
         }
         builder.setNegativeButton("OK") { dialogInterface, i ->
-            onStart()
-            startActivity(intent)
+            onResume()
+        }
+        builder.show()
+    }
+
+    fun showAlertSendingEmail() {
+        val builder = AlertDialog.Builder(this@SignInActivity)
+        builder.setTitle("Forgot Password")
+        builder.setMessage("Sending email ...")
+        builder.setCancelable(true)
+        builder.setNegativeButton("OK") { dialogInterface, i ->
+            onResume()
         }
         builder.show()
     }

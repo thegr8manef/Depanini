@@ -49,7 +49,7 @@ class GouvernementAdapter (
                     if (!oneTap) {
 
                         oneTap=true
-                        Toast.makeText(context, "${data.id}", Toast.LENGTH_SHORT).show()
+                        //Toast.makeText(context, "${data.id}", Toast.LENGTH_SHORT).show()
                         itemView.setBackgroundColor(Color.parseColor("#1E56A0"))
                         itemView.findViewById<TextView>(R.id.id).setTextColor(Color.parseColor("#ffffff"))
                         //Toast.makeText(context, "Clicked", Toast.LENGTH_SHORT).show()

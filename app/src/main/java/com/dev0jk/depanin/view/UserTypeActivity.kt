@@ -81,7 +81,8 @@ class UserTypeActivity : AppCompatActivity() {
                     userVM.signUpClient(
                         username,
                         password,
-                        Location(ChosenGouv,ChosenCity).toString(),
+                        ChosenGouv,
+                        ChosenCity,
                         phone.toInt()
                     )
                     val intent = Intent(this, HomeActivity::class.java)

@@ -9,8 +9,6 @@ import com.dev0jk.depanin.model.data.service.ServiceUserBuilder
 import com.dev0jk.depanin.model.entity.Location
 import com.dev0jk.depanin.model.entity.modelWorker.RequestUserModel
 import com.dev0jk.depanin.model.entity.modelWorker.ResponseUserModel
-import com.dev0jk.depanin.model.entity.User
-import com.dev0jk.depanin.model.entity.modelWorker.UserModel
 import com.dev0jk.depanin.utils.MessageResult
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -25,10 +23,10 @@ class WorkerRemote {
     val db = Firebase.firestore
 
 
-    fun getRecommendedWorker(location: String): MutableLiveData<ArrayList<User>?> {
+    fun getRecommendedWorker(address_municipale:String,address_gov:String): LiveData<com.dev0jk.depanin.model.data.remote.entity.User> {
 
-        var mutableLiveData = MutableLiveData<ArrayList<User>?>()
-        db.collection("users")
+        var readAllData = MutableLiveData<com.dev0jk.depanin.model.data.remote.entity.User>()
+/*        db.collection("users")
             .whereEqualTo("address.municipale", location)
             .whereEqualTo("type", "worker")
             .get()
@@ -56,7 +54,41 @@ class WorkerRemote {
             }
 
 
-        return mutableLiveData
+        return mutableLiveData*/
+        try {
+            val service = RetrofitHelper.getInstance().create(ApiClientInterface::class.java)
+            MainScope().launch {
+
+
+                var response = service.getRecommendedWorker(address_municipale,address_gov)
+                //Log.println(Log.ASSERT, "============>Response", response.body()?.data.toString())
+                val errorCode = response.code()
+                if (errorCode == 200) {
+                    val messageResult: com.dev0jk.depanin.model.data.remote.entity.User
+                    Log.println(Log.ASSERT, "============>Code500", "phone is already exist")
+                    Log.println(Log.ASSERT, "============>ResponseApi", response.body().toString())
+                    //readAllData.value?.statu = response.body().toString().toBoolean()
+                    Log.println(Log.ASSERT, "============>statu", response.body().toString().toBoolean().toString())
+
+                }
+                if (errorCode==500){
+                    var  messageResult = MessageResult(true,response.body().toString())
+//                Log.println(Log.ASSERT, "============>Code200", "phone is already exist")
+//                Log.println(Log.ASSERT, "============>ResponseApi", response.body().toString())
+
+                    //  Log.println(Log.ASSERT, "============>statu", response.body().toString().toBoolean().toString())
+
+
+                }
+
+            }
+
+        } catch (e: Exception) {
+
+        }
+
+
+        return readAllData
     }
 
     fun createSpecialtyOfWorker(userID: String, specialty: String): LiveData<MessageResult> {
@@ -88,14 +120,9 @@ class WorkerRemote {
     }
 
     fun signUpWorker(
-        username: String,
-        password: String,
-        address: String,
-        phone: Int,
-        cin: Int,
-        niveau: String
+        username:String,password:String,address_gov:String,address_municipale:String,phone:Int,cin: Int, niveau: String
     ): LiveData<ResponseUserModel> {
-        val requestUserModel = RequestUserModel(username, password, address, phone, cin, niveau)
+        val requestUserModel = RequestUserModel(username, password, address_gov,address_municipale, phone, cin, niveau)
 
         var mutableLiveData = MutableLiveData<ResponseUserModel>()
 
@@ -191,6 +218,11 @@ class WorkerRemote {
         return readAllData
     }
 
+    suspend fun updateWorker(id : Long,
+                             username: String,
+                             password : String) :LiveData<ResponseUserModel> {
+        return updateUser(id,username,password)
+    }
 
 
 }
