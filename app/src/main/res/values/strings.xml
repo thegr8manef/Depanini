@@ -13,4 +13,6 @@
     <string name="dropped_pin">Dropped Pin</string>
     <string name="poi">poi</string>
     <string name="zoom">15f</string>
+    <string name="forgot_password"><u>Forgot password?</u></string>
+
 </resources>

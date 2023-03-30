@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dev0jk.depanin.R
 import com.dev0jk.depanin.databinding.FragmentHomeBinding
@@ -13,11 +14,10 @@ import com.dev0jk.depanin.utils.Strings
 import com.dev0jk.depanin.view.home.RecommendedAdapter
 
 
-class SettingsFragment : Fragment() {
+class SettingsFragment: Fragment()  {
 
     private var _binding : FragmentSettingBinding? =null
     private val binding get() = _binding!!
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,12 +31,10 @@ class SettingsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentSettingBinding.inflate(inflater, container, false)
-        val settingsAdapter = SettingsAdapter(requireContext(), Strings().settings)
+        val settingsAdapter = SettingsAdapter(requireContext(), Strings().settings,this.parentFragmentManager)
         binding.settings.layoutManager = LinearLayoutManager(requireContext())
         binding.settings.layoutManager = LinearLayoutManager(
             requireContext(),
-
-
             )
 
         binding.settings.adapter = settingsAdapter

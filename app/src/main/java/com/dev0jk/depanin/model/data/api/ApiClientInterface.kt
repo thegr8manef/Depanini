@@ -9,6 +9,7 @@ import com.dev0jk.depanin.model.entity.modelWorker.UserModel
 import retrofit2.Call
 import retrofit2.Response
 import retrofit2.http.*
+import rx.Observable
 
 interface ApiClientInterface {
     @POST("client/signup")
@@ -27,5 +28,16 @@ interface ApiClientInterface {
     suspend fun getCurrency(@Path("phone") phone: Int): Response<Boolean>
 
     @POST("authenticate")
-    fun authentificateUsers(@Body requestModel: RequestUserModel) : Call<ResponseUserModel>
+    fun authentificateUsers(@Body user: User) : Call<User>
+
+//=============================================================================
+@PUT("/client/modify/{id}")
+suspend fun UpdateWorker(@Path("id") id: Long,
+                         @Body username: RequestUserModel) : Call<ResponseUserModel>
+
+@GET("/admin/search/{address_municipale}/{address_gov}")
+suspend fun getRecommendedWorker(@Path("address_municipale") address_municipale : String,
+                                 @Path("address_gov")address_gov : String)   : Response<List<User>>
+
+
 }
