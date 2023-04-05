@@ -2,6 +2,8 @@ package com.dev0jk.depanin.model.data.service
 
 import com.dev0jk.depanin.model.data.api.ApiClientInterface
 import com.dev0jk.depanin.utils.Strings
+import com.google.gson.Gson
+import com.google.gson.GsonBuilder
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -19,7 +21,9 @@ private val retrofit = Retrofit.Builder()
 
 fun<T> buildService(service: Class<T>): T{
     return retrofit.create(service)
-}*/
+}*/  var gson: Gson? = GsonBuilder()
+        .setLenient()
+        .create()
     private val retrofit by lazy {
         val logging = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BASIC)
         val client = OkHttpClient.Builder()
@@ -33,7 +37,7 @@ fun<T> buildService(service: Class<T>): T{
             .build()
         Retrofit.Builder()
             .baseUrl(Strings().URL)
-            .addConverterFactory(GsonConverterFactory.create())
+            .addConverterFactory(GsonConverterFactory.create(gson))
             .client(client)
             .build()
     }

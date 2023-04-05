@@ -22,8 +22,8 @@ class UserRepository {
     fun updateLocation(userId : String,location: Location) : LiveData<MessageResult>{
         return userRemote.updateLocationUser(userId, location)
     }
-    fun signUpClient(username:String,password:String,address_gov:String,address_municipale:String,phone:Int) : LiveData<ResponseUserModel>{
-        return userRemote.signUpClient(username, password,address_gov,address_municipale,phone)
+    fun signUpClient(username:String,password:String,address_gov:String,address_municipale:String,image:String,phone:Int) : LiveData<com.dev0jk.depanin.model.data.remote.entity.User>{
+        return userRemote.signUpClient(username, password,address_gov,address_municipale,image,phone)
     }
 
     fun authentifacteUsers(username : String,password:String) : LiveData<com.dev0jk.depanin.model.data.remote.entity.User>{
@@ -35,5 +35,9 @@ class UserRepository {
     }
     fun getAllClient() : LiveData<List<com.dev0jk.depanin.model.data.remote.entity.User>>{
         return userRemote.getAllClient()
+    }
+
+    suspend fun updateUser(id : Long, username: String?, password: String?) : LiveData<ResponseUserModel>{
+        return userRemote.updateUser(id, username!!,password!!)
     }
 }

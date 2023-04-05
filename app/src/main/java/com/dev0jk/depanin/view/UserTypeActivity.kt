@@ -1,16 +1,15 @@
 package com.dev0jk.depanin.view
 
+import android.app.AlertDialog
 import android.content.Intent
-import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
-import androidx.lifecycle.Observer
 import com.dev0jk.depanin.R
 import com.dev0jk.depanin.databinding.ActivityUserTypeBinding
-import com.dev0jk.depanin.model.entity.Location
-import com.dev0jk.depanin.model.entity.User
-import com.dev0jk.depanin.utils.LoadingAlert
+import com.dev0jk.depanin.model.data.remote.entity.User
+import com.dev0jk.depanin.utils.setUser
 import com.dev0jk.depanin.view.home.HomeActivity
 import com.dev0jk.depanin.vm.UserVM
 import com.dev0jk.depanin.vm.WorkerVM
@@ -19,8 +18,15 @@ class UserTypeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityUserTypeBinding
      var type : String =""
+     lateinit var user: User
     lateinit var userVM : UserVM
     lateinit var workerVM: WorkerVM
+    var username = String()
+    var phone = String()
+    var password = String()
+    var image = String()
+    var ChosenCity = String()
+    var ChosenGouv = String()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,17 +37,17 @@ class UserTypeActivity : AppCompatActivity() {
         userVM = UserVM()
         workerVM = WorkerVM()
 
-        var phone = intent.getStringExtra("phone").toString()
-        var image : Uri? = try {
+         phone = intent.getStringExtra("phone").toString()
+/*          var image : Uri? = try {
             Uri.parse(intent.getStringExtra("image").toString())
         } catch (e : java.lang.NullPointerException){
             null
-        }
-
-        var username = intent.getStringExtra("username").toString()
-        var password = intent.getStringExtra("password").toString()
-        var ChosenCity = intent.getStringExtra("ChosenCity").toString()
-        var ChosenGouv = intent.getStringExtra("ChosenGouv").toString()
+        }*/
+        image = intent.getStringExtra("image").toString()
+         username = intent.getStringExtra("username").toString()
+         password = intent.getStringExtra("password").toString()
+         ChosenCity = intent.getStringExtra("ChosenCity").toString()
+         ChosenGouv = intent.getStringExtra("ChosenGouv").toString()
 
 
 
@@ -76,17 +82,38 @@ class UserTypeActivity : AppCompatActivity() {
                 Toast.makeText(this, "Please Select your Type", Toast.LENGTH_LONG).show()
             }else{
                 if (type.equals("provider")){
-
-
                     userVM.signUpClient(
                         username,
                         password,
                         ChosenGouv,
                         ChosenCity,
+                        image.toString(),
                         phone.toInt()
-                    )
-                    val intent = Intent(this, HomeActivity::class.java)
-                    startActivity(intent)
+                    ).observe(this){
+                        if (it.isLogin==true) {
+                            setUser(User(
+                                it.id,
+                                it.username,
+                                it.password,
+                                it.address_gov,
+                                it.address_municipale,
+                                it.image.toString(),
+                                it.phone!!.toInt(),
+                                it.cin,
+                                it.speciality,
+                                true),
+                                this)
+                            next()
+
+                        }else{
+                            showAlertIfAddingFailed()
+
+                        }
+                    }
+
+/*                    if (::user.isInitialized) {
+                        setUser(user, this@UserTypeActivity)
+                    }*/
             }else{
                     val intent = Intent(this, WorkerInfoActivity::class.java)
 
@@ -94,6 +121,8 @@ class UserTypeActivity : AppCompatActivity() {
                     intent.putExtra("password",password)
                     intent.putExtra("ChosenCity",ChosenCity)
                     intent.putExtra("ChosenGouv",ChosenGouv)
+                    intent.putExtra("image",image)
+                    Log.println(Log.ASSERT,"image_2",image.toString())
                     intent.putExtra("phone",phone)
 
 
@@ -142,4 +171,31 @@ class UserTypeActivity : AppCompatActivity() {
             }*/
         }
     }
+    fun showAlertIfAddingFailed() {
+        val builder = AlertDialog.Builder(this@UserTypeActivity)
+        builder.setTitle("Info")
+        builder.setMessage("Sign Up Failed .")
+        builder.setCancelable(true)
+        builder.setPositiveButton("Try again") { dialogInterface, i ->
+            finish()
+            startActivity(intent)
+
+        }
+        builder.setNegativeButton("OK") { dialogInterface, i ->
+            onResume()
+        }
+        builder.show()
+    }
+    private fun next(){
+        //eaiToast.makeText(applicationContext, "register: ", Toast.LENGTH_SHORT).show()
+        val intent = Intent(this, HomeActivity::class.java).apply {
+
+/*            putExtra("speciality",speciality)
+            putExtra("role",role)
+            putExtra("username",username)
+            putExtra("email",email)*/
+        }
+        startActivity(intent)
+    }
+
 }

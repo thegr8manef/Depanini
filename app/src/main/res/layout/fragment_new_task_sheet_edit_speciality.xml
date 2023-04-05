@@ -7,7 +7,7 @@
     android:backgroundTint="#CDCBCB"
     android:layout_marginTop="15dp"
     android:orientation="vertical"
-    tools:context=".view.settings.edit.NewTaskSheet">
+    tools:context=".view.settings.edit.NewEditSpeciality">
 
 
 
@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_gravity="start|center"
-            android:text="Change Language"
+            android:text="Edit Speciality"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -80,7 +80,7 @@
         android:layout_marginBottom="115dp"
         android:focusable="false"
         android:gravity="center"
-        android:hint="Choose your language"
+        android:hint="Choose your Speciality"
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

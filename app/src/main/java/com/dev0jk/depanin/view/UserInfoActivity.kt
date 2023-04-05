@@ -9,6 +9,7 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.lifecycle.Observer
@@ -68,6 +69,8 @@ class UserInfoActivity : AppCompatActivity() {
 
                     if (uriImage != null){
                         putExtra("image", uriImage.toString())
+                        Log.println(Log.ASSERT,"image_",uriImage.toString())
+
                     }
 
                     putExtra("phone",phone)

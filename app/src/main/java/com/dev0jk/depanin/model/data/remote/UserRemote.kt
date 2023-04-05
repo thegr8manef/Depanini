@@ -21,7 +21,6 @@ import retrofit2.Response
 import java.util.*
 
 class UserRemote {
-
     val db = Firebase.firestore
     private val storage_referance = FirebaseStorage.getInstance().getReference()
 
@@ -114,15 +113,9 @@ class UserRemote {
         password: String
     ): LiveData<com.dev0jk.depanin.model.data.remote.entity.User> {
         val user = com.dev0jk.depanin.model.data.remote.entity.User(
+            null,
             username,
-            password,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            false
+            password,null,null,null,null,null,null,false
         )
         var readAllData = MutableLiveData<com.dev0jk.depanin.model.data.remote.entity.User>()
 
@@ -153,13 +146,13 @@ class UserRemote {
 //                       Log.println(Log.ASSERT, "", it.toString())
 //                   }
             }
-*/
-                if (response.isSuccessful) {
+*/                if (response.isSuccessful) {
                     val messageResult: com.dev0jk.depanin.model.data.remote.entity.User =
-                        if (response.headers()["authorization"]!=null) {
+                        if (response.body()!=null) {
                             // Log.println(Log.ASSERT, "header", response.body().toString())
                             Log.println(Log.ASSERT, "header+body", response.body().toString())
                             com.dev0jk.depanin.model.data.remote.entity.User(
+                                response.body()!!.id,
                                 response.body()!!.username,
                                 response.body()!!.password,
                                 response.body()!!.address_gov,
@@ -167,12 +160,13 @@ class UserRemote {
                                 response.body()!!.image,
                                 response.body()!!.phone,
                                 response.body()!!.cin,
-                                response.body()!!.niveau,
+                                response.body()!!.speciality,
                                 true
                             )
                         } else {
                             //  Log.println(Log.ASSERT, "header", response.body().toString())
                             com.dev0jk.depanin.model.data.remote.entity.User(
+                                response.body()!!.id,
                                 username,
                                 password,
                                 response.body()!!.address_gov,
@@ -180,7 +174,7 @@ class UserRemote {
                                 response.body()!!.image,
                                 response.body()!!.phone,
                                 response.body()!!.cin,
-                                response.body()!!.niveau,
+                                response.body()!!.speciality,
                                 false
                             )
                         }
@@ -189,10 +183,12 @@ class UserRemote {
                 }
             }
 
+
             override fun onFailure(call: Call<com.dev0jk.depanin.model.data.remote.entity.User>, t: Throwable) {
 
                 var  messageResult : com.dev0jk.depanin.model.data.remote.entity.User = if (code200){
                     com.dev0jk.depanin.model.data.remote.entity.User(
+                        null,
                         username,
                         password,
                         null,
@@ -206,6 +202,7 @@ class UserRemote {
 
                 }else{
                     com.dev0jk.depanin.model.data.remote.entity.User(
+                        null,
                         username,
                         password,
                         null,
@@ -227,33 +224,68 @@ class UserRemote {
         return readAllData
     }
 
-    fun signUpClient(username:String,password:String,address_gov:String,address_municipale:String,phone:Int) : LiveData<ResponseUserModel> {
-        val requestUserModel = RequestUserModel(username, password,address_gov,address_municipale,phone,null,null)
+    fun signUpClient(username:String,password:String,address_gov:String,address_municipale:String,image:String,phone:Int) : LiveData<com.dev0jk.depanin.model.data.remote.entity.User> {
+        val user = com.dev0jk.depanin.model.data.remote.entity.User(null,username, password,address_gov,address_municipale,image,phone,null,null,false)
 
-        var mutableLiveData = MutableLiveData<ResponseUserModel> ()
-
+        var readAllData = MutableLiveData<com.dev0jk.depanin.model.data.remote.entity.User>()
         //val getPost = ServiceBuilder.api.sendReqWorker("manefDEv", "manef","TozeurHayMatar",99105580,9722325,"master")
 
-        ServiceUserBuilder.apiClient.sendReqClient(requestUserModel).enqueue(object :
-            Callback<ResponseUserModel> {
+        ServiceUserBuilder.apiClient.sendReqClient(user).enqueue(object :
+            Callback<com.dev0jk.depanin.model.data.remote.entity.User> {
 
             override fun onResponse(
 
-                call: Call<ResponseUserModel>,
-                response: Response<ResponseUserModel>
+                call: Call<com.dev0jk.depanin.model.data.remote.entity.User>,
+                response: Response<com.dev0jk.depanin.model.data.remote.entity.User>
             ) {
                 Log.println(Log.ASSERT, "", response.message())
-                if (response.isSuccessful){
+                if (response.isSuccessful) {
+                    val messageResult: com.dev0jk.depanin.model.data.remote.entity.User =
+                        if (response.body() != null) {
+                            com.dev0jk.depanin.model.data.remote.entity.User(
+                                response.body()!!.id!!.toLong(),
+                                response.body()!!.username,
+                                response.body()!!.password,
+                                response.body()!!.address_gov,
+                                response.body()!!.address_municipale,
+                                response.body()!!.image,
+                                response.body()!!.phone,
+                                response.body()!!.cin,
+                                response.body()!!.speciality,
+                                true
+                            )
+/*                        val editor = context.applicationContext.getSharedPreferences("list_user", android.content.Context.MODE_PRIVATE).edit()
+                        editor.putLong("id", response.body()!!.id!!.toLong(),)
+                        editor.putString("username", response.body()!!.username,)
+                        editor.putString("password", response.body()!!.password)
+                        editor.putString("address_gov", response.body()!!.address_gov)
+                        editor.putString("address_municipale", response.body()!!.address_municipale)
+                        editor.putString("image", response.body()!!.image)
+                        editor.putString("phone", response.body()!!.phone.toString())
+                        editor.putString("cin", response.body()!!.cin.toString())
+                        editor.putString("niveau", response.body()!!.niveau)
+                        editor.apply()*/
 
-                    //mutableLiveData.value = response.body()?.message()
-                    Log.println(Log.ASSERT, "======================>1", mutableLiveData.value.toString())
-//                   response.body()?.results?.forEach{
-//                       Log.println(Log.ASSERT, "", it.toString())
-//                   }
+                        } else {
+                            com.dev0jk.depanin.model.data.remote.entity.User(
+                                response.body()!!.id!!.toLong(),
+                                response.body()!!.username,
+                                response.body()!!.password,
+                                response.body()!!.address_gov,
+                                response.body()!!.address_municipale,
+                                response.body()!!.image,
+                                response.body()!!.phone,
+                                response.body()!!.cin,
+                                response.body()!!.speciality,
+                                false
+                            )
+                        }
+                    readAllData.value = messageResult
                 }
-            }
 
-            override fun onFailure(call: Call<ResponseUserModel>, t: Throwable) {
+                }
+
+            override fun onFailure(call: Call<com.dev0jk.depanin.model.data.remote.entity.User>, t: Throwable) {
                 Log.println(Log.ASSERT, "======================>2", t.message.toString())
 
             }
@@ -262,7 +294,7 @@ class UserRemote {
 
         })
 
-        return mutableLiveData
+        return readAllData
     }
     fun getAllClient(): LiveData<List<com.dev0jk.depanin.model.data.remote.entity.User>> {
         var readAllData = MutableLiveData<List<com.dev0jk.depanin.model.data.remote.entity.User>>()
@@ -317,6 +349,66 @@ class UserRemote {
             }
 
         })
+        return readAllData
+    }
+
+    suspend fun updateUser(id : Long,
+                           username: String?,
+                           password : String?
+    ): LiveData<ResponseUserModel> {
+        val requestUserModel = RequestUserModel(id,username!!, password,null,null,null,null)
+        var readAllData = MutableLiveData<ResponseUserModel>()
+
+        //val getPost = ServiceBuilder.api.sendReqWorker("manefDEv", "manef","TozeurHayMatar",99105580,9722325,"master")
+        val code200=true
+        try {
+
+
+            ServiceUserBuilder.apiClient.UpdateClient(id, requestUserModel).enqueue(object :
+                Callback<ResponseUserModel> {
+                override fun onResponse(
+
+                    call: Call<ResponseUserModel>,
+                    response: Response<ResponseUserModel>
+                ) {
+                    Log.println(Log.ASSERT, "body", response.body().toString())
+
+                    var messageResult: ResponseUserModel = if (response.code() == 200) {
+                        Log.println(Log.ASSERT, "header", "code 200")
+                        ResponseUserModel(response.headers()["authorization"].toString(), true)
+
+                    } else {
+                        Log.println(Log.ASSERT, "header", "code !=  200")
+                        ResponseUserModel(response.headers()["authorization"].toString(), false)
+
+                    }
+                    readAllData.value = messageResult
+                    //mutableLiveData.value = response.body()
+//                   response.body()?.results?.forEach{
+//                       Log.println(Log.ASSERT, "", it.toString())
+//                   }
+                }
+
+
+                override fun onFailure(call: Call<ResponseUserModel>, t: Throwable) {
+                    Log.println(Log.ASSERT, "header", "code 404")
+
+/*
+            var  messageResult : ResponseUserModel = if (code200){
+                ResponseUserModel("null",true)
+
+            }else{
+                ResponseUserModel("null",false)
+            }
+            readAllData.value= messageResult
+*/
+
+                }
+
+
+            })
+        }catch (e: Exception){}
+
         return readAllData
     }
 

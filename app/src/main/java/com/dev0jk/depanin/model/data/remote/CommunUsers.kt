@@ -4,13 +4,11 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.dev0jk.depanin.model.data.api.ApiClientInterface
-import com.dev0jk.depanin.model.data.remote.entity.User
 import com.dev0jk.depanin.model.data.service.RetrofitHelper
 import com.dev0jk.depanin.model.data.service.ServiceUserBuilder
 import com.dev0jk.depanin.model.entity.Location
 import com.dev0jk.depanin.model.entity.modelWorker.RequestUserModel
 import com.dev0jk.depanin.model.entity.modelWorker.ResponseUserModel
-import com.dev0jk.depanin.model.entity.modelWorker.UserModel
 import com.dev0jk.depanin.utils.MessageResult
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -78,62 +76,4 @@ fun getData(phone : Int):  LiveData<MessageResult> {
     return readAllData
 
 }
-suspend fun updateUser(id : Long,
-                       username: String,
-                       password : String
-): LiveData<ResponseUserModel> {
-    val requestUserModel = RequestUserModel(username, password,null,null,null,null)
-    var readAllData = MutableLiveData<ResponseUserModel>()
 
-    //val getPost = ServiceBuilder.api.sendReqWorker("manefDEv", "manef","TozeurHayMatar",99105580,9722325,"master")
-    val code200=true
-    try {
-
-
-        ServiceUserBuilder.apiUser.UpdateWorker(id, requestUserModel).enqueue(object :
-            Callback<ResponseUserModel> {
-            override fun onResponse(
-
-                call: Call<ResponseUserModel>,
-                response: Response<ResponseUserModel>
-            ) {
-                Log.println(Log.ASSERT, "body", response.body().toString())
-
-                var messageResult: ResponseUserModel = if (response.code() == 200) {
-                    Log.println(Log.ASSERT, "header", "code 200")
-                    ResponseUserModel(response.headers()["authorization"].toString(), true)
-
-                } else {
-                    Log.println(Log.ASSERT, "header", "code !=  200")
-                    ResponseUserModel(response.headers()["authorization"].toString(), false)
-
-                }
-                readAllData.value = messageResult
-                //mutableLiveData.value = response.body()
-//                   response.body()?.results?.forEach{
-//                       Log.println(Log.ASSERT, "", it.toString())
-//                   }
-            }
-
-
-            override fun onFailure(call: Call<ResponseUserModel>, t: Throwable) {
-                Log.println(Log.ASSERT, "header", "code 404")
-
-/*
-            var  messageResult : ResponseUserModel = if (code200){
-                ResponseUserModel("null",true)
-
-            }else{
-                ResponseUserModel("null",false)
-            }
-            readAllData.value= messageResult
-*/
-
-            }
-
-
-        })
-    }catch (e: Exception){}
-
-    return readAllData
-}

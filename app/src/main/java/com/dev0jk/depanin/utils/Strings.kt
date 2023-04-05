@@ -4,6 +4,9 @@ package com.dev0jk.depanin.utils
     var settings: ArrayList<String> =
         arrayListOf("Edit Specialty","Edit Profile","My Address","Language","Contact us")
 
+     var settingsClient: ArrayList<String> =
+         arrayListOf("Edit Profile","My Address","Language","Contact us")
+
     var URL = "http://localhost:8080/"
     //var URL = "https://depaninibackend-production.up.railway.app"
  }

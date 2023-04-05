@@ -152,6 +152,7 @@ class SelectLocationActivity : AppCompatActivity() {
         var phone = intent.getStringExtra("phone").toString()
         image = try {
             Uri.parse(intent.getStringExtra("image"))
+
         } catch (e : java.lang.NullPointerException){
             null
         }
@@ -175,6 +176,7 @@ class SelectLocationActivity : AppCompatActivity() {
             putExtra("ChosenGouv",storedValueOfGouv)
             putExtra("phone",phone)
             putExtra("image",image)
+            Log.println(Log.ASSERT,"image_1",image.toString())
             putExtra("username",username)
             putExtra("password",password)
         }

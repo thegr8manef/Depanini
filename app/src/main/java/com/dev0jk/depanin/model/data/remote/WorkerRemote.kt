@@ -12,81 +12,155 @@ import com.dev0jk.depanin.model.entity.modelWorker.ResponseUserModel
 import com.dev0jk.depanin.utils.MessageResult
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import kotlinx.coroutines.MainScope
-import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class WorkerRemote {
-
     val db = Firebase.firestore
 
 
-    fun getRecommendedWorker(address_municipale:String,address_gov:String): LiveData<com.dev0jk.depanin.model.data.remote.entity.User> {
+     fun getRecommendedWorker(
+        address_municipale: String,
+        address_gov: String
+    ): LiveData<List<com.dev0jk.depanin.model.data.remote.entity.User>> {
+/*
+        var readAllData = MutableLiveData<List<com.dev0jk.depanin.model.data.remote.entity.User>?>()
+        try{
+        val service = RetrofitHelper.getInstance().create(ApiClientInterface::class.java)
+        MainScope().launch {
 
-        var readAllData = MutableLiveData<com.dev0jk.depanin.model.data.remote.entity.User>()
-/*        db.collection("users")
-            .whereEqualTo("address.municipale", location)
-            .whereEqualTo("type", "worker")
-            .get()
-            .addOnSuccessListener {
-                if (!it.documents.isEmpty()) {
-                    var recommended = ArrayList<User>()
+            var response = service.getRecommendedWorker(address_municipale, address_gov)
+            //Log.println(Log.ASSERT, "============>Response", response.body()?.data.toString())
+            if (response.isSuccessful) {
 
-                    for (item in it.documents) {
-
-
-                        recommended.add(item.toObject(User::class.java)!!)
-                    }
-                    mutableLiveData.value = recommended
-
-                } else {
-                    Log.v("================>firebase2", "$location")
-                    mutableLiveData.value = null
-
-                }
+                        val messageResult = response.body()
 
 
-            }
-            .addOnFailureListener {
-                mutableLiveData.value = null
+                readAllData.value = messageResult
             }
 
-
-        return mutableLiveData*/
-        try {
-            val service = RetrofitHelper.getInstance().create(ApiClientInterface::class.java)
-            MainScope().launch {
-
-
-                var response = service.getRecommendedWorker(address_municipale,address_gov)
-                //Log.println(Log.ASSERT, "============>Response", response.body()?.data.toString())
-                val errorCode = response.code()
-                if (errorCode == 200) {
-                    val messageResult: com.dev0jk.depanin.model.data.remote.entity.User
-                    Log.println(Log.ASSERT, "============>Code500", "phone is already exist")
-                    Log.println(Log.ASSERT, "============>ResponseApi", response.body().toString())
-                    //readAllData.value?.statu = response.body().toString().toBoolean()
-                    Log.println(Log.ASSERT, "============>statu", response.body().toString().toBoolean().toString())
-
-                }
-                if (errorCode==500){
-                    var  messageResult = MessageResult(true,response.body().toString())
-//                Log.println(Log.ASSERT, "============>Code200", "phone is already exist")
-//                Log.println(Log.ASSERT, "============>ResponseApi", response.body().toString())
-
-                    //  Log.println(Log.ASSERT, "============>statu", response.body().toString().toBoolean().toString())
-
-
-                }
-
-            }
+        }
 
         } catch (e: Exception) {
 
         }
 
+
+        return readAllData*/
+
+        var readAllData = MutableLiveData<List<com.dev0jk.depanin.model.data.remote.entity.User>>()
+
+        //val getPost = ServiceBuilder.api.sendReqWorker("manefDEv", "manef","TozeurHayMatar",99105580,9722325,"master")
+
+        ServiceUserBuilder.apiWorker.getRecommendedWorker(address_municipale,address_gov).enqueue(object :
+            Callback<List<com.dev0jk.depanin.model.data.remote.entity.User>> {
+
+            override fun onResponse(
+
+                call: Call<List<com.dev0jk.depanin.model.data.remote.entity.User>>,
+                response: Response<List<com.dev0jk.depanin.model.data.remote.entity.User>>
+            ) {
+                Log.println(Log.ASSERT, "", response.message())
+                if (response.isSuccessful) {
+                    Log.println(Log.ASSERT, "", response.body().toString())
+
+                        if (response.body() != null) {
+                            readAllData.value = response.body()
+
+                        }
+                }
+
+            }
+
+            override fun onFailure(call: Call<List<com.dev0jk.depanin.model.data.remote.entity.User>>, t: Throwable) {
+                Log.println(Log.ASSERT, "======================>2", t.message.toString())
+
+            }
+
+
+
+        })
+
+        return readAllData
+    }
+
+    fun filterbySpeciality(
+        speciality: String
+    ): LiveData<List<com.dev0jk.depanin.model.data.remote.entity.User>> {
+
+        var readAllData = MutableLiveData<List<com.dev0jk.depanin.model.data.remote.entity.User>>()
+
+        //val getPost = ServiceBuilder.api.sendReqWorker("manefDEv", "manef","TozeurHayMatar",99105580,9722325,"master")
+
+        ServiceUserBuilder.apiWorker.filterbySpeciality(speciality).enqueue(object :
+            Callback<List<com.dev0jk.depanin.model.data.remote.entity.User>> {
+
+            override fun onResponse(
+
+                call: Call<List<com.dev0jk.depanin.model.data.remote.entity.User>>,
+                response: Response<List<com.dev0jk.depanin.model.data.remote.entity.User>>
+            ) {
+                Log.println(Log.ASSERT, "", response.message())
+                if (response.isSuccessful) {
+                    Log.println(Log.ASSERT, "", response.body().toString())
+
+                    if (response.body() != null) {
+                        readAllData.value = response.body()
+
+                    }
+                }
+
+            }
+
+            override fun onFailure(call: Call<List<com.dev0jk.depanin.model.data.remote.entity.User>>, t: Throwable) {
+                Log.println(Log.ASSERT, "======================>2", t.message.toString())
+
+            }
+
+
+
+        })
+
+        return readAllData
+    }
+
+    fun searchByUsername(
+        username: String
+    ): LiveData<List<com.dev0jk.depanin.model.data.remote.entity.User>> {
+
+        var readAllData = MutableLiveData<List<com.dev0jk.depanin.model.data.remote.entity.User>>()
+
+        //val getPost = ServiceBuilder.api.sendReqWorker("manefDEv", "manef","TozeurHayMatar",99105580,9722325,"master")
+
+        ServiceUserBuilder.apiWorker.searchByUsername(username).enqueue(object :
+            Callback<List<com.dev0jk.depanin.model.data.remote.entity.User>> {
+
+            override fun onResponse(
+
+                call: Call<List<com.dev0jk.depanin.model.data.remote.entity.User>>,
+                response: Response<List<com.dev0jk.depanin.model.data.remote.entity.User>>
+            ) {
+                Log.println(Log.ASSERT, "", response.message())
+                if (response.isSuccessful) {
+                    Log.println(Log.ASSERT, "", response.body().toString())
+
+                    if (response.body() != null) {
+                        readAllData.value = response.body()
+
+                    }
+                }
+
+            }
+
+            override fun onFailure(call: Call<List<com.dev0jk.depanin.model.data.remote.entity.User>>, t: Throwable) {
+                Log.println(Log.ASSERT, "======================>2", t.message.toString())
+
+            }
+
+
+
+        })
 
         return readAllData
     }
@@ -120,46 +194,79 @@ class WorkerRemote {
     }
 
     fun signUpWorker(
-        username:String,password:String,address_gov:String,address_municipale:String,phone:Int,cin: Int, niveau: String
-    ): LiveData<ResponseUserModel> {
-        val requestUserModel = RequestUserModel(username, password, address_gov,address_municipale, phone, cin, niveau)
+        username:String,password:String,address_gov:String,address_municipale:String,image:String,phone:Int,cin: String, speciality: String
+    ): LiveData<com.dev0jk.depanin.model.data.remote.entity.User> {
+        val user = com.dev0jk.depanin.model.data.remote.entity.User(null,username, password, address_gov,address_municipale, image,phone, cin, speciality,false)
 
-        var mutableLiveData = MutableLiveData<ResponseUserModel>()
+        var readAllData = MutableLiveData<com.dev0jk.depanin.model.data.remote.entity.User>()
 
         //val getPost = ServiceBuilder.api.sendReqWorker("manefDEv", "manef","TozeurHayMatar",99105580,9722325,"master")
 
-        ServiceUserBuilder.apiWorker.sendReqWorker(requestUserModel).enqueue(object :
-            Callback<ResponseUserModel> {
+        ServiceUserBuilder.apiWorker.sendReqWorker(user).enqueue(object :
+            Callback<com.dev0jk.depanin.model.data.remote.entity.User> {
 
             override fun onResponse(
 
-                call: Call<ResponseUserModel>,
-                response: Response<ResponseUserModel>
+                call: Call<com.dev0jk.depanin.model.data.remote.entity.User>,
+                response: Response<com.dev0jk.depanin.model.data.remote.entity.User>
             ) {
                 Log.println(Log.ASSERT, "", response.message())
                 if (response.isSuccessful) {
+                    val messageResult: com.dev0jk.depanin.model.data.remote.entity.User =
+                        if (response.body() != null) {
+                            com.dev0jk.depanin.model.data.remote.entity.User(
+                                response.body()!!.id!!.toLong(),
+                                response.body()!!.username,
+                                response.body()!!.password,
+                                response.body()!!.address_gov,
+                                response.body()!!.address_municipale,
+                                response.body()!!.image,
+                                response.body()!!.phone,
+                                response.body()!!.cin,
+                                response.body()!!.speciality,
+                                true
+                            )
+/*                        val editor = context.applicationContext.getSharedPreferences("list_user", android.content.Context.MODE_PRIVATE).edit()
+                        editor.putLong("id", response.body()!!.id!!.toLong(),)
+                        editor.putString("username", response.body()!!.username,)
+                        editor.putString("password", response.body()!!.password)
+                        editor.putString("address_gov", response.body()!!.address_gov)
+                        editor.putString("address_municipale", response.body()!!.address_municipale)
+                        editor.putString("image", response.body()!!.image)
+                        editor.putString("phone", response.body()!!.phone.toString())
+                        editor.putString("cin", response.body()!!.cin.toString())
+                        editor.putString("niveau", response.body()!!.niveau)
+                        editor.apply()*/
 
-                    //mutableLiveData.value = response.body()?.message()
-                    Log.println(
-                        Log.ASSERT,
-                        "======================>",
-                        mutableLiveData.value.toString()
-                    )
-//                   response.body()?.results?.forEach{
-//                       Log.println(Log.ASSERT, "", it.toString())
-//                   }
+                        } else {
+                            com.dev0jk.depanin.model.data.remote.entity.User(
+                                response.body()!!.id!!.toLong(),
+                                response.body()!!.username,
+                                response.body()!!.password,
+                                response.body()!!.address_gov,
+                                response.body()!!.address_municipale,
+                                response.body()!!.image,
+                                response.body()!!.phone,
+                                response.body()!!.cin,
+                                response.body()!!.speciality,
+                                false
+                            )
+                        }
+                    readAllData.value = messageResult
                 }
-            }
-
-            override fun onFailure(call: Call<ResponseUserModel>, t: Throwable) {
-                Log.println(Log.ASSERT, "======================>", t.message.toString())
 
             }
+
+            override fun onFailure(call: Call<com.dev0jk.depanin.model.data.remote.entity.User>, t: Throwable) {
+                Log.println(Log.ASSERT, "======================>2", t.message.toString())
+
+            }
+
 
 
         })
 
-        return mutableLiveData
+        return readAllData
     }
 
     fun getAllWorker(): LiveData<List<com.dev0jk.depanin.model.data.remote.entity.User>> {
@@ -219,9 +326,122 @@ class WorkerRemote {
     }
 
     suspend fun updateWorker(id : Long,
-                             username: String,
-                             password : String) :LiveData<ResponseUserModel> {
-        return updateUser(id,username,password)
+                           username: String?,
+                           password : String?
+    ): LiveData<ResponseUserModel> {
+        val requestUserModel = RequestUserModel(id,username!!, password,null,null,null,null)
+        var readAllData = MutableLiveData<ResponseUserModel>()
+
+        //val getPost = ServiceBuilder.api.sendReqWorker("manefDEv", "manef","TozeurHayMatar",99105580,9722325,"master")
+        val code200=true
+        try {
+
+
+            ServiceUserBuilder.apiUser.UpdateWorker(id, requestUserModel).enqueue(object :
+                Callback<ResponseUserModel> {
+                override fun onResponse(
+
+                    call: Call<ResponseUserModel>,
+                    response: Response<ResponseUserModel>
+                ) {
+                    Log.println(Log.ASSERT, "body", response.body().toString())
+
+                    var messageResult: ResponseUserModel = if (response.code() == 200) {
+                        Log.println(Log.ASSERT, "header", "code 200")
+                        ResponseUserModel(response.headers()["authorization"].toString(), true)
+
+                    } else {
+                        Log.println(Log.ASSERT, "header", "code !=  200")
+                        ResponseUserModel(response.headers()["authorization"].toString(), false)
+
+                    }
+                    readAllData.value = messageResult
+                    //mutableLiveData.value = response.body()
+//                   response.body()?.results?.forEach{
+//                       Log.println(Log.ASSERT, "", it.toString())
+//                   }
+                }
+
+
+                override fun onFailure(call: Call<ResponseUserModel>, t: Throwable) {
+                    Log.println(Log.ASSERT, "header", "code 404")
+
+/*
+            var  messageResult : ResponseUserModel = if (code200){
+                ResponseUserModel("null",true)
+
+            }else{
+                ResponseUserModel("null",false)
+            }
+            readAllData.value= messageResult
+*/
+
+                }
+
+
+            })
+        }catch (e: Exception){}
+
+        return readAllData
+    }
+
+    suspend fun updateWorkerSpeciality(id : Long,
+                             specialty: String,
+    ): LiveData<ResponseUserModel> {
+        val requestUserModel = RequestUserModel(id,null, null,null,null,null,null,null,specialty)
+        var readAllData = MutableLiveData<ResponseUserModel>()
+
+        //val getPost = ServiceBuilder.api.sendReqWorker("manefDEv", "manef","TozeurHayMatar",99105580,9722325,"master")
+        val code200=true
+        try {
+
+
+            ServiceUserBuilder.apiUser.UpdateWorkerSpeciality(id, requestUserModel).enqueue(object :
+                Callback<ResponseUserModel> {
+                override fun onResponse(
+
+                    call: Call<ResponseUserModel>,
+                    response: Response<ResponseUserModel>
+                ) {
+                    Log.println(Log.ASSERT, "body", response.body().toString())
+
+                    var messageResult: ResponseUserModel = if (response.code() == 200) {
+                        Log.println(Log.ASSERT, "header", "code 200")
+                        ResponseUserModel(response.headers()["authorization"].toString(), true)
+
+                    } else {
+                        Log.println(Log.ASSERT, "header", "code !=  200")
+                        ResponseUserModel(response.headers()["authorization"].toString(), false)
+
+                    }
+                    readAllData.value = messageResult
+                    //mutableLiveData.value = response.body()
+//                   response.body()?.results?.forEach{
+//                       Log.println(Log.ASSERT, "", it.toString())
+//                   }
+                }
+
+
+                override fun onFailure(call: Call<ResponseUserModel>, t: Throwable) {
+                    Log.println(Log.ASSERT, "header", "code 404")
+
+/*
+            var  messageResult : ResponseUserModel = if (code200){
+                ResponseUserModel("null",true)
+
+            }else{
+                ResponseUserModel("null",false)
+            }
+            readAllData.value= messageResult
+*/
+
+                }
+
+
+            })
+        }catch (e: Exception){}
+
+        return readAllData
     }
 
 
