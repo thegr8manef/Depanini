@@ -13,13 +13,13 @@ import rx.Observable
 
 interface ApiClientInterface {
     @POST("client/signup")
-    fun sendReqClient(@Body requestModel: RequestUserModel) : Call<ResponseUserModel>
+    fun sendReqClient(@Body user: User) : Call<User>
 
     @GET("clients")
     fun getDataClient(): Call<List<User>>
 // ========================================================================
     @POST("worker/signup")
-    fun sendReqWorker(@Body requestModel: RequestUserModel) : Call<ResponseUserModel>
+    fun sendReqWorker(@Body user: User) : Call<User>
 
     @GET("workers")
     fun getAllUsers(): Call<List<User>>
@@ -31,13 +31,26 @@ interface ApiClientInterface {
     fun authentificateUsers(@Body user: User) : Call<User>
 
 //=============================================================================
-@PUT("/client/modify/{id}")
+@PUT("/worker/modify/{id}")
 suspend fun UpdateWorker(@Path("id") id: Long,
                          @Body username: RequestUserModel) : Call<ResponseUserModel>
+//================================================================================
+@PUT("/worker/modify/speciality/{id}")
+suspend fun UpdateWorkerSpeciality(@Path("id") id: Long,
+                         @Body speciality: RequestUserModel) : Call<ResponseUserModel>
+//=================================================================================
+@PUT("/client/modify/{id}")
+suspend fun UpdateClient(@Path("id") id: Long,
+                             @Body username: RequestUserModel) : Call<ResponseUserModel>
 
 @GET("/admin/search/{address_municipale}/{address_gov}")
-suspend fun getRecommendedWorker(@Path("address_municipale") address_municipale : String,
-                                 @Path("address_gov")address_gov : String)   : Response<List<User>>
+ fun getRecommendedWorker(@Path("address_municipale") address_municipale : String,
+                                 @Path("address_gov")address_gov : String)   : Call<List<User>>
 
+    @GET("/worker/filter/{speciality}")
+    fun filterbySpeciality(@Path("speciality") speciality : String)   : Call<List<User>>
+
+    @GET("/users/searchbyname/{username}")
+    fun searchByUsername(@Path("username") username : String)   : Call<List<User>>
 
 }

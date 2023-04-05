@@ -1,4 +1,4 @@
-package com.dev0jk.depanin.view.home
+package com.dev0jk.depanin.view.search
 
 import android.content.Context
 import android.content.Intent
@@ -13,9 +13,10 @@ import com.bumptech.glide.Glide
 import com.dev0jk.depanin.R
 import com.dev0jk.depanin.model.data.remote.entity.User
 import com.dev0jk.depanin.view.SelectLocationActivity
+import com.dev0jk.depanin.view.home.WorkerDetailedActivity
 
-class RecommendedAdapter(val context: Context, val recommends: ArrayList<User>) :
-    RecyclerView.Adapter<RecommendedAdapter.ViewHolder>() {
+class SearchAdapter(val context: Context, val recommends: ArrayList<User>) :
+    RecyclerView.Adapter<SearchAdapter.ViewHolder>() {
 
 
    inner class ViewHolder(viewItem : View) : RecyclerView.ViewHolder(viewItem) {

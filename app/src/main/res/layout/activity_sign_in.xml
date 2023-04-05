@@ -73,7 +73,6 @@
         android:hint="username"
 
         app:errorEnabled="true"
-        app:counterMaxLength="20"
         app:helperTextTextColor="@color/red"
 
         app:layout_constraintStart_toStartOf="parent"
@@ -81,7 +80,6 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/username"
-            android:maxLength="20"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -138,7 +136,7 @@
         android:drawableRight="@drawable/ic_arrow_forward"
         android:paddingLeft="30dp"
         android:paddingRight="10dp"
-        android:text="Next"
+        android:text="Sign In"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textStyle="bold"

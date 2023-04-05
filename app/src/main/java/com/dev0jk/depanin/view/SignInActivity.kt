@@ -73,11 +73,12 @@ class SignInActivity : AppCompatActivity() {
                         Log.println(Log.ASSERT, "it.response", it.password.toString())
 
                         var itm = it
-                        if (it.isLogin==false) {
-                            user = User(it.username,it.password,it.address_gov,it.address_municipale,it.image,it.phone,it.cin,it.niveau,it.isLogin)
+                        if (it.isLogin==true) {
+                            user = User(it.id,it.username,it.password,it.address_gov,it.address_municipale,it.image,it.phone,it.cin,it.speciality,it.isLogin)
                             Log.println(Log.ASSERT, "it.response",user.toString())
-                            setUser(user,this)
-                            val intent1 = Intent(this, HomeActivity::class.java)
+                            val intent1 = Intent(this, HomeActivity::class.java).apply {
+                                setUser(user,this@SignInActivity)
+                            }
                             startActivity(intent1)
 
                         } else {

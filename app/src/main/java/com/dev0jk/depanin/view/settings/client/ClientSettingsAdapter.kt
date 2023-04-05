@@ -1,4 +1,4 @@
-package com.dev0jk.depanin.view.settings
+package com.dev0jk.depanin.view.settings.client
 
 import android.content.Context
 import android.content.Intent
@@ -7,16 +7,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
-import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 import com.dev0jk.depanin.R
 import com.dev0jk.depanin.view.SelectLocationActivity
+import com.dev0jk.depanin.view.settings.edit.EditProfileActivity
 import com.dev0jk.depanin.view.settings.edit.NewTaskSheet
 
 
-class SettingsAdapter(var context: Context, var settings : ArrayList<String>,private val supportFragmentManager: FragmentManager) :
-    RecyclerView.Adapter<SettingsAdapter.ViewHolder>() {
+class ClientSettingsAdapter(var context: Context, var settings : ArrayList<String>, private val supportFragmentManager: FragmentManager) :
+    RecyclerView.Adapter<ClientSettingsAdapter.ViewHolder>() {
 
    //     val  myAdapter = SettingsAdapter(context,settings, supportFragmentManager)
 
@@ -32,12 +32,9 @@ class SettingsAdapter(var context: Context, var settings : ArrayList<String>,pri
             itemView.findViewById<TextView>(R.id.setting_name).text = setting
            itemView.setOnClickListener{
                when(itemView.findViewById<TextView>(R.id.setting_name).text.toString() ){
-                   "Edit Specialty" -> {
-                      Toast.makeText(context,"Edit Specialty",Toast.LENGTH_LONG).show()
-                   }
-
                    "Edit Profile" -> {
-                      showNewTaskSheet()
+                       val intent = Intent(context, EditProfileActivity::class.java)
+                       context.startActivity(intent)
                    }
 
                    "My Address" -> {
@@ -45,7 +42,7 @@ class SettingsAdapter(var context: Context, var settings : ArrayList<String>,pri
                        context.startActivity(intent)
                    }
                    "Language" -> {
-                       Toast.makeText(context,"Language",Toast.LENGTH_LONG).show()
+                       showNewTaskSheet()
                    }
                    "Contact us" -> {
                        Toast.makeText(context,"Contact us",Toast.LENGTH_LONG).show()
