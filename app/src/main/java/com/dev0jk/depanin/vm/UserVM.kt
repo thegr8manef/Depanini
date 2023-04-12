@@ -12,7 +12,7 @@ class UserVM {
 
     val userRepository = UserRepository()
 
-    fun addUser(user: User, userImage: Uri?) : LiveData<MessageResult> {
+    fun addUser(user: com.dev0jk.depanin.model.data.remote.entity.User, userImage: Uri?) : LiveData<MessageResult> {
         return userRepository.addUser(user, userImage)
     }
 

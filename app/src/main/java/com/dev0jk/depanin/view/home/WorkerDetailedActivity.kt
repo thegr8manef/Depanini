@@ -8,12 +8,20 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat.startActivity
+import androidx.core.graphics.drawable.toIcon
+import androidx.core.net.toFile
+import androidx.core.net.toUri
+import com.bumptech.glide.Glide
+import com.dev0jk.depanin.R
 
 import com.dev0jk.depanin.databinding.ActivityWorkerDetailedBinding
 var REQUEST_PHONE_CALL= 1
+private const val s = "Permission denied"
+
 class WorkerDetailedActivity : AppCompatActivity() {
     var username = String()
     var address_gov = String()
@@ -34,7 +42,19 @@ class WorkerDetailedActivity : AppCompatActivity() {
         username = intent.getStringExtra("username_worker").toString()
         address_gov = intent.getStringExtra("address_gov_worker").toString()
         address_municipale = intent.getStringExtra("address_municipale_worker").toString()
-        image = intent.getStringExtra("image_worker").toString()
+        //image = intent.getStringExtra("image_worker").toString()
+        var image : Uri? = try {
+            intent.getStringExtra("image_worker")?.toUri()
+
+        } catch (e : java.lang.NullPointerException){
+            null
+        }
+        Glide.with(this@WorkerDetailedActivity /* context */)
+            .load(image.toString())
+            .into(binding.userImage)
+            .waitForLayout()
+        binding.userImage.setPadding(0,0,0,0)
+        Log.println(Log.ASSERT,"worker image2",image.toString())
         phone = intent.getIntExtra("phone_worker",0).toString()
         Log.println(Log.ASSERT,"worker phone2",phone)
         speciality = intent.getStringExtra("speciality_worker").toString()
@@ -47,6 +67,7 @@ class WorkerDetailedActivity : AppCompatActivity() {
             onBackPressed()
 
         }
+
         binding.workerPhone.setOnClickListener {
             // cheacking permission
             if (ActivityCompat.checkSelfPermission(
@@ -71,7 +92,7 @@ class WorkerDetailedActivity : AppCompatActivity() {
             intent1.data = Uri.parse("tel:${phone.toInt()}")
             if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED
             ) {
-                Toast.makeText(this,"Permission denied",Toast.LENGTH_LONG).show()
+                Toast.makeText(this,getString(R.string.permission_denied),Toast.LENGTH_LONG).show()
                 return
             }
             startActivity(intent1)

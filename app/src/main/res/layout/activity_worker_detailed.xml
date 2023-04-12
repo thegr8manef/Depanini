@@ -19,14 +19,14 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:background="@color/secand_color"
-            android:src="@drawable/ic_arrow_back" />
+            android:src="@drawable/ic_arrow_back_black" />
 
         <TextView
             android:id="@+id/edit_profile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="60dp"
-            android:text="Worker Profile"
+            android:text="@string/worker_profile"
             android:textStyle="bold"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -48,7 +48,7 @@
         android:id="@+id/worker_username"
         android:layout_marginTop="20dp"
         android:textSize="25dp"
-        android:text="foulen fouleni"
+        android:text="@string/foulen_fouleni"
         android:textStyle="bold"
         android:gravity="center_horizontal"
         android:layout_width="match_parent"
@@ -59,7 +59,7 @@
         android:id="@+id/worker_location"
         android:layout_marginTop="5dp"
         android:textSize="19dp"
-        android:text="tunis,tunisia"
+        android:text="@string/tunis_tunisia"
 
         android:gravity="center_horizontal"
         android:layout_width="match_parent"
@@ -70,7 +70,7 @@
         android:id="@+id/worker_speciality"
         android:layout_marginTop="5dp"
         android:textSize="19dp"
-        android:text="Plumbing"
+        android:text="@string/plumbing"
         android:gravity="center_horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -107,7 +107,7 @@
         android:drawableRight="@drawable/ic_phone"
         android:paddingLeft="30dp"
         android:paddingRight="10dp"
-        android:text="Call"
+        android:text="@string/call"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textStyle="bold"

@@ -21,7 +21,9 @@ class WorkerRepository {
     fun searchByUsername(speciality: String) : LiveData<List<com.dev0jk.depanin.model.data.remote.entity.User>>{
         return workerRemote.searchByUsername(speciality)
     }
-
+    fun findAllFavorites(id_client: Long) : LiveData<List<com.dev0jk.depanin.model.data.remote.entity.User>>{
+        return workerRemote.findAllFavorites(id_client)
+    }
     fun CreateSpecialtyOfWorker(userID: String, specialty: String): LiveData<MessageResult> {
         return workerRemote.createSpecialtyOfWorker(userID, specialty)
     }
@@ -30,6 +32,16 @@ class WorkerRepository {
     }
     fun signUpWorker(username:String,password:String,address_gov:String,address_municipale:String,image:String,phone:Int,cin:String,speciality:String) : LiveData<com.dev0jk.depanin.model.data.remote.entity.User>{
         return workerRemote.signUpWorker(username, password, address_gov,address_municipale,image, phone, cin, speciality)
+    }
+
+    fun addToFavorites(id_worker :Long,
+                       id_client : Long) : LiveData<com.dev0jk.depanin.model.data.remote.entity.User>{
+        return workerRemote.addToFavorites(id_worker,id_client)
+    }
+
+    fun removeFromFavorites(id_worker :Long,
+                       id_client : Long) : LiveData<com.dev0jk.depanin.model.data.remote.entity.User>{
+        return workerRemote.removeFromFavorites(id_worker,id_client)
     }
     fun getData(phone:Int) : LiveData<MessageResult>{
         return workerRemote.getDataWorker(phone)
@@ -43,5 +55,9 @@ class WorkerRepository {
     }
      suspend fun updateWorkerSpeciality(id: Long, specialty: String) : LiveData<ResponseUserModel>{
         return workerRemote.updateWorkerSpeciality(id, specialty )
+    }
+
+    suspend fun updateWorkerLocation(id: Long, address_municipale: String,address_gov: String) : LiveData<ResponseUserModel>{
+        return workerRemote.updateWorkerLocation(id, address_municipale,address_gov )
     }
 }

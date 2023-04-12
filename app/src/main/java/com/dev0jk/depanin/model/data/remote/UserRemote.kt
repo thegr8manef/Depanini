@@ -25,7 +25,7 @@ class UserRemote {
     private val storage_referance = FirebaseStorage.getInstance().getReference()
 
 
-    fun addUser(user: User, userImage: Uri?): LiveData<MessageResult> {
+    fun addUser(user: com.dev0jk.depanin.model.data.remote.entity.User, userImage: Uri?): LiveData<MessageResult> {
 
         var mutableLiveData = MutableLiveData<MessageResult>()
         try {
@@ -46,7 +46,7 @@ class UserRemote {
 
             else{
 
-                val ref = storage_referance.child("users/${user.phone+ Date().toString().replace(" ","") }")
+                val ref = storage_referance.child("users/${user.phone.toString()+ Date().toString().replace(" ","") }")
 
             var uploadTask=  ref.putFile(userImage)
 
@@ -62,7 +62,7 @@ class UserRemote {
             }.addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     var downloadUri = task.result
-                    user.userImage = downloadUri.toString()
+                    user.image = downloadUri.toString()
 
                     var result = db.collection("users").document()
                     val id = result.id

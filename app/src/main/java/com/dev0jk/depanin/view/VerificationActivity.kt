@@ -12,6 +12,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
+import com.dev0jk.depanin.R
 import com.dev0jk.depanin.databinding.ActivityVerificationBinding
 import com.dev0jk.depanin.vm.UserVM
 import com.dev0jk.depanin.vm.WorkerVM
@@ -41,9 +42,11 @@ lateinit var workerVM: WorkerVM
         setContentView(binding.root)
         workerVM = WorkerVM()
         progressDialog = ProgressDialog(this)
-        progressDialog.setTitle("Please wait")
+        progressDialog.setTitle(getString(R.string.please_wait))
         progressDialog.setCanceledOnTouchOutside(false)
-
+        binding.btnBack.setOnClickListener {
+            onBackPressed()
+        }
         val intentDataUser = intent
 
         textEmail = intentDataUser.getStringExtra("email").toString()
@@ -79,35 +82,42 @@ lateinit var workerVM: WorkerVM
 
 
         }*/
+        binding.idEdtPhoneNumber.error=null
         binding.btnNext.setOnClickListener {
+            if (binding.numberphone.text?.length!! < 8) {
+                binding.idEdtPhoneNumber.error=getString(R.string.number_is_too_short)
+            }
+            if(binding.numberphone.text?.length!! > 8) {
+                binding.idEdtPhoneNumber.error=getString(R.string.number_is_too_long)
+        }
+            if(binding.numberphone.text?.length!! == 8) {
+                val phone = binding.numberphone.text.toString().trim()
+                if (TextUtils.isEmpty(phone)) {
+                    Toast.makeText(
+                        this@VerificationActivity,
+                        getString(R.string.please_enter_phone_number),
+                        Toast.LENGTH_LONG
+                    ).show()
 
-            val phone = binding.numberphone.text.toString().trim()
-            if (TextUtils.isEmpty(phone)) {
-                Toast.makeText(
-                    this@VerificationActivity,
-                    "Please enter phone number",
-                    Toast.LENGTH_LONG
-                ).show()
+                } else {
+                    progressDialog.setMessage(getString(R.string.verifying_phone_number))
+                    progressDialog.show()
+                    workerVM.getData(phone.toInt()).observe(this) {
 
-            } else {
-                progressDialog.setMessage("Verifing Phone Number...")
-                progressDialog.show()
-                workerVM.getData(phone.toInt()).observe(this) {
+                        var itm = it
+                        if (it.statu) {
+                            val intent1 = Intent(this, UserInfoActivity::class.java)
+                            intent1.putExtra("phone", phone)
+                            startActivity(intent1)
 
-                    var itm = it
-                    if (it.statu) {
-                        val intent1 = Intent(this, UserInfoActivity::class.java)
-                        intent1.putExtra("phone",phone)
-                        startActivity(intent1)
-
+                        } else {
+                            progressDialog.dismiss()
+                            binding.idEdtPhoneNumber.error = getString(R.string.phone_number_exists)
+                        }
                     }
-                    else{
-                        progressDialog.dismiss()
-                        binding.idEdtPhoneNumber.error = "This Phone Number Exists"
-                    }
+
+                    //progressDialog.dismiss()
                 }
-
-                //progressDialog.dismiss()
             }
         }
 

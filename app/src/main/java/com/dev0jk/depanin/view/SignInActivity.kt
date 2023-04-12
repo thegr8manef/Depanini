@@ -10,6 +10,7 @@ import android.net.ConnectivityManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import com.dev0jk.depanin.R
 import com.dev0jk.depanin.databinding.ActivitySignInBinding
 import com.dev0jk.depanin.model.data.remote.entity.User
 import com.dev0jk.depanin.utils.setUser
@@ -31,39 +32,37 @@ class SignInActivity : AppCompatActivity() {
         setContentView(view)
         userVM = UserVM()
         progressDialog = ProgressDialog(this)
-        progressDialog.setTitle("Please wait")
+        progressDialog.setTitle(getString(R.string.please_wait))
         progressDialog.setCanceledOnTouchOutside(false)
-
+            binding.btnBack.setOnClickListener {
+                onBackPressed()
+            }
+        binding.btnSignup.setOnClickListener {
+            val intent2 = Intent(this, VerificationActivity::class.java)
+            startActivity(intent2)
+        }
             binding.createAccount.setOnClickListener {
-                if(!binding.checkBox.isChecked){
-
-                    binding.checkBox.setTextColor(Color.parseColor("#ff3333"))
-
-                } else
 
                     if (binding.username.text?.isEmpty() == true || binding.password.text?.isEmpty() == true) {
-                        binding.checkBox.setTextColor(Color.parseColor("#000000"))
-
                         binding.labelUsername.error = null
                         binding.labelPassword.error = null
                         if (binding.username.text?.isEmpty() == true) {
-                            binding.labelUsername.error = "Username is required"
+                            binding.labelUsername.error = getString(R.string.username_is_required)
 
 
 
                         }
                         if (binding.password.text?.isEmpty() == true) {
-                            binding.labelPassword.error = "Password is required"
+                            binding.labelPassword.error = getString(R.string.password_is_required)
                         }
 
                     } else {
-                        binding.checkBox.setTextColor(Color.parseColor("#000000"))
                 if (!isNetworkConnected()){
                     showAlertIfNoConnection()
                 }
                         else {
 
-                    progressDialog.setMessage("Verifing User...")
+                    progressDialog.setMessage(getString(R.string.verifying_user))
                     progressDialog.show()
                     userVM.authentifacteUsers(
                         binding.username.text.toString(),
@@ -83,8 +82,8 @@ class SignInActivity : AppCompatActivity() {
 
                         } else {
                             progressDialog.dismiss()
-                            binding.labelUsername.error = "Your Username is false"
-                            binding.labelPassword.error = "Your Password is false"
+                            binding.labelUsername.error = getString(R.string.your_username_is_false)
+                            binding.labelPassword.error = getString(R.string.your_password_is_false)
                         }
                     }
                 }
@@ -105,15 +104,15 @@ class SignInActivity : AppCompatActivity() {
     }
         fun showAlertIfNoConnection() {
         val builder = AlertDialog.Builder(this@SignInActivity)
-        builder.setTitle("Info")
-        builder.setMessage("You are not Connected plz check you connection network .")
+        builder.setTitle(getString(R.string.info))
+        builder.setMessage(getString(R.string.cheking_internet))
         builder.setCancelable(true)
-        builder.setPositiveButton("Try again") { dialogInterface, i ->
+        builder.setPositiveButton(getString(R.string.try_again)) { dialogInterface, i ->
             finish()
             startActivity(intent)
 
         }
-        builder.setNegativeButton("OK") { dialogInterface, i ->
+        builder.setNegativeButton(getString(R.string.ok)) { dialogInterface, i ->
             onResume()
         }
         builder.show()
@@ -121,10 +120,10 @@ class SignInActivity : AppCompatActivity() {
 
     fun showAlertSendingEmail() {
         val builder = AlertDialog.Builder(this@SignInActivity)
-        builder.setTitle("Forgot Password")
-        builder.setMessage("Sending email ...")
+        builder.setTitle(getString(R.string.forgot_password))
+        builder.setMessage(getString(R.string.sending_email))
         builder.setCancelable(true)
-        builder.setNegativeButton("OK") { dialogInterface, i ->
+        builder.setNegativeButton(getString(R.string.ok)) { dialogInterface, i ->
             onResume()
         }
         builder.show()

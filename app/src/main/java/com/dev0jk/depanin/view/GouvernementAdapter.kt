@@ -58,7 +58,7 @@ class GouvernementAdapter (
                         editor.putString("ChosenGouv", data.value)
                         editor.apply()
                     }else{
-                        Toast.makeText(context, "You Select Only One City if You Want to Change It Press Cancel", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(context, context.getString(R.string.one_city), Toast.LENGTH_SHORT).show()
 
                     }
                 }

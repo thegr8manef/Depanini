@@ -4,60 +4,92 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#1C58C9"
     tools:context=".view.MainActivity">
 
-
-    <ImageView
-        android:id="@+id/OtpImg"
-        android:layout_width="match_parent"
-        android:layout_height="370dp"
-        android:src="@drawable/undraw_access_account"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="128dp"
+        android:layout_marginTop="20dp"
         android:gravity="center_horizontal"
-        android:maxLines="2"
-        android:text="You Are Welcome \n to Depanini."
-        android:textSize="20dp"
+        android:text="@string/welcome_to_depanini"
+        android:textColor="#EAEAEA"
+        android:textSize="30dp"
+        android:textStyle="bold"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/OtpImg" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/info1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:padding="15dp"
+        android:text="@string/we_are_designing_to_assist_students_with_various_house_repair_tasks_by_connecting_them_with_local_service_providers_who_can_assist_them_with_the_repair"
+        android:textColor="#EAEAEA"
+        android:textSize="15dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintTop_toBottomOf="@+id/info" />
+
+    <ImageView
+        android:id="@+id/OtpImg"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="264dp"
+        android:layout_marginEnd="104dp"
+        android:src="@drawable/logoo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:id="@+id/btn_signup"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="28dp"
+        android:backgroundTint="@color/white"
+        android:text="@string/sign_up"
+        android:textSize="15dp"
+        android:textAllCaps="false"
+        android:textColor="#1C58C9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/OtpImg" />
+
+    <TextView
+        android:id="@+id/already"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:gravity="center_horizontal"
+        android:text="@string/already_a_member"
+        android:textColor="#ABABAB"
+        android:textStyle="bold"
+        android:textSize="12dp"
+        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@+id/btn_signup"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
         android:id="@+id/btn_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
-        android:layout_marginTop="596dp"
-        android:background="@drawable/circlebutton"
-        android:text="Log in"
+        android:text="@string/sign_in"
+        android:layout_marginTop="8dp"
+        android:textStyle="bold"
+        android:gravity="center_horizontal"
         android:textAllCaps="false"
         android:textColor="#F6F6F6"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btn_signup"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="656dp"
-        android:layout_marginEnd="4dp"
-        android:background="@drawable/circlebutton"
-        android:text="Sign Up"
-        android:textAllCaps="false"
-        android:textColor="#F6F6F6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/already" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -44,15 +44,25 @@
 
 
             <ImageView
-                android:id="@+id/imageView2"
+                android:id="@+id/notification"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_notifications"
                 app:layout_constraintBottom_toBottomOf="@+id/textView90"
-                app:layout_constraintEnd_toStartOf="@+id/profile_image"
+                app:layout_constraintEnd_toStartOf="@+id/heart"
                 app:layout_constraintHorizontal_bias="0.93"
                 app:layout_constraintStart_toEndOf="@+id/textView90"
                 app:layout_constraintTop_toTopOf="@+id/textView90"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <ImageView
+                android:id="@+id/heart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/heart"
+                android:layout_marginEnd="15dp"
+                app:layout_constraintEnd_toStartOf="@+id/profile_image"
+                app:layout_constraintTop_toTopOf="@+id/notification"
                 app:layout_constraintVertical_bias="1.0" />
 
             <de.hdodenhof.circleimageview.CircleImageView
@@ -86,7 +96,7 @@
             android:id="@+id/textView7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Recommended For You"
+            android:text="@string/recommended_for_you"
             android:textColor="@color/text_color"
             android:textStyle="bold"
             android:layout_marginTop="8dp"

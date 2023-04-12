@@ -34,6 +34,10 @@ interface ApiClientInterface {
 @PUT("/worker/modify/{id}")
 suspend fun UpdateWorker(@Path("id") id: Long,
                          @Body username: RequestUserModel) : Call<ResponseUserModel>
+
+@PUT("/worker/modify/location/{id}")
+suspend fun UpdateLocation(@Path("id") id: Long,
+                         @Body username: RequestUserModel) : Call<ResponseUserModel>
 //================================================================================
 @PUT("/worker/modify/speciality/{id}")
 suspend fun UpdateWorkerSpeciality(@Path("id") id: Long,
@@ -52,5 +56,18 @@ suspend fun UpdateClient(@Path("id") id: Long,
 
     @GET("/users/searchbyname/{username}")
     fun searchByUsername(@Path("username") username : String)   : Call<List<User>>
+//==================================================================================
 
+    @POST("/client/add-favorite/{id_worker}/{id_client}")
+    fun addToFavorites(@Path("id_worker") id_worker : Long,
+    @Path("id_client")id_client : Long)   : Call<String>
+
+
+    @DELETE("/client/delete-favorite/{id_worker}/{id_client}")
+    fun removeFromFavorites(@Path("id_worker") id_worker : Long,
+                       @Path("id_client")id_client : Long)   : Call<String>
+
+
+    @GET("/client/fav-list/{client_id}")
+    fun findAllFavorites(@Path("client_id") client_id : Long)   : Call<List<User>>
 }

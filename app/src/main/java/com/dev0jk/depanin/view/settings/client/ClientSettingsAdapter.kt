@@ -11,6 +11,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 import com.dev0jk.depanin.R
 import com.dev0jk.depanin.view.SelectLocationActivity
+import com.dev0jk.depanin.view.settings.edit.EditLocationActivity
 import com.dev0jk.depanin.view.settings.edit.EditProfileActivity
 import com.dev0jk.depanin.view.settings.edit.NewTaskSheet
 
@@ -38,13 +39,13 @@ class ClientSettingsAdapter(var context: Context, var settings : ArrayList<Strin
                    }
 
                    "My Address" -> {
-                       val intent = Intent(context, SelectLocationActivity::class.java)
+                       val intent = Intent(context, EditLocationActivity::class.java)
                        context.startActivity(intent)
                    }
                    "Language" -> {
                        showNewTaskSheet()
                    }
-                   "Contact us" -> {
+                   "Contact Us" -> {
                        Toast.makeText(context,"Contact us",Toast.LENGTH_LONG).show()
                    }
                }

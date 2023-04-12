@@ -7,16 +7,34 @@
     android:background="@color/secand_color"
     tools:context=".view.SelectLocationActivity">
 
-    <ImageButton
-        android:id="@+id/btn_back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:background="@color/secand_color"
-        android:src="@drawable/ic_arrow_back"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@drawable/background_login"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="#1C58C9"
+            android:src="@drawable/ic_arrow_back_white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:id="@+id/img_horizon"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="168dp"
+            android:layout_marginTop="36dp"
+            android:background="@drawable/logoo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     <com.google.android.material.textfield.TextInputLayout
@@ -25,16 +43,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:focusable="false"
-        android:hint="Select your Gouvernement"
+        android:hint="@string/select_your_gouvernement"
         android:gravity="center"
         android:layout_margin="15dp"
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.081">
+        app:layout_constraintTop_toBottomOf="@+id/constraint"
+>
 
         <AutoCompleteTextView
             android:id="@+id/auto_complete_txt"
@@ -45,7 +60,15 @@
             android:inputType="none" />
     </com.google.android.material.textfield.TextInputLayout>
 
-
+    <ImageView
+        android:id="@+id/map"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/map"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewer"
         android:layout_width="match_parent"
@@ -53,7 +76,7 @@
         android:layout_marginBottom="10dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/linear"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"
+        app:layout_constraintTop_toBottomOf="@+id/map"
         tools:layout_editor_absoluteX="-16dp" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -70,10 +93,7 @@
             android:layout_height="40dp"
             android:layout_marginLeft="10dp"
             android:background="@drawable/circlebutton"
-            android:drawableLeft="@drawable/ic_close_20"
-            android:paddingLeft="10dp"
-            android:paddingRight="0dp"
-            android:text="Cancel"
+            android:text="@string/cancel"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textStyle="bold"
@@ -89,7 +109,7 @@
             android:drawableRight="@drawable/ic_arrow_forward"
             android:paddingLeft="10dp"
             android:paddingRight="0dp"
-            android:text="Next"
+            android:text="@string/next"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textStyle="bold"

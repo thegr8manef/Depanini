@@ -11,6 +11,7 @@ import android.os.Bundle
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.core.net.toUri
 import com.dev0jk.depanin.R
 import com.dev0jk.depanin.databinding.ActivityWorkerInfoBinding
 import com.dev0jk.depanin.model.data.remote.entity.User
@@ -40,34 +41,43 @@ class WorkerInfoActivity : AppCompatActivity() {
         var password = intent.getStringExtra("password").toString()
         var ChosenCity = intent.getStringExtra("ChosenCity").toString()
         var ChosenGouv = intent.getStringExtra("ChosenGouv").toString()
-        var image = intent.getStringExtra("image").toString()
+        var image : Uri? = try {
+            intent.getStringExtra("image")?.toUri()
+
+        } catch (e : java.lang.NullPointerException){
+            null
+        }
+        //var image = intent.getStringExtra("image").toString()
          speciality = intent.getStringExtra("speciality").toString()
 
         dropDownList()
+        binding.btnBack.setOnClickListener {
+            onBackPressed()
+        }
 
         binding.createAccount.setOnClickListener {
-            if(!binding.checkBox.isChecked){
-
-                binding.checkBox.setTextColor(Color.parseColor("#ff3333"))
-
-            } else
 
                 if (binding.cin.text?.isEmpty() == true || !selected) {
-                    binding.checkBox.setTextColor(Color.parseColor("#000000"))
 
                     binding.labelCin.error = null
                     binding.labelSpeciality.error = null
                     if (binding.cin.text?.isEmpty() == true) {
-                        binding.labelCin.error = "CIN is required"
+                        binding.labelCin.error = getString(R.string.cin_is_required)
 
                     }
                     if (!selected) {
-                        binding.labelCin.error = "Speciality is required"
+                        binding.labelSpeciality.error = getString(R.string.speciality_is_required)
 
                     }
 
                 } else {
-                    binding.checkBox.setTextColor(Color.parseColor("#000000"))
+                    if (binding.cin.text?.length!! < 8) {
+                        binding.labelCin.error=getString(R.string.cin_number_is_too_short)
+                    }
+                    if(binding.cin.text?.length!! > 8) {
+                        binding.labelCin.error=getString(R.string.cin_number_is_too_long)
+                    }
+                    if(binding.cin.text?.length!! == 8) {
                     //  val loadingAlert = LoadingAlert(this)
                     //  loadingAlert.startLoadingAlert()
                     workerVM.signUpWorker(
@@ -75,28 +85,32 @@ class WorkerInfoActivity : AppCompatActivity() {
                         password,
                         ChosenGouv,
                         ChosenCity,
-                        image,
+                        image.toString(),
                         phone.toInt(),
                         binding.cin.text.toString(),
                         speciality
-                    ).observe(this){
-                        if (it.isLogin==true){
-                            setUser(User(
-                                it.id,
-                                it.username,
-                                it.password,
-                                it.address_gov,
-                                it.address_municipale,
-                                it.image.toString(),
-                                it.phone!!.toInt(),
-                                it.cin,
-                                it.speciality,
-                                true),
-                                this)
+                    ).observe(this) {
+                        if (it.isLogin == true) {
+                            setUser(
+                                User(
+                                    it.id,
+                                    it.username,
+                                    it.password,
+                                    it.address_gov,
+                                    it.address_municipale,
+                                    it.image.toString(),
+                                    it.phone!!.toInt(),
+                                    it.cin,
+                                    it.speciality,
+                                    true
+                                ),
+                                this
+                            )
                             next()
-                        }else{
+                        } else {
                             showAlertIfAddingFailed()
                         }
+                    }
 
                     }
 
@@ -113,15 +127,15 @@ class WorkerInfoActivity : AppCompatActivity() {
     }
     fun showAlertIfAddingFailed() {
         val builder = AlertDialog.Builder(this@WorkerInfoActivity)
-        builder.setTitle("Info")
-        builder.setMessage("Sign Up Failed .")
+        builder.setTitle(getString(R.string.info))
+        builder.setMessage(getString(R.string.sign_up_failed))
         builder.setCancelable(true)
-        builder.setPositiveButton("Try again") { dialogInterface, i ->
+        builder.setPositiveButton(getString(R.string.try_again)) { dialogInterface, i ->
             finish()
             startActivity(intent)
 
         }
-        builder.setNegativeButton("OK") { dialogInterface, i ->
+        builder.setNegativeButton(getString(R.string.ok)) { dialogInterface, i ->
             onResume()
         }
         builder.show()
@@ -135,7 +149,7 @@ class WorkerInfoActivity : AppCompatActivity() {
                  speciality = parent.getItemAtPosition(position).toString()
                 speciality.dropLast(1)
                 selected = true
-                Toast.makeText(applicationContext, "Item: $speciality", Toast.LENGTH_SHORT).show()
+                //Toast.makeText(applicationContext, "Item: $speciality", Toast.LENGTH_SHORT).show()
                 val editor = getSharedPreferences("my_prefs", Context.MODE_PRIVATE).edit()
                 editor.putString("speciality", speciality)
                 editor.apply()

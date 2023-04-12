@@ -8,6 +8,8 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Toast
+import androidx.core.net.toUri
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dev0jk.depanin.R
@@ -48,13 +50,20 @@ class SelectLocationActivity : AppCompatActivity() {
         workerVM = WorkerVM()
         readJson()
         dropDownList()
-
+        binding.btnBack.setOnClickListener {
+            onBackPressed()
+        }
         adapter = GouvernementAdapter(this, _listOfCites2)
         binding.recyclerViewer.layoutManager = LinearLayoutManager(this)
         binding.recyclerViewer.adapter = adapter
 
-        binding.getStarted.setOnClickListener{
-            NextBtn()
+            binding.getStarted.setOnClickListener {
+                if (adapter.oneTap) {
+                    NextBtn()
+                }
+                else{
+                    Toast.makeText(this,getString(R.string.select_your_town_please),Toast.LENGTH_LONG).show()
+                }
         }
         binding.Cancel.setOnClickListener {
             CancelBtn()
@@ -148,15 +157,14 @@ class SelectLocationActivity : AppCompatActivity() {
     fun NextBtn(){
         var loadingAlert=  LoadingAlert(this)
         loadingAlert.startLoadingAlert()
-        var image : Uri?
         var phone = intent.getStringExtra("phone").toString()
-        image = try {
-            Uri.parse(intent.getStringExtra("image"))
+        var image : Uri? = try {
+            intent.getStringExtra("image")?.toUri()
 
         } catch (e : java.lang.NullPointerException){
             null
         }
-
+        //var image = intent.getStringExtra("image")
         var username = intent.getStringExtra("username").toString()
         var password = intent.getStringExtra("password").toString()
 
@@ -175,7 +183,7 @@ class SelectLocationActivity : AppCompatActivity() {
             putExtra("ChosenCity",storedValueOfCity)
             putExtra("ChosenGouv",storedValueOfGouv)
             putExtra("phone",phone)
-            putExtra("image",image)
+            putExtra("image",image.toString())
             Log.println(Log.ASSERT,"image_1",image.toString())
             putExtra("username",username)
             putExtra("password",password)
@@ -185,5 +193,7 @@ class SelectLocationActivity : AppCompatActivity() {
     fun CancelBtn(){
         val intent = Intent(this, SelectLocationActivity::class.java)
         startActivity(intent)
+        /*        _listOfCites2.clear()
+        adapter.notifyDataSetChanged()*/
     }
 }

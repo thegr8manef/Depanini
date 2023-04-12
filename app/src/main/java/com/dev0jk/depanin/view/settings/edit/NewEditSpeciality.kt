@@ -38,7 +38,7 @@ class NewEditSpeciality : BottomSheetDialogFragment()
         super.onViewCreated(view, savedInstanceState)
         workerVM = WorkerVM()
         progressDialog = ProgressDialog(requireContext())
-        progressDialog.setTitle("Please wait")
+        progressDialog.setTitle(getString(R.string.please_wait))
         progressDialog.setCanceledOnTouchOutside(false)
         workersettingsFragment = WorkerSettingsFragment()
         item = requireActivity().intent.getStringExtra("speciality").toString()
@@ -47,7 +47,7 @@ class NewEditSpeciality : BottomSheetDialogFragment()
         binding.btnSave.setTextColor(Color.parseColor("#1565D8"))
         binding.btnSave.setOnClickListener {
             if (selected){
-                progressDialog.setMessage("Updating User...")
+                progressDialog.setMessage(getString(R.string.updating_user))
                 progressDialog.show()
                 saveAction()
             }else{

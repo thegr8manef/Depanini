@@ -6,18 +6,22 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.dev0jk.depanin.R
 import com.dev0jk.depanin.model.data.remote.entity.User
-import com.dev0jk.depanin.view.SelectLocationActivity
 
-class RecommendedAdapter(val context: Context, val recommends: ArrayList<User>) :
+class RecommendedAdapter(
+    val context: Context,
+    val recommends: ArrayList<User>,
+    val homeFragment: HomeFragment
+) :
     RecyclerView.Adapter<RecommendedAdapter.ViewHolder>() {
 
-
+var liked = false
    inner class ViewHolder(viewItem : View) : RecyclerView.ViewHolder(viewItem) {
 
        fun bind(user : com.dev0jk.depanin.model.data.remote.entity.User){
@@ -29,12 +33,27 @@ class RecommendedAdapter(val context: Context, val recommends: ArrayList<User>) 
                itemView.findViewById<TextView>(R.id.worker_municipale).text = user.address_municipale
                itemView.findViewById<TextView>(R.id.worker_job).text = user.speciality
 
+               //itemView.setBackgroundColor(Color.parseColor(R.color.primary_color.toString()))
+           itemView.setOnLongClickListener{
+               if (!liked){
+                   liked =true
+                   itemView.findViewById<ImageButton>(R.id.favoris).setImageResource(R.drawable.ic_bookmark_on)
+                   homeFragment.addFavorites(user.id!!.toLong())
+               }else{
+                   liked =false
+                   itemView.findViewById<ImageButton>(R.id.favoris).setImageResource(R.drawable.ic_bookmark)
+                   homeFragment.removeFavorites(user.id!!.toLong())
+               }
+
+               true
+           }
            itemView.setOnClickListener {
                val intent = Intent(context, WorkerDetailedActivity::class.java).apply {
                    putExtra("username_worker",user.username)
                    putExtra("address_gov_worker",user.address_gov)
                    putExtra("address_municipale_worker",user.address_municipale)
                    putExtra("image_worker",user.image)
+                   Log.println(Log.ASSERT,"worker image",user.image.toString())
                    putExtra("phone_worker",user.phone)
                    Log.println(Log.ASSERT,"worker phone",user.phone.toString())
                    putExtra("speciality_worker",user.speciality)

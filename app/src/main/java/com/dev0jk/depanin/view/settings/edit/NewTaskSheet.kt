@@ -2,6 +2,8 @@ package com.dev0jk.depanin.view.settings.edit
 
 
 import android.content.Context
+import android.content.Intent
+import android.content.res.Configuration
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
@@ -14,10 +16,12 @@ import androidx.core.widget.doOnTextChanged
 import com.dev0jk.depanin.R
 import com.dev0jk.depanin.databinding.FragmentNewTaskSheetBinding
 import com.dev0jk.depanin.utils.getUser
+import com.dev0jk.depanin.view.home.HomeActivity
 import com.dev0jk.depanin.vm.WorkerVM
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
+import java.util.*
 
 class NewTaskSheet : BottomSheetDialogFragment()
 {
@@ -53,7 +57,8 @@ class NewTaskSheet : BottomSheetDialogFragment()
 
     private fun saveAction()
     {
-
+        val intent1 = Intent(requireActivity(), HomeActivity::class.java)
+        startActivity(intent1)
         dismiss()
     }
     private fun dropDownList() {
@@ -65,7 +70,13 @@ class NewTaskSheet : BottomSheetDialogFragment()
                  val item = parent.getItemAtPosition(position).toString()
                 item.dropLast(1)
                 selected = true
-
+                val myLocale =
+                    Locale(item.toLowerCase(Locale.ROOT).substring(0, 2))
+                val res = resources
+                val dm = res.displayMetrics
+                val conf: Configuration = res.configuration
+                conf.locale = myLocale
+                res.updateConfiguration(conf, dm)
             }
     }
 

@@ -165,6 +165,44 @@ class WorkerRemote {
         return readAllData
     }
 
+    fun findAllFavorites(
+        id_client: Long
+    ): LiveData<List<com.dev0jk.depanin.model.data.remote.entity.User>> {
+
+        var readAllData = MutableLiveData<List<com.dev0jk.depanin.model.data.remote.entity.User>>()
+
+        ServiceUserBuilder.apiWorker.findAllFavorites(id_client).enqueue(object :
+            Callback<List<com.dev0jk.depanin.model.data.remote.entity.User>> {
+
+            override fun onResponse(
+
+                call: Call<List<com.dev0jk.depanin.model.data.remote.entity.User>>,
+                response: Response<List<com.dev0jk.depanin.model.data.remote.entity.User>>
+            ) {
+                Log.println(Log.ASSERT, "listAllFavorites", response.message())
+                if (response.isSuccessful) {
+                    Log.println(Log.ASSERT, "listAllFavorites", response.body().toString())
+
+                    if (response.body() != null) {
+                        readAllData.value = response.body()
+
+                    }
+                }
+
+            }
+
+            override fun onFailure(call: Call<List<com.dev0jk.depanin.model.data.remote.entity.User>>, t: Throwable) {
+                Log.println(Log.ASSERT, "======================>2", t.message.toString())
+
+            }
+
+
+
+        })
+
+        return readAllData
+    }
+
     fun createSpecialtyOfWorker(userID: String, specialty: String): LiveData<MessageResult> {
 
         var mutableLiveData = MutableLiveData<MessageResult>()
@@ -269,6 +307,63 @@ class WorkerRemote {
         return readAllData
     }
 
+    fun addToFavorites(id_worker :Long,
+                       id_client : Long
+    ): LiveData<com.dev0jk.depanin.model.data.remote.entity.User> {
+        var readAllData = MutableLiveData<com.dev0jk.depanin.model.data.remote.entity.User>()
+
+
+        ServiceUserBuilder.apiWorker.addToFavorites(id_worker,id_client).enqueue(object :
+            Callback<String> {
+
+            override fun onResponse(
+
+                call: Call<String>,
+                response: Response<String>
+            ) {
+                Log.println(Log.ASSERT, "", response.message())
+                }
+
+            override fun onFailure(call: Call<String>, t: Throwable) {
+                Log.println(Log.ASSERT, "======================>2", t.message.toString())
+
+            }
+
+
+
+        })
+
+        return readAllData
+    }
+
+    fun removeFromFavorites(id_worker :Long,
+                       id_client : Long
+    ): LiveData<com.dev0jk.depanin.model.data.remote.entity.User> {
+        var readAllData = MutableLiveData<com.dev0jk.depanin.model.data.remote.entity.User>()
+
+
+        ServiceUserBuilder.apiWorker.removeFromFavorites(id_worker,id_client).enqueue(object :
+            Callback<String> {
+
+            override fun onResponse(
+
+                call: Call<String>,
+                response: Response<String>
+            ) {
+                Log.println(Log.ASSERT, "", response.message())
+            }
+
+            override fun onFailure(call: Call<String>, t: Throwable) {
+                Log.println(Log.ASSERT, "======================>2", t.message.toString())
+
+            }
+
+
+
+        })
+
+        return readAllData
+    }
     fun getAllWorker(): LiveData<List<com.dev0jk.depanin.model.data.remote.entity.User>> {
         var readAllData = MutableLiveData<List<com.dev0jk.depanin.model.data.remote.entity.User>>()
 
@@ -444,6 +539,64 @@ class WorkerRemote {
         return readAllData
     }
 
+    suspend fun updateWorkerLocation(id : Long,
+                                     address_municipale: String,
+                                       address_gov: String,
+    ): LiveData<ResponseUserModel> {
+        val requestUserModel = RequestUserModel(id,null, null,address_gov,address_municipale,null,null,null,null)
+        var readAllData = MutableLiveData<ResponseUserModel>()
 
+        //val getPost = ServiceBuilder.api.sendReqWorker("manefDEv", "manef","TozeurHayMatar",99105580,9722325,"master")
+        val code200=true
+        try {
+
+
+            ServiceUserBuilder.apiUser.UpdateLocation(id, requestUserModel).enqueue(object :
+                Callback<ResponseUserModel> {
+                override fun onResponse(
+
+                    call: Call<ResponseUserModel>,
+                    response: Response<ResponseUserModel>
+                ) {
+                    Log.println(Log.ASSERT, "body", response.body().toString())
+
+                    var messageResult: ResponseUserModel = if (response.code() == 200) {
+                        Log.println(Log.ASSERT, "header", "code 200")
+                        ResponseUserModel(response.headers()["authorization"].toString(), true)
+
+                    } else {
+                        Log.println(Log.ASSERT, "header", "code !=  200")
+                        ResponseUserModel(response.headers()["authorization"].toString(), false)
+
+                    }
+                    readAllData.value = messageResult
+                    //mutableLiveData.value = response.body()
+//                   response.body()?.results?.forEach{
+//                       Log.println(Log.ASSERT, "", it.toString())
+//                   }
+                }
+
+
+                override fun onFailure(call: Call<ResponseUserModel>, t: Throwable) {
+                    Log.println(Log.ASSERT, "header", "code 404")
+
+/*
+            var  messageResult : ResponseUserModel = if (code200){
+                ResponseUserModel("null",true)
+
+            }else{
+                ResponseUserModel("null",false)
+            }
+            readAllData.value= messageResult
+*/
+
+                }
+
+
+            })
+        }catch (e: Exception){}
+
+        return readAllData
+    }
 }
 

@@ -1,10 +1,12 @@
 package com.dev0jk.depanin.model.data.repository
 
+import android.content.Context
 import android.net.Uri
 import androidx.lifecycle.LiveData
 import com.dev0jk.depanin.model.data.remote.UserRemote
 import com.dev0jk.depanin.model.entity.Location
 import com.dev0jk.depanin.model.entity.User
+import com.dev0jk.depanin.model.entity.UserImageFb
 import com.dev0jk.depanin.model.entity.modelWorker.ResponseUserModel
 import com.dev0jk.depanin.utils.MessageResult
 
@@ -12,7 +14,7 @@ class UserRepository {
 
     val userRemote = UserRemote()
 
-    fun addUser(user: User, userImage: Uri?) : LiveData<MessageResult>{
+    fun addUser(user: com.dev0jk.depanin.model.data.remote.entity.User, userImage: Uri?) : LiveData<MessageResult>{
         return userRemote.addUser(user, userImage)
     }
 
