@@ -1,8 +1,8 @@
 package com.dev0jk.depanin.view.home
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import com.dev0jk.depanin.R
 import com.dev0jk.depanin.databinding.ActivityHomeBinding
 import com.dev0jk.depanin.utils.getUser
@@ -71,6 +71,9 @@ class HomeActivity : AppCompatActivity() {
 
 
 
+    }
+    override fun onBackPressed() {
+        moveTaskToBack(true)
     }
     fun changeFragmentWorker(id :Int){
 
